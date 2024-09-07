@@ -1,0 +1,194 @@
+
+@import '../../inventory/validcontracts/styles/vars.scss';
+@import '../../inventory/validcontracts/styles/tables.scss';
+div.header {
+
+  .filter-button {
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: center;
+
+    &.filter-disabled {
+      background-image: url('../../../../assets/icons/filter.png');
+      background-color: #808080;
+    }
+
+    &.filter-enabled {
+      background-image: url('../../../../assets/icons/filter_remove.png');
+      background-color: #203b79;
+    }
+  }
+}
+
+
+  .green{
+    text-align: center !important;
+    color: #fdfcfb !important;
+      background-color: #5fe1b2 !important;
+      font-size: 18px;
+
+  }
+
+  .green {
+    text-align: center !important;
+    color: #fdfcfb !important;
+    background-color: #5fe1b2 !important;
+    font-size: 18px;
+  }
+  .orange {
+    text-align: center !important;
+    color: #fdfcfb !important;
+    background-color: #fbac94 !important;
+    font-size: 18px;
+  }
+  .red {
+    text-align: center !important;
+    color: #fdfcfb !important;
+    background-color: #f1879f !important;
+    font-size: 18px;
+  }
+  .gray {
+    text-align: center !important;
+    color: #fdfcfb !important;
+    background-color: #808080cf !important ;
+    font-size: 18px;
+  }
+  .orange {
+    background-color: coral;
+    color: white !important;
+  }
+  .red {
+    background-color: #ff0101ad;
+    color: white !important;
+  }
+  .mat-row:hover {
+    background-color: #abd0f06e;
+    cursor: pointer;
+    color: white !important;
+  }
+  .footBarraTab {
+    width: auto;
+    height: 50px;
+    background-color: #0c4464;
+  }
+  .green {
+    background-color: #7fdc7f;
+    color: white !important;
+  }
+  .blue {
+    background-color: #0099d2;
+    color: white !important;
+  }
+  .chart {
+    display: flex;
+    flex: 1 1 100%;
+  }
+
+  .title {
+    text-align: center !important;
+    color: #0f4282 !important;
+    font-size: 32px;
+  }
+  .coutTotal {
+    text-align: center !important;
+    color: orange !important;
+    font-size: 32px;
+  }
+
+  mat-panel-title {
+    font-size: 19px !important;
+    color: #0c4464;
+  }
+  .cursor {
+    cursor: pointer;
+  }
+
+  .marTop {
+    margin-top: 25px;
+  }
+  .center {
+    text-align: center !important;
+  }
+  .timer {
+    font-size: 17px;
+    color: #0099cc;
+  }
+  .countTimer {
+    color: red !important;
+  }
+  .alarmOk {
+    color: #2ca18c;
+    font-size: 18px;
+  }
+  .alarmWaning {
+    color: #ff8a65ab;
+    font-size: 18px;
+  }
+  .alarmDanger {
+    color: #f0466b9e;
+    font-size: 18px;
+  }
+  .alrmOk{
+   color: #0099CC;
+   font-size: 18px;
+  }
+  .btnClear{
+      font-size: 23px;
+      color: #60e2b4;
+  }
+  .link{
+    text-decoration: none;
+    color: #000;
+  }
+
+
+
+  /* responsive view */
+  @media only screen and (width: 600px) {
+    #all-alarms-chart{
+      display: none;
+    }
+  }
+
+  @media only screen and (width: 768px) {
+    #all-alarms-chart{
+      display: none;
+    }
+  }
+
+  @media only screen and (width: 800px) {
+    #all-alarms-chart{
+      display: none;
+    }
+  }
+
+  @media only screen and (width: 900px) {
+    #all-alarms-chart{
+      display: none;
+    }
+  }
+
+  @media only screen and (width: 1024px) {
+    #all-alarms-chart{
+      display: none;
+    }
+  }
+
+  @media only screen and (width: 1080px) {
+    #all-alarms-chart{
+      display: none;
+    }
+  }
+
+  @media only screen and (width: 1200px) {
+    #all-alarms-chart{
+      display: none;
+    }
+  }
+
+  @media only screen and (width: 1280px) {
+    #all-alarms-chart{
+      display: none;
+    }
+  }
+

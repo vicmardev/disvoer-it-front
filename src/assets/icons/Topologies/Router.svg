@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fad224;
+      }
+
+      .cls-3 {
+        fill: #03232e;
+      }
+
+      .cls-4 {
+        fill: #b3d1d6;
+      }
+
+      .cls-5 {
+        fill: #07485e;
+      }
+
+      .cls-6 {
+        fill: #0b799c;
+      }
+    </style>
+  </defs>
+  <g id="Capa_1-2" data-name="Capa 1">
+    <g>
+      <g>
+        <g>
+          <rect class="cls-3" x="19.94" y="179.28" width="20.18" height="30.98" transform="translate(-164.74 224.8) rotate(-90)"/>
+          <rect class="cls-3" x="258.44" y="179.28" width="20.18" height="30.98" transform="translate(73.76 463.3) rotate(-90)"/>
+          <rect class="cls-5" x="14.52" y="95.14" width="15.42" height="38.99" rx="7.59" ry="7.59"/>
+          <rect class="cls-5" x="270.05" y="95.14" width="15.42" height="38.99" rx="7.59" ry="7.59"/>
+          <path class="cls-6" d="M289.99,128.48H10.01c-5.46,0-9.89,4.43-9.89,9.89v43.64c0,5.46,4.43,9.89,9.89,9.89H289.99c5.46,0,9.89-4.43,9.89-9.89v-43.64c0-5.46-4.43-9.89-9.89-9.89ZM38.55,166.74c-8.99,0-16.27-3.45-16.27-7.71s7.29-7.71,16.27-7.71,16.27,3.45,16.27,7.71-7.29,7.71-16.27,7.71Zm54.82,0c-8.99,0-16.27-3.45-16.27-7.71s7.29-7.71,16.27-7.71,16.27,3.45,16.27,7.71-7.29,7.71-16.27,7.71Zm187.49-.21h-41.65v-15.42h41.65v15.42Z"/>
+        </g>
+        <rect class="cls-1" width="300" height="300"/>
+      </g>
+      <rect class="cls-4" x="239.31" y="150.82" width="43" height="16"/>
+      <ellipse class="cls-2" cx="38.81" cy="158.32" rx="16.5" ry="8.5"/>
+      <ellipse class="cls-2" cx="93.81" cy="158.32" rx="16.5" ry="8.5"/>
+    </g>
+  </g>
+</svg>

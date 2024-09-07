@@ -1,0 +1,43 @@
+<h1>Ingeniero(s)</h1>
+<mat-card fxLayout="row wrap">
+	<mat-chip-list aria-label="Dog selection" class="mat-chip-list-stacked">
+		<mat-chip *ngFor="let engineer of engineers" (removed)="remove(engineer)">
+			<img
+				matChipAvatar
+				src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+				alt="Photo of a Shiba Inu" />
+			{{ engineer.Name }}
+			<button matChipRemove (click)="deleteEngineerCE(engineer)">
+				<mat-icon>cancel</mat-icon>
+			</button>
+		</mat-chip>
+	</mat-chip-list>
+	<form
+		class="new-person-form"
+		[formGroup]="formEngineers"
+		*ngIf="availableEngineers.length > 0">
+		<mat-form-field fxFlexFill class="field">
+			<mat-label>Agregar Ingeniero</mat-label>
+			<mat-icon matSuffix>supervised_user_circle</mat-icon>
+			<mat-select multiple disableOptionCentering formControlName="id">
+				<mat-option
+					[value]="operator.IdSupportOperators"
+					*ngFor="let operator of availableEngineers">
+					{{ operator.Name }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</form>
+</mat-card>
+
+<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+	<button
+		mat-flat-button
+		class="btn-add"
+		(click)="addEngineer()"
+		*ngIf="availableEngineers.length > 0">
+		<mat-icon>add</mat-icon>
+		Agregar
+	</button>
+	<button mat-flat-button class="btn-cancel" (click)="closeDialog()">Cerrar</button>
+</mat-card>

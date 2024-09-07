@@ -1,0 +1,45 @@
+<div id="container-login" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="center center"
+  fxLayoutGap="5em">
+
+  <img class="animate__animated animate__fadeIn" id="img-logo" src="assets/img/DiscovertLogonotbg.png" alt="logo-DiscoverIT">
+
+  <mat-card class="animate__animated animate__fadeIn" id="form-login-container">
+    <mat-card-header>
+      <mat-card-title class="tex" *ngIf="emailStatus == EmailStatus.Verifying">Verificar Usuario</mat-card-title>
+      <mat-card-title class="tex" *ngIf="emailStatus == EmailStatus.Failed">La verificación falló</mat-card-title>
+    </mat-card-header>
+
+    <br />
+    <br />
+    <mat-card-content fxLayoutAlign="center center" fxLayout="column" *ngIf="emailStatus == EmailStatus.Verifying">
+      <br>
+      <div class="login-wrapper">
+        <mat-card-content class="tex">
+          <h1> No. de Contrato: <b>{{contrato}}</b> </h1>
+        </mat-card-content>
+      </div>
+      <div class="login-wrapper">
+        <mat-card-content class="tex">
+          <h1>Nombre: <b>{{name}}</b></h1>
+        </mat-card-content>
+      </div>
+      <div class="login-wrapper">
+        <mat-card-content class="tex">
+          <h1>Correo: <b>{{email}}</b></h1>
+        </mat-card-content>
+      </div>
+
+    </mat-card-content>
+
+    <mat-card-content fxLayoutAlign="center center" *ngIf="emailStatus == EmailStatus.Verifying">
+      <button mat-raised-button class="btn-accept" (click)="verifyUser()">Autorizar Usuario</button>
+      <span class="btn-span"></span>
+      <a routerLink="/login/login" mat-raised-button class="btn-cancel">Cancelar</a>
+    </mat-card-content>
+
+    <mat-card-content fxLayoutAlign="center center" *ngIf="emailStatus == EmailStatus.Failed">
+      <a routerLink="/login/login" mat-raised-button id="tex">OK</a>
+    </mat-card-content>
+  </mat-card>
+
+</div>

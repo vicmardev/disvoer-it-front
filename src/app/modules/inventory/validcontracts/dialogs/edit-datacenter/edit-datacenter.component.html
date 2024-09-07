@@ -1,0 +1,93 @@
+<form class="new-person-form" [formGroup]="formEditDataCenter">
+	<div>
+		<h1 class="title">
+			<strong>
+				<mat-icon>edit</mat-icon>
+				Editar DataCenter:
+				<strong class="black">{{ data.dataCenter.DataCenter }}</strong>
+			</strong>
+		</h1>
+		<br />
+	</div>
+	<mat-card fxLayout="row wrap">
+		<mat-form-field fxFlexFill class="field">
+			<mat-label>Pais</mat-label>
+			<mat-select
+				[(ngModel)]="countrySelected"
+				[ngModelOptions]="{standalone: true}"
+				(selectionChange)="countryChange()">
+				<mat-option *ngFor="let country of countriesList" [value]="country.IdCountry">
+					{{ country.Name }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field fxFlexFill class="field">
+			<mat-label>Ciudad</mat-label>
+			<mat-select [(ngModel)]="citySelected" [ngModelOptions]="{standalone: true}">
+				<mat-option *ngFor="let city of citiesList" [value]="city.IdCity">
+					{{ city.State }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<mat-form-field fxFlexFill class="field">
+			<mat-label>Municipio</mat-label>
+			<input
+				matInput
+				placeholder="Municipio"
+				fxFlex="100"
+				formControlName="Delegation"
+				maxlength="100" />
+		</mat-form-field>
+		<mat-form-field fxFlexFill class="field">
+			<mat-label>Vecindario</mat-label>
+			<input
+				matInput
+				placeholder="Vecindario"
+				fxFlex="100"
+				formControlName="Neighborhood"
+				maxlength="100" />
+		</mat-form-field>
+		<mat-form-field fxFlexFill class="field">
+			<mat-label>Calle</mat-label>
+			<input
+				matInput
+				placeholder="Calle"
+				fxFlex="100"
+				formControlName="Street"
+				maxlength="200" />
+		</mat-form-field>
+	</mat-card>
+	<mat-card fxLayout="row" fxLayoutGap="15px">
+		<mat-form-field fxFlexFill class="field" fxFlex="30">
+			<mat-label>Código Postal</mat-label>
+			<input
+				matInput
+				placeholder="Código Postal"
+				fxFlex="100"
+				formControlName="PostalCode"
+				maxlength="10" />
+		</mat-form-field>
+		<mat-form-field fxFlexFill class="field" fxFlex="30">
+			<mat-label>No. Exterior</mat-label>
+			<input
+				matInput
+				placeholder="No. Exterior"
+				formControlName="ExternalNumber"
+				maxlength="50" />
+		</mat-form-field>
+		<mat-form-field fxFlexFill class="field" fxFlex="30">
+			<mat-label>No. Interior</mat-label>
+			<input
+				matInput
+				placeholder="Calle"
+				formControlName="InternalNumber"
+				maxlength="50" />
+		</mat-form-field>
+	</mat-card>
+</form>
+<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+	<button mat-flat-button class="btn-cancel" (click)="cancel()">Cancelar</button>
+	<button mat-flat-button class="btn-accept" (click)="update()">Guardar</button>
+</mat-card>

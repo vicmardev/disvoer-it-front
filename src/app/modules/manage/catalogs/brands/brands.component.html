@@ -1,0 +1,81 @@
+<button
+	id="add-brand"
+	mat-fab
+	class="maLe"
+	matTooltip="Agregar Marca"
+	(click)="openDialog()">
+	<mat-icon>add</mat-icon>
+</button>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" multiTemplateDataRows>
+	<!-- Nombre -->
+	<ng-container matColumnDef="Nombre">
+		<mat-header-cell *matHeaderCellDef class="header-table">Nombre</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.NameBrand }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Descripción -->
+	<ng-container matColumnDef="Descripción">
+		<mat-header-cell *matHeaderCellDef class="header-table">Descripción</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.Description }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Fecha de registro -->
+	<ng-container matColumnDef="Fecha de Registro">
+		<mat-header-cell *matHeaderCellDef class="header-table">
+			Fecha de Registro
+		</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.createdAt | date: 'shortDate' }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Acciones -->
+	<ng-container matColumnDef="Acciones">
+		<mat-header-cell *matHeaderCellDef class="header-table"></mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			<div class="acciones">
+				<button
+					mat-icon-button
+					[matMenuTriggerFor]="menu"
+					aria-label="Example icon-button with a menu">
+					<mat-icon>more_vert</mat-icon>
+				</button>
+			</div>
+			<mat-menu #menu="matMenu">
+				<button id="button-accions-edit" (click)="editBrand(element)">
+					<span class="text">Editar</span>
+				</button>
+				<button id="button-accions-delete" (click)="deleteBrand(element)">
+					<span class="text">Eliminar</span>
+				</button>
+			</mat-menu>
+		</mat-cell>
+	</ng-container>
+
+	<!-- ------ -->
+	<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+	<mat-row
+		*matRowDef="let row; columns: displayedColumns"
+		class="example-element-row"></mat-row>
+</table>
+<mat-paginator
+	[pageSizeOptions]="[10, 15, 30]"
+	showFirstLastButtons
+	aria-label="paginator"></mat-paginator>

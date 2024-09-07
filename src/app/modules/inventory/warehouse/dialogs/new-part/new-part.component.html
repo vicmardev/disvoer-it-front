@@ -1,0 +1,74 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+	<div>
+		<h1 class="title">
+			<strong>
+				<mat-icon>add_to_queue</mat-icon>
+				Nueva Parte
+			</strong>
+		</h1>
+		<br />
+	</div>
+	<form class="new-person-form" [formGroup]="logEquipmentForm">
+		<mat-card fxLayout="column" fxLayoutGap="15px">
+			<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="15px">
+				<mat-form-field fxFlex="30" style="font-size: 17px">
+					<mat-label>Proveedor</mat-label>
+					<mat-select formControlName="IdProvider">
+						<mat-option
+							*ngFor="let store of providerSelectorValues"
+							[value]="store.value">
+							{{ store.viewValue }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+
+				<mat-form-field fxFlex="30" style="font-size: 17px">
+					<mat-label>Tipo de parte</mat-label>
+					<mat-select formControlName="TypePart">
+						<mat-option
+							*ngFor="let partType of partTypeSelectorValues"
+							[value]="partType.value">
+							{{ partType.viewValue }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+
+				<mat-form-field fxFlex="30" style="font-size: 17px">
+					<mat-label>Marca</mat-label>
+					<input matInput placeholder="Brand" formControlName="Brand" />
+					<!-- <mat-icon matSuffix>branding_watermark</mat-icon> -->
+				</mat-form-field>
+			</div>
+
+			<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="15px">
+				<mat-form-field fxFlex="45" style="font-size: 17px">
+					<mat-label>Modelo</mat-label>
+					<input matInput placeholder="Modelo" formControlName="Model" />
+					<!-- <mat-icon matSuffix>confirmation_number</mat-icon> -->
+				</mat-form-field>
+				<mat-form-field fxFlex="45" style="font-size: 17px">
+					<mat-label>Número de parte</mat-label>
+					<input matInput placeholder="# parte" formControlName="PartNumber" />
+					<!-- <mat-icon matSuffix>confirmation_number</mat-icon> -->
+				</mat-form-field>
+			</div>
+		</mat-card>
+	</form>
+
+	<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+		<button
+			mat-flat-button
+			class="btn-accept"
+			(click)="createNewPart()"
+			[disabled]="!logEquipmentForm.valid">
+			Guardar
+		</button>
+
+		<button
+			mat-flat-button
+			class="btn-cancel"
+			(click)="closeDialog(logEquipmentForm.value)">
+			Cancelar
+		</button>
+	</mat-card>
+</div>

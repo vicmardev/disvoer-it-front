@@ -1,0 +1,246 @@
+.center {
+  text-align: center;
+}
+
+.subTitle {
+  color: #0099cc;
+}
+.countStyle {
+  font-size: 30px;
+}
+.mat-card:not([class*="mat-elevation-z"]) {
+  cursor: pointer;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+mat-table {
+  width: 100% !important;
+}
+mat-header-cell {
+  text-align: center !important;
+  color: #fdfcfb !important;
+  background-color: #0099cc;
+  font-size: 15px !important;
+}
+th {
+  text-align: center !important;
+  background-color: #0099cc;
+  color: #fdfcfb;
+  font-size: 18px;
+}
+mat-paginator {
+  width: 100% !important;
+}
+.barTitle {
+  background: #0099cc;
+  color: white;
+  
+  /*top: 8px;*/
+  margin-bottom: 0px;
+  text-align: center;
+  height: 32px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.divChild {
+  width: 100%;
+}
+.idTicket {
+  color: white;
+}
+.highlight {
+  background-color: #4560682b;
+  cursor: pointer;
+}
+#listBadge {
+  /*margin-top: 8px;*/
+  text-align: center;
+  width: 49%;
+  box-sizing: border-box;
+  display: flex;
+  place-content: stretch center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.gray {
+  background: #646460;
+  color: white;
+ 
+  cursor: pointer;
+}
+.pendig {
+  background: #efcc00;
+  color: white;
+  border-radius: 30px;
+  width:30px ;
+  cursor: pointer;
+}
+.complete {
+  background: #2db674;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  width:30px ;
+  
+}
+.canceled {
+  background: #cc4c32;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  width:30px ;
+  
+}
+.reasign {
+  background: #646460;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  width:30px ;
+  
+}
+
+.graphics {
+  display: flex;
+  cursor: pointer;
+}
+
+.child-1 {
+  width: 100%;
+  background-color: white;
+}
+
+.child-2 {
+  width: 48%;
+}
+
+.chart {
+  cursor: pointer;
+}
+
+.patern1{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title-test{
+  background: #0099cc;
+  text-align: center;
+  color: white;
+}
+
+.graph1{
+  /*
+  margin-right: 30px;*/
+  width: 100%;
+  display: flex;
+}
+
+.grap2{
+  /*
+  margin-right: 30px;*/
+  display: flex;
+}
+
+.title-grap{
+  width: 100%;
+}
+
+mat-row, mat-footer-row {
+  min-height: 40px;
+}
+
+mat-header-row {
+  min-height: 50px;
+}
+
+.btn-back {
+  background: #0099cc;
+  color: #fff;
+  padding-left: 11px;
+}
+.patern12{
+  width: 49%;
+}
+
+.footer-table{
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.btn-back{
+  width: 18%;
+  margin-left: 10px;
+}
+
+.paginator{
+  width: 80%;
+}
+
+
+div _ngcontent-itn-c362{
+  width: 200px;
+}
+
+#apexchartsgng5i3q7g{
+  width: 200px !important;
+}
+
+.chart{
+  width: 200px !important;
+} 
+/*
+
+.ng-star-inserted{
+  width: 200px !important;
+}*/
+
+.apexcharts-text{
+  font-size: 12px !important;
+}
+
+#SvgjsText1040{
+  font-size: 12px !important;
+}
+
+#SvgjsG1039{
+  font-size: 12px !important;
+}
+
+.apexcharts-datalabels-group{
+  font-size: 12px !important;
+}
+
+.flex-item {
+  width: auto;
+  height: auto;
+}
+
+.filterDates{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}

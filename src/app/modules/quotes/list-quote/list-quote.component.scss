@@ -1,0 +1,205 @@
+@import '../../inventory/validcontracts/styles/vars.scss';
+@import '../../inventory/validcontracts/styles/tables.scss';
+div.header {
+
+  .filter-button {
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: center;
+
+    &.filter-disabled {
+      background-image: url('../../../../assets/icons/filter.png');
+      background-color: #808080;
+    }
+
+    &.filter-enabled {
+      background-image: url('../../../../assets/icons/filter_remove.png');
+      background-color: #203b79;
+    }
+  }
+}
+
+
+
+
+
+
+.title {
+	text-align: center;
+	color: #0f4282;
+	font-size: 32px;
+}
+.footBarraTab {
+	display: inline-block;
+	width: 100%;
+	height: 50px;
+	background-color: #0c4464;
+}
+.foot {
+	margin-top: 3px;
+}
+.danger {
+	background-color: #ff000099 !important;
+	color: white;
+}
+.success {
+	background-color: #45bf68;
+	color: white;
+}
+.unknown {
+	background-color: gray;
+	color: #fdfcfb;
+}
+.noneDisplay {
+	display: contents !important;
+}
+.alertWarning {
+	background: #ffff593b;
+	color: black;
+}
+.cursor {
+	cursor: pointer;
+	color: #c4b5c0;
+	font-size: 34px;
+}
+.grab {
+	cursor: grab;
+	color: #d01b1b;
+	font-size: 34px;
+}
+.purple {
+	background: #fed9ff;
+}
+.maLe {
+	margin-left: 31px;
+}
+.mat-tooltip {
+	font-size: 18px;
+}
+.iptSearch {
+	width: 99%;
+	/* margin-right: 107px; */
+}
+.icons {
+	font-size: 26px;
+}
+.backGreen {
+	background: #20ad9a;
+}
+.octopian {
+	background-color: #c6caff7d;
+	color: #0113fe;
+}
+.pink {
+	background-color: pink;
+}
+
+.mat-row:hover {
+	background-color: #abd0f06e;
+	cursor: pointer;
+}
+
+.badgeNew {
+	background-color: #0008ff99 !important;
+	color: white;
+}
+.info {
+	color: #3c43da;
+	font-size: 34px;
+}
+.ticket {
+	color: #f0b311;
+	font-size: 30px;
+}
+.green {
+	color: #14c1ae;
+}
+.showInfo {
+	display: none;
+}
+
+.chipSuspend {
+	background-color: #ffffd9 !important;
+	color: #e3c611 !important;
+	cursor: pointer;
+}
+.chipActive {
+	background-color: #dadada !important;
+	color: #4129d2 !important;
+	cursor: pointer;
+}
+.chipAll {
+	background-color: #c0f9fc !important;
+	color: #254bc7 !important;
+	cursor: pointer;
+}
+.paletColors {
+	color: #0f4282;
+}
+.mat-badge-content {
+	color: white !important;
+	background: #f33008 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+	color: #0c86e6 !important;
+	margin-top: 1px !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-select {
+	color: #0c86e6 !important;
+	margin-top: 1px !important;
+}
+
+.meter {
+	background-color: green !important;
+}
+.percentage {
+	width: 4em;
+	margin-left: 10px;
+}
+.test {
+	margin-top: 55px;
+}
+.mgLeft {
+	margin-left: 3px;
+}
+.imgEquipment {
+	width: 55px;
+}
+/* progres  bar  */
+::ng-deep .mat-progress-bar-fill::after {
+	background-color: #0c4464 !important;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+	background: #e4e8eb !important;
+}
+
+::ng-deep .mat-progress-bar {
+	border-radius: 5px !important;
+}
+.audio-progress-bar {
+	height: 8px;
+}
+
+
+
+.progress-bar-text {
+	position: absolute;
+	padding-right: -4px;
+	color: white;
+	text-shadow: 1px 0 0 rgba(0, 0, 0, 0.253), 0 -1px 0 rgba(0, 0, 0, 0.253), 0 1px 0 #000,
+		-1px 0 0 rgba(0, 0, 0, 0.253);
+}
+
+
+
+.equipos-contratos-header {
+	min-width: 50px !important;
+}
+
+
+
+
+

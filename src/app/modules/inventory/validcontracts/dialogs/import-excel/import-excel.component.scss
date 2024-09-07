@@ -1,0 +1,35 @@
+@import '../../styles/vars';
+@import '../../styles/tables';
+
+.title {
+	color: #3e4981;
+	text-align: center;
+}
+
+.file-select {
+	margin: 20px auto;
+}
+
+.btn-cancel {
+	background: red;
+	color: white;
+}
+.btn-accept {
+	background: #00c22a;
+	color: white;
+}
+
+input.mat-input-element {
+	margin-top: -0.0625em;
+	margin-top: 23px;
+}
+
+.spinner {
+	width: auto;
+	height: auto;
+	background-image: url('/assets/gifs/Antena-1-unscreen.gif') center no-repeat;
+}
+
+.details {
+	font-weight: bold;
+}

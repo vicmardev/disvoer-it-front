@@ -1,0 +1,76 @@
+<div class="container">
+	<h1 class="title">
+		<strong>
+			<mat-icon>edit</mat-icon>
+			Agregar Tarea:
+		</strong>
+	</h1>
+</div>
+<div class="container">
+	<form class="new-person-form" [formGroup]="taskForm">
+		<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="15px">
+			<mat-form-field fxFlex="100" style="font-size: 17px">
+				<mat-label>Titulo</mat-label>
+				<input matInput placeholder="Lead" formControlName="Title" />
+			</mat-form-field>
+		</div>
+
+		<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="15px">
+			<mat-form-field fxFlex="40" style="font-size: 17px">
+				<mat-label>Operador</mat-label>
+				<mat-select formControlName="AssignedTo">
+					<mat-option
+						*ngFor="let selector of operatorSelectorValues"
+						[value]="selector.value">
+						{{ selector.viewValue }}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<mat-form-field fxFlex="55" style="font-size: 17px">
+				<mat-label>Inicio y fin de la tarea</mat-label>
+				<mat-date-range-input [rangePicker]="picker">
+					<input
+						matStartDate
+						placeHolder="Start date"
+						(dateChange)="startChange($event)"
+						formControlName="StartDate" />
+					<input
+						matEndDate
+						placeholder="End date"
+						(dateChange)="endChange($event)"
+						formControlName="EndDate" />
+				</mat-date-range-input>
+				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+				<mat-date-range-picker #picker></mat-date-range-picker>
+			</mat-form-field>
+		</div>
+
+		<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="15px">
+			<mat-form-field fxFlexFill fxFlex="100" style="font-size: 17px">
+				<mat-label>Comentarios</mat-label>
+				<textarea
+					matInput
+					placeholder="Comentarios"
+					fxFlex="100"
+					formControlName="Comments"></textarea>
+			</mat-form-field>
+		</div>
+	</form>
+
+	<mat-card
+		fxLayout="row"
+		fxLayoutAlign="center center"
+		fxLayoutGap="15px"
+		class="container-buttons">
+		<button mat-flat-button class="btn-cancel .cancel-button" (click)="cancel()">
+			Cancelar
+		</button>
+		<button
+			mat-flat-button
+			class="btn-accept .save-button"
+			(click)="onSubmit()"
+			[disabled]="taskForm.invalid || submiting">
+			Guardar
+		</button>
+	</mat-card>
+</div>

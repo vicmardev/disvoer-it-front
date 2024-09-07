@@ -1,0 +1,570 @@
+<div id="title-page" class="container">
+	<div class="flex navbar-top">
+		<div class="flex-item dox1">
+			<img class="logo-navbar" src="../../../assets/img/DiscovertLogonotbg.png" alt="#" />
+		</div>
+		<div class="flex-item logo-discover">
+			<h1
+				id="titulo-pagina"
+				class="animate__animated animate__fadeIn"
+				style="color: #07293c !important">
+				{{ activeRoutePath | pageTitle }}
+			</h1>
+		</div>
+		<div class="flex-item dox2">
+			<div class="twoColumns">
+				<div class="notifierColumn">
+					<!-- mail -->
+					<div class="column">
+						<button mat-icon-button>
+							<img
+								[matMenuTriggerFor]="belowMenu"
+								class="icon-size"
+								src="../../../assets/img/Icons/mensaje.png"
+								alt="" />
+							<span
+								style="margin-right: 30px"
+								[ngClass]="totalMailCount > 9 ? 'override' : ''"
+								class="badge mat-badge-content"
+								*ngIf="totalMailCount > 0">
+								{{ totalMailCount }}
+							</span>
+							<mat-menu #belowMenu="matMenu" xPosition="after">
+								<button mat-menu-item *ngFor="let op of operatorNotifiers">
+									{{ op.name }} : {{ op.tickets }}
+								</button>
+								<button
+									class="toCalendar"
+									mat-menu-item
+									routerLink="/dash/ticketsAlerts/calendar">
+									Ir al calendario
+								</button>
+							</mat-menu>
+						</button>
+						<!--<button mat-icon-button>
+							<mat-icon [ngStyle]="{color: '#0c4464'}" [matMenuTriggerFor]="belowMenu">
+								mail
+							</mat-icon>
+							<span
+								style="margin-right: 30px"
+								[ngClass]="totalMailCount > 9 ? 'override' : ''"
+								class="badge mat-badge-content"
+								*ngIf="totalMailCount > 0">
+								{{ totalMailCount }}
+							</span>
+							<mat-menu #belowMenu="matMenu" xPosition="after">
+								<button mat-menu-item *ngFor="let op of operatorNotifiers">
+									{{ op.name }} : {{ op.tickets }}
+								</button>
+								<button
+									class="toCalendar"
+									mat-menu-item
+									routerLink="/dash/ticketsAlerts/calendar">
+									Ir al calendario
+								</button>
+							</mat-menu>
+						</button> -->
+					</div>
+
+					<!-- green bell -->
+					<div class="column">
+						<button mat-icon-button style="margin-right: 15px">
+							<img
+								[matMenuTriggerFor]="afterMenu"
+								class="icon-size"
+								src="../../../assets/img/Icons/notiVerde.png"
+								alt="" />
+							<span
+								[ngClass]="totalAlarmCount > 9 ? 'override' : ''"
+								class="badge mat-badge-content"
+								*ngIf="okCount > 0">
+								{{ okCount }}
+							</span>
+							<mat-menu #afterMenu="matMenu" xPosition="after">
+								<button
+									class="toTicketsAlerts"
+									mat-menu-item
+									routerLink="/dash/alarms/graphics">
+									Ir a Alarmas en tiempo real
+								</button>
+							</mat-menu>
+						</button>
+					</div>
+
+					<!-- orange bell -->
+					<div class="column">
+						<button mat-icon-button style="margin-right: 15px">
+							<img
+								[matMenuTriggerFor]="afterMenu"
+								class="icon-size"
+								src="../../../assets/img/Icons/notiNaranja.png"
+								alt="" />
+							<span
+								[ngClass]="totalAlarmCount > 9 ? 'override' : ''"
+								class="badge mat-badge-content"
+								*ngIf="warningCount > 0">
+								{{ warningCount }}
+							</span>
+							<mat-menu #afterMenu="matMenu" xPosition="after">
+								<button
+									class="toTicketsAlerts"
+									mat-menu-item
+									routerLink="/dash/alerts/realtime">
+									Ir a Alarmas en tiempo real
+								</button>
+							</mat-menu>
+						</button>
+					</div>
+
+					<!-- red bell -->
+					<div class="column">
+						<button mat-icon-button style="margin-right: 15px">
+							<img
+								[matMenuTriggerFor]="afterMenu"
+								class="icon-size"
+								src="../../../assets/img/Icons/notiRojo.png"
+								alt="" />
+							<span
+								[ngClass]="totalAlarmCount > 9 ? 'override' : ''"
+								class="badge mat-badge-content"
+								*ngIf="criticalCount > 0">
+								{{ criticalCount }}
+							</span>
+							<mat-menu #afterMenu="matMenu" xPosition="after">
+								<button
+									class="toTicketsAlerts"
+									mat-menu-item
+									routerLink="/dash/alerts/realtime">
+									Ir a Alarmas en tiempo real
+								</button>
+							</mat-menu>
+						</button>
+					</div>
+				</div>
+				<div class="userColumn">
+					<button mat-icon-button [matMenuTriggerFor]="menu">
+						<img src="{{ imgUrl }}" class="img-login" *ngIf="!user.avatarImagePath" />
+						<img
+							src="{{ AvatarImgUrl + user.avatarImagePath }}"
+							class="img-login"
+							*ngIf="user.avatarImagePath" />
+						<p class="username" *ngIf="user.role != 'User'">{{ user.firstName }}</p>
+						<mat-icon style="margin-top: -13px; color: #07293c">
+							keyboard_arrow_down
+						</mat-icon>
+						<p class="username" *ngIf="user.role === 'User'">{{ user.firstName }}</p>
+					</button>
+					<mat-menu #menu="matMenu">
+						<button class="asdfg" mat-menu-item routerLink="./manage/editProfile">
+							<a class="usermenu">
+								<i class="fas fa-edit"></i>
+								Editar Perfil
+							</a>
+						</button>
+						<button class="asdfg" mat-menu-item (click)="logout()">
+							<a class="usermenu">
+								<i class="fas fa-sign-out-alt"></i>
+								Salir
+							</a>
+						</button>
+					</mat-menu>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="area"></div>
+	<div class="qwerty">
+		<nav class="main-menu">
+			<br />
+			<br />
+			<br />
+			<br />
+			<ul class="list">
+				<!-- Home -->
+				<li class="has-subnav">
+					<a
+						routerLink="./graphics"
+						mat-list-item
+						*ngIf="user.role != 'User'"
+						class="home-link"
+						routerLinkActive="router-link-active"
+						[routerLinkActiveOptions]="{exact: true}"
+						class="home-link">
+						<span class="nav-text">
+							<img class="icon" src="../../../assets/img/Icons/home.png" alt="" />
+							Inicio
+						</span>
+					</a>
+				</li>
+				<br />
+				<br />
+				<!-- Cotizaciones -->
+				<li class="has-subnav">
+					<a
+						routerLink="./quotes"
+						mat-list-item
+						*ngIf="user.role != 'User'"
+						class="home-link"
+						routerLinkActive="router-link-active"
+						[routerLinkActiveOptions]="{exact: true}"
+						class="home-link">
+						<span class="nav-text">
+							<img class="icon" src="../../../assets/img/Icons/cotizaciones.png" alt="" />
+							Cotizaciones
+						</span>
+					</a>
+				</li>
+				<br />
+				<br />
+				<!-- Orden de Compra -->
+				<li class="has-subnav">
+					<a
+						routerLink="./purcharse"
+						mat-list-item
+						*ngIf="user.role != 'User'"
+						class="home-link"
+						routerLinkActive="router-link-active"
+						[routerLinkActiveOptions]="{exact: true}"
+						class="home-link">
+						<span class="nav-text">
+							<img
+								class="icon"
+								src="../../../assets/img/Icons/orden de compra.png"
+								alt="" />
+							Orden de Compra
+						</span>
+					</a>
+				</li>
+				<br />
+				<br />
+				<!-- Descubrimiento -->
+				<li class="has-subnav">
+					<a
+						routerLink="./discovery/devices"
+						mat-list-item
+						*ngIf="user.role != 'User'"
+						class="has-subnav"
+						routerLinkActive="router-link-active"
+						[routerLinkActiveOptions]="{exact: true}">
+						<span class="nav-text">
+							<img
+								class="icon"
+								src="../../../assets/img/Icons/descubrimiento.png"
+								alt="" />
+							Descubrimiento
+						</span>
+					</a>
+				</li>
+				<br />
+				<br />
+				<!-- Topologias  -->
+				<li class="has-subnav">
+					<a
+						routerLink="./topologies"
+						mat-list-item
+						*ngIf="user.role != 'User'"
+						class="has-subnav"
+						routerLinkActive="router-link-active"
+						[routerLinkActiveOptions]="{exact: true}">
+						<span class="nav-text">
+							<img src="../../../assets/img/Icons/topologia.png" class="icon" alt="" />
+							Topologias
+						</span>
+					</a>
+				</li>
+				<br />
+				<br />
+				<!-- Alarmas  -->
+				<div (mouseenter)="showAlerts = true" (mouseleave)="showAlerts = false">
+					<li class="has-subnav">
+						<a mat-list-item (click)="showAlerts = !showAlerts" class="home-link">
+							<span class="nav-text">
+								<img class="icon" src="../../../assets/img/Icons/alarmas.png" alt="" />
+								Alarmas
+							</span>
+						</a>
+						<div
+							class="submenu borderLeft"
+							[ngClass]="{expanded: showAlerts}"
+							*ngIf="showAlerts">
+							<div class="selected-text">
+								<a
+									class="home-link"
+									routerLink="./alarms/graphics"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Tiempo real</span>
+								</a>
+							</div>
+							<div class="selected-text">
+								<a
+									class="home-link"
+									routerLink="./alarms/historical"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Histórico</span>
+								</a>
+							</div>
+						</div>
+					</li>
+				</div>
+				<br />
+				<br />
+				<!-- Tickets -->
+				<div (mouseenter)="showTicketsMenu = true" (mouseleave)="showTicketsMenu = false">
+					<li class="has-subnav">
+						<a
+							mat-list-item
+							(click)="showTicketsMenu = !showTicketsMenu"
+							class="home-link">
+							<span class="nav-text">
+								<img class="icon" src="../../../assets/img/Icons/ticket.png" alt="" />
+								Tickets
+							</span>
+						</a>
+						<div
+							class="submenu borderLeft"
+							[ngClass]="{expanded: showAlerts}"
+							*ngIf="showTicketsMenu">
+							<div class="selected-text">
+								<a
+									class="home-link"
+									id="expand-more-arrow"
+									routerLink="./ticketsAlerts/home"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Tickets</span>
+								</a>
+							</div>
+							<div class="selected-text">
+								<a
+									class="home-link"
+									id="expand-more-arrow"
+									routerLink="./ticketsAlerts/calendar"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Calendario</span>
+								</a>
+							</div>
+							<div class="selected-text">
+								<a
+									class="home-link"
+									id="expand-more-arrow"
+									routerLink="./ticketsAlerts/inventoryTickets"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Inventario de Tickets</span>
+								</a>
+							</div>
+						</div>
+					</li>
+				</div>
+				<br />
+				<br />
+				<!-- Inventario -->
+				<div (mouseenter)="showHistorical = true" (mouseleave)="showHistorical = false">
+					<li class="has-subnav">
+						<a class="home-link" mat-list-item>
+							<span class="nav-text">
+								<img class="icon" src="../../../assets/img/Icons/contratos.png" alt="" />
+								Contratos
+							</span>
+						</a>
+						<div
+							class="submenu borderLeft"
+							[ngClass]="{expanded: showHistorical}"
+							*ngIf="showHistorical">
+							<div class="selected-text">
+								<a
+									class="home-link"
+									routerLink="./inventory/validcontracts"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Contratos actuales</span>
+								</a>
+							</div>
+							<div class="selected-text">
+								<a
+									class="home-link"
+									routerLink="./inventory/detail-contract"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Detalles de contrato</span>
+								</a>
+							</div>
+							<div class="selected-text">
+								<a
+									class="home-link"
+									routerLink="./inventory/location"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Ubicación de contratos</span>
+								</a>
+							</div>
+							<div class="selected-text">
+								<a
+									class="home-link"
+									routerLink="./partsWerehouse/parts"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Almacén de equipo</span>
+								</a>
+							</div>
+							<div class="selected-text">
+								<a
+									class="home-link"
+									routerLink="./inventory/contract"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Crear Contratos</span>
+								</a>
+							</div>
+						</div>
+					</li>
+				</div>
+				<br />
+				<br />
+				<!-- Centro de ayuda -->
+				<div (mouseenter)="showFaqs = true" (mouseleave)="showFaqs = false">
+					<li class="has-subnav">
+						<a class="home-link" mat-list-item (click)="showFaqs = !showFaqs">
+							<span class="nav-text">
+								<img
+									class="icon"
+									src="../../../assets/img/Icons/centro de ayuda.png"
+									alt="" />
+								Centro de Ayuda
+							</span>
+						</a>
+						<div
+							class="submenu borderLeft"
+							[ngClass]="{expanded: showFaqs}"
+							*ngIf="showFaqs">
+							<div class="selected-text">
+								<a
+									class="home-link"
+									routerLink="./help-center/faqs"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">FAQs</span>
+								</a>
+							</div>
+							<div class="selected-text">
+								<a
+									class="home-link"
+									routerLink="./help-center/guides"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Guías</span>
+								</a>
+							</div>
+							<div class="selected-text">
+								<a
+									class="home-link"
+									routerLink="./help-center/support"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Contacto</span>
+								</a>
+							</div>
+							<div class="selected-text">
+								<a
+									class="home-link"
+									routerLink="./help-center/about"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Acerca de</span>
+								</a>
+							</div>
+							<div class="selected-text">
+								<a
+									class="home-link"
+									routerLink="./help-center/know"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Conocimiento</span>
+								</a>
+							</div>
+						</div>
+					</li>
+				</div>
+				<br />
+				<br />
+
+				<!-- Admin -->
+				<div (mouseenter)="showAdminMenu = true" (mouseleave)="showAdminMenu = false">
+					<li class="has-subnav">
+						<a
+							mat-list-item
+							(click)="showAdminMenu = !showAdminMenu"
+							*ngIf="user.role != 'User'">
+							<span class="nav-text">
+								<img class="icon" src="../../../assets/img/Icons/admin.png" alt="" />
+								Administrador
+							</span>
+						</a>
+						<div
+							class="submenu borderLeft"
+							[ngClass]="{expanded: showAdminMenu}"
+							*ngIf="showAdminMenu">
+							<div class="selected-text">
+								<a
+									class="home-link"
+									routerLink="./manage/listUsers"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Gestión Usuarios</span>
+								</a>
+							</div>
+							<div class="selected-text">
+								<a
+									class="home-link"
+									routerLink="./manage/catalogs"
+									mat-list-item
+									routerLinkActive="router-link-active"
+									[routerLinkActiveOptions]="{exact: true}">
+									<span class="expand-text">Gestión de Catálogos</span>
+								</a>
+							</div>
+						</div>
+					</li>
+				</div>
+			</ul>
+		</nav>
+	</div>
+	<br />
+	<div class="main-app">
+		<router-outlet></router-outlet>
+	</div>
+	<a
+		href="https://api.whatsapp.com/send?phone=+525555027501"
+		class="btn-wsp"
+		target="_blank"
+		matTooltip="Contáctanos">
+		<i class="fab fa-whatsapp"></i>
+	</a>
+	<div class="foot">
+		<img class="logoFooter" src="../../../assets/img/Others/logoFooter.png" alt="" />
+		<p class="footer">
+			© 2022 Grupo
+			<a class="vir-link" href="https://virwo.com/" target="_blank">VIRWO.</a>
+			Todos los Derechos Reservados.
+		</p>
+	</div>
+</div>

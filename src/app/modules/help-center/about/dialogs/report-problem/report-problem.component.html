@@ -1,0 +1,55 @@
+<div>
+	<h1 class="title">
+		<strong>Reportar un problema</strong>
+	</h1>
+	<h4>
+		<strong class="sub-title">*Instrucciones para reportar un problema</strong>
+		<p>1.- Llena los campos solicitados</p>
+	</h4>
+	<br />
+</div>
+<div>
+	<mat-card class="box1">
+		<mat-card-title class="title"></mat-card-title>
+		<br />
+		<mat-card-content>
+			<form [formGroup]="reportForm">
+				<mat-form-field appearance="outline" class="example-full-width">
+					<textarea
+						id="description"
+						type="text"
+						matInput
+						placeholder="Descripción del problema"
+						formControlName="description"
+						required></textarea>
+					<mat-error>Por favor ingrese la Descripción</mat-error>
+				</mat-form-field>
+				<mat-form-field appearance="outline" class="example-full-width">
+					<mat-icon mat-list-icon matSuffix>link</mat-icon>
+					<input
+						type="text"
+						id="url"
+						matInput
+						placeholder="Url"
+						formControlName="url"
+						required />
+					<mat-error>Por favor ingrese la Url</mat-error>
+				</mat-form-field>
+				<mat-form-field appearance="outline" class="example-full-width">
+					<mat-icon mat-list-icon matSuffix>mail</mat-icon>
+					<input
+						type="email"
+						id="mail"
+						matInput
+						placeholder="E-mail"
+						formControlName="mail"
+						required />
+					<mat-error>Por favor ingrese su E-mail</mat-error>
+				</mat-form-field>
+			</form>
+		</mat-card-content>
+		<div class="buttons">
+			<button class="btn-accept" mat-flat-button (click)="onSubmit()">Enviar</button>
+		</div>
+	</mat-card>
+</div>

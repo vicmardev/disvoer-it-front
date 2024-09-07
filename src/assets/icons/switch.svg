@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 657 657">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Capa_1-2" data-name="Capa 1">
+    <g>
+      <rect x="69.09" y="262.4" width="518.81" height="109.75" rx="17.02" ry="17.02"/>
+      <path class="cls-2" d="M146.96,301.69h22.53v53.63h-22.53c-6.84,0-12.39-5.55-12.39-12.39v-28.85c0-6.84,5.55-12.39,12.39-12.39Z" transform="translate(-176.47 480.53) rotate(-90)"/>
+      <rect x="103.39" y="350.32" width="34.92" height="53.63" transform="translate(-256.29 497.99) rotate(-90)"/>
+      <rect x="516.19" y="350.32" width="34.92" height="53.63" transform="translate(156.52 910.79) rotate(-90)"/>
+      <path class="cls-2" d="M213.02,301.69h22.57v53.63h-22.57c-6.82,0-12.35-5.54-12.35-12.35v-28.92c0-6.82,5.54-12.35,12.35-12.35Z" transform="translate(-110.37 546.63) rotate(-90)"/>
+      <path class="cls-2" d="M277.88,301.69h22.56v53.63h-22.56c-6.82,0-12.36-5.54-12.36-12.36v-28.9c0-6.82,5.54-12.36,12.36-12.36Z" transform="translate(-45.52 611.48) rotate(-90)"/>
+      <path class="cls-2" d="M341.55,301.69h22.49v53.63h-22.49c-6.86,0-12.43-5.57-12.43-12.43v-28.77c0-6.86,5.57-12.43,12.43-12.43Z" transform="translate(18.08 675.08) rotate(-90)"/>
+      <path class="cls-2" d="M410.12,301.69h22.52v53.63h-22.52c-6.84,0-12.4-5.56-12.4-12.4v-28.82c0-6.84,5.56-12.4,12.4-12.4Z" transform="translate(86.68 743.68) rotate(-90)"/>
+      <rect class="cls-2" x="515.57" y="292.33" width="34.92" height="53.63"/>
+      <ellipse class="cls-2" cx="143.3" cy="294.2" rx="11.85" ry="5.61"/>
+      <ellipse class="cls-2" cx="183.21" cy="294.2" rx="11.85" ry="5.61"/>
+      <ellipse class="cls-2" cx="221.87" cy="294.2" rx="11.85" ry="5.61"/>
+      <ellipse class="cls-2" cx="259.28" cy="294.2" rx="11.85" ry="5.61"/>
+      <ellipse class="cls-2" cx="295.45" cy="294.2" rx="11.85" ry="5.61"/>
+      <ellipse class="cls-2" cx="331.62" cy="294.2" rx="11.85" ry="5.61"/>
+    </g>
+    <rect class="cls-1" width="657" height="657"/>
+  </g>
+</svg>

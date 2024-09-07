@@ -1,0 +1,143 @@
+<form class="new-person-form" [formGroup]="kbForm">
+	<div>
+		<h1 class="title">
+			<strong *ngIf="editFlag">
+				<i class="fas fa-file-pdf file"></i>
+				Cambiar el archivo:
+				<strong class="black">{{ nodeInfo.name }}</strong>
+			</strong>
+			<strong *ngIf="!editFlag">
+				<i class="fas fa-file-pdf file"></i>
+				Agregar Documento
+			</strong>
+		</h1>
+		<h4 *ngIf="!editFlag">
+			<strong class="title">*Instrucciones para agregar documento:</strong>
+			<p>1.- Registrar los campos correspondientes.</p>
+			<p>2.- Agregar PDF en el campo de documento.</p>
+			<p>3.- Completar la información y seleccionar "Guardar Entrada".</p>
+		</h4>
+		<h4 *ngIf="editFlag">
+			<strong class="title">*Instrucciones para modificar archivos:</strong>
+			<p>1.- Actuliza los campos correspondientes.</p>
+			<p>2.- Agregar o remplaza el nuevo documento.</p>
+			<p>3.- Selecciona "Guardar Entrada".</p>
+			<p>4.- Importante ingresar un documento.</p>
+		</h4>
+		<br />
+		<span *ngIf="editFlag" class="spanInfo">
+			Si te equivocaste de archivo, selecciona otro para actualizar.
+		</span>
+		<br />
+	</div>
+	<!-- Formulario  para  agregra  eun archivo  nuevo -->
+	<mat-card
+		fxLayout="row wrap"
+		fxLayoutAlign="center center"
+		fxLayoutGap="15px"
+		*ngIf="!editFlag">
+		<mat-form-field fxFlex="47">
+			<mat-label class="lololo">Servicio:</mat-label>
+			<br />
+			<br />
+			<mat-select formControlName="DeviceFieldUse">
+				<mat-option *ngFor="let ser of servicio" [value]="ser.value">
+					{{ ser.viewValue }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<mat-form-field fxFlex="47">
+			<mat-label class="lololo">Equipo:</mat-label>
+			<br />
+			<br />
+			<mat-select formControlName="DeviceType">
+				<mat-option *ngFor="let equipo of equipo" [value]="equipo.value">
+					{{ equipo.viewValue }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<mat-form-field fxFlex="47">
+			<mat-label>Marca del equipo:</mat-label>
+			<br />
+			<input matInput placeholder="Ejemplo: Cisco" formControlName="DeviceBrand" />
+		</mat-form-field>
+
+		<mat-form-field fxFlex="47">
+			<mat-label>Modelo del equipo:</mat-label>
+			<br />
+			<input matInput placeholder="Ejemplo: 12345" formControlName="Device" />
+		</mat-form-field>
+		<mat-form-field fxFlex="100">
+			<mat-label class="lololo">Tipo de Documento:</mat-label>
+			<br />
+			<br />
+			<mat-select formControlName="name">
+				<mat-option *ngFor="let documento of documento" [value]="documento.value">
+					{{ documento.viewValue }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</mat-card>
+	<!-- seccion  para  editar  los archivos -->
+	<mat-card
+		fxLayout="row wrap"
+		fxLayoutAlign="center center"
+		fxLayoutGap="15px"
+		*ngIf="editFlag">
+		<mat-form-field fxFlex="47">
+			<mat-label class="lololo">Servicio:</mat-label>
+			<br />
+			<mat-select formControlName="DeviceFieldUse">
+				<mat-option *ngFor="let ser of servicio" [value]="ser.value">
+					{{ ser.viewValue }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<mat-form-field fxFlex="47">
+			<mat-label class="lololo">Equipo:</mat-label>
+			<br />
+			<mat-select formControlName="DeviceType">
+				<mat-option *ngFor="let equipo of equipo" [value]="equipo.value">
+					{{ equipo.viewValue }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<mat-form-field fxFlex="47">
+			<mat-label>Marca del equipo:</mat-label>
+			<br />
+			<input
+				class=""
+				matInput
+				placeholder="Ejemplo: Cisco"
+				formControlName="DeviceBrand" />
+		</mat-form-field>
+		<mat-form-field fxFlex="47">
+			<mat-label>Modelo del equipo:</mat-label>
+			<br />
+			<input class="" matInput placeholder="Ejemplo: 12345" formControlName="Device" />
+		</mat-form-field>
+		<mat-form-field fxFlex="100">
+			<mat-label class="lololo">Tipo de documento:</mat-label>
+			<br />
+			<mat-select formControlName="name">
+				<mat-option *ngFor="let documento of documento" [value]="documento.value">
+					{{ documento.viewValue }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</mat-card>
+	<mat-card fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="15px">
+		<h2 class="title">
+			<span *ngIf="!editFlag">
+				<span class="spanInfo">Adjuntar Documento PDF</span>
+			</span>
+		</h2>
+		<input id="file" name="file" type="file" (change)="onFileChange($event)" />
+	</mat-card>
+</form>
+<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+	<button mat-flat-button class="btn-accept" (click)="submitEntry()">
+		Guardar Entrada
+	</button>
+	<button mat-flat-button class="btn-cancel" (click)="closeDialog()">Cancelar</button>
+</mat-card>

@@ -1,0 +1,2337 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "c:\\Users\\tealf\\Alux-Web-Angular",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2022-03-10 12:55:08",
+            "filesum": 376,
+            "codesum": 40606,
+            "commentsum": 18048,
+            "blanksum": 2323,
+            "statistics": {
+                "": {
+                    "code": 48,
+                    "comment": 24,
+                    "blank": 11
+                },
+                ".json": {
+                    "code": 12754,
+                    "comment": 3,
+                    "blank": 14
+                },
+                ".md": {
+                    "code": 22,
+                    "comment": 2,
+                    "blank": 5
+                },
+                ".ts": {
+                    "code": 7890,
+                    "comment": 281,
+                    "blank": 1472
+                },
+                ".js": {
+                    "code": 37,
+                    "comment": 8,
+                    "blank": 1
+                },
+                ".html": {
+                    "code": 3581,
+                    "comment": 277,
+                    "blank": 247
+                },
+                ".css": {
+                    "code": 4157,
+                    "comment": 111,
+                    "blank": 524
+                },
+                ".scss": {
+                    "code": 13,
+                    "comment": 15,
+                    "blank": 7
+                },
+                ".pdf": {
+                    "code": 12104,
+                    "comment": 17327,
+                    "blank": 42
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 2,
+                    "filename": ".browserslistrc"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 1,
+                    "filename": ".editorconfig"
+                },
+                {
+                    "blank": 5,
+                    "code": 21,
+                    "comment": 21,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 7,
+                    "code": 112,
+                    "comment": 0,
+                    "filename": "angular.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 37,
+                    "comment": 8,
+                    "filename": "karma.conf.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 12381,
+                    "comment": 0,
+                    "filename": "package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 49,
+                    "comment": 0,
+                    "filename": "package.json"
+                },
+                {
+                    "blank": 5,
+                    "code": 22,
+                    "comment": 2,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 6,
+                    "code": 35,
+                    "comment": 0,
+                    "filename": "src\\app\\alerts\\alerts.module.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 27,
+                    "comment": 0,
+                    "filename": "src\\app\\alerts\\alerts.routing.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\app\\alerts\\critical\\critical.component.css"
+                },
+                {
+                    "blank": 8,
+                    "code": 100,
+                    "comment": 71,
+                    "filename": "src\\app\\alerts\\critical\\critical.component.html"
+                },
+                {
+                    "blank": 27,
+                    "code": 266,
+                    "comment": 1,
+                    "filename": "src\\app\\alerts\\critical\\critical.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 60,
+                    "comment": 0,
+                    "filename": "src\\app\\alerts\\historic-alarm\\historic-alarm.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 148,
+                    "comment": 5,
+                    "filename": "src\\app\\alerts\\historic-alarm\\historic-alarm.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\alerts\\historic-alarm\\historic-alarm.component.spec.ts"
+                },
+                {
+                    "blank": 30,
+                    "code": 121,
+                    "comment": 11,
+                    "filename": "src\\app\\alerts\\historic-alarm\\historic-alarm.component.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 130,
+                    "comment": 0,
+                    "filename": "src\\app\\alerts\\real-time\\real-time.component.css"
+                },
+                {
+                    "blank": 5,
+                    "code": 187,
+                    "comment": 8,
+                    "filename": "src\\app\\alerts\\real-time\\real-time.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\alerts\\real-time\\real-time.component.spec.ts"
+                },
+                {
+                    "blank": 34,
+                    "code": 413,
+                    "comment": 8,
+                    "filename": "src\\app\\alerts\\real-time\\real-time.component.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 87,
+                    "comment": 3,
+                    "filename": "src\\app\\alerts\\warning\\warning.component.css"
+                },
+                {
+                    "blank": 7,
+                    "code": 4,
+                    "comment": 2,
+                    "filename": "src\\app\\alerts\\warning\\warning.component.html"
+                },
+                {
+                    "blank": 14,
+                    "code": 70,
+                    "comment": 2,
+                    "filename": "src\\app\\alerts\\warning\\warning.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 28,
+                    "comment": 1,
+                    "filename": "src\\app\\app-routing.module.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\app.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\app.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 27,
+                    "comment": 0,
+                    "filename": "src\\app\\app.component.spec.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\app\\app.component.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 53,
+                    "comment": 2,
+                    "filename": "src\\app\\app.module.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 39,
+                    "comment": 1,
+                    "filename": "src\\app\\auth\\auth.module.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\auth.routing.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\auth.service.spec.ts"
+                },
+                {
+                    "blank": 21,
+                    "code": 86,
+                    "comment": 1,
+                    "filename": "src\\app\\auth\\auth.service.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 34,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\dialogs\\update-password\\update-password.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\dialogs\\update-password\\update-password.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\dialogs\\update-password\\update-password.component.spec.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 34,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\dialogs\\update-password\\update-password.component.ts"
+                },
+                {
+                    "blank": 25,
+                    "code": 138,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\forgot-password\\forgot-password.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 38,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\forgot-password\\forgot-password.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\forgot-password\\forgot-password.component.spec.ts"
+                },
+                {
+                    "blank": 16,
+                    "code": 53,
+                    "comment": 5,
+                    "filename": "src\\app\\auth\\forgot-password\\forgot-password.component.ts"
+                },
+                {
+                    "blank": 21,
+                    "code": 136,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\login\\login.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 70,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\login\\login.component.html"
+                },
+                {
+                    "blank": 15,
+                    "code": 61,
+                    "comment": 11,
+                    "filename": "src\\app\\auth\\login\\login.component.ts"
+                },
+                {
+                    "blank": 20,
+                    "code": 112,
+                    "comment": 23,
+                    "filename": "src\\app\\auth\\register\\register.component.css"
+                },
+                {
+                    "blank": 5,
+                    "code": 57,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\register\\register.component.html"
+                },
+                {
+                    "blank": 20,
+                    "code": 89,
+                    "comment": 4,
+                    "filename": "src\\app\\auth\\register\\register.component.ts"
+                },
+                {
+                    "blank": 23,
+                    "code": 135,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\reset-password\\reset-password.component.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 101,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\reset-password\\reset-password.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\reset-password\\reset-password.component.spec.ts"
+                },
+                {
+                    "blank": 19,
+                    "code": 105,
+                    "comment": 5,
+                    "filename": "src\\app\\auth\\reset-password\\reset-password.component.ts"
+                },
+                {
+                    "blank": 22,
+                    "code": 119,
+                    "comment": 23,
+                    "filename": "src\\app\\auth\\verify-email\\verify-email.component.css"
+                },
+                {
+                    "blank": 5,
+                    "code": 56,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\verify-email\\verify-email.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\auth\\verify-email\\verify-email.component.spec.ts"
+                },
+                {
+                    "blank": 15,
+                    "code": 59,
+                    "comment": 2,
+                    "filename": "src\\app\\auth\\verify-email\\verify-email.component.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 1,
+                    "filename": "src\\app\\error\\error-routing.module.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\error\\error.module.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\error\\not-found\\not-found.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "src\\app\\error\\not-found\\not-found.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\error\\not-found\\not-found.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "src\\app\\helpers\\app.initializer.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\helpers\\auth.guard.spec.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 39,
+                    "comment": 4,
+                    "filename": "src\\app\\helpers\\auth.guard.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\helpers\\error.interceptor.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "src\\app\\helpers\\generic-list.spec.ts"
+                },
+                {
+                    "blank": 20,
+                    "code": 67,
+                    "comment": 0,
+                    "filename": "src\\app\\helpers\\generic-list.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\app\\helpers\\index.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 20,
+                    "comment": 1,
+                    "filename": "src\\app\\helpers\\jwt.interceptor.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 15,
+                    "comment": 3,
+                    "filename": "src\\app\\helpers\\must-match.validator.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\app\\img-equipment.pipe.spec.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\app\\img-equipment.pipe.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 83,
+                    "comment": 1,
+                    "filename": "src\\app\\material\\material.module.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "src\\app\\models\\alarm.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\app\\models\\helpCenter.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "src\\app\\models\\Inventory.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "src\\app\\models\\knowledge-base-node-types.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 11,
+                    "comment": 11,
+                    "filename": "src\\app\\models\\knowledge-base-node.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "src\\app\\models\\Report.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "src\\app\\models\\role.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "src\\app\\models\\Tickets.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "src\\app\\models\\User.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 96,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\about\\about.component.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 77,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\about\\about.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\about\\about.component.spec.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 34,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\about\\about.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\admin-routing.module.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\admin.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\admin.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\admin.component.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\admin.module.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\dialogs\\contracts\\contracts.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 20,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\admin\\dialogs\\contracts\\contracts.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\dialogs\\contracts\\contracts.component.spec.ts"
+                },
+                {
+                    "blank": 17,
+                    "code": 56,
+                    "comment": 7,
+                    "filename": "src\\app\\pages\\admin\\dialogs\\contracts\\contracts.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\inventory\\inventory.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\inventory\\inventory.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\inventory\\inventory.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\inventory\\inventory.component.ts"
+                },
+                {
+                    "blank": 23,
+                    "code": 147,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\users\\add-eddit\\add-eddit.component.css"
+                },
+                {
+                    "blank": 11,
+                    "code": 80,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\users\\add-eddit\\add-eddit.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\users\\add-eddit\\add-eddit.component.spec.ts"
+                },
+                {
+                    "blank": 18,
+                    "code": 108,
+                    "comment": 12,
+                    "filename": "src\\app\\pages\\admin\\users\\add-eddit\\add-eddit.component.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 88,
+                    "comment": 6,
+                    "filename": "src\\app\\pages\\admin\\users\\list-users\\list-users.component.css"
+                },
+                {
+                    "blank": 4,
+                    "code": 85,
+                    "comment": 4,
+                    "filename": "src\\app\\pages\\admin\\users\\list-users\\list-users.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\users\\list-users\\list-users.component.spec.ts"
+                },
+                {
+                    "blank": 15,
+                    "code": 75,
+                    "comment": 7,
+                    "filename": "src\\app\\pages\\admin\\users\\list-users\\list-users.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\users\\users-routing.module.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\admin\\users\\users.module.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\alerts\\alerts.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\alerts\\alerts.component.html"
+                },
+                {
+                    "blank": 6,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\alerts\\alerts.component.ts"
+                },
+                {
+                    "blank": 10,
+                    "code": 46,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\alarms\\alarms.component.css"
+                },
+                {
+                    "blank": 5,
+                    "code": 32,
+                    "comment": 11,
+                    "filename": "src\\app\\pages\\componentsEquipment\\alarms\\alarms.component.html"
+                },
+                {
+                    "blank": 7,
+                    "code": 101,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\componentsEquipment\\alarms\\alarms.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\configuration\\configuration.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\configuration\\configuration.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\configuration\\configuration.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\dev-information\\dev-information.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 70,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\componentsEquipment\\dev-information\\dev-information.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\dev-information\\dev-information.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\firmware\\firmware.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\firmware\\firmware.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\firmware\\firmware.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\graphics\\graphics.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\graphics\\graphics.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\graphics\\graphics.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\sys-information\\sys-information.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\sys-information\\sys-information.component.html"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsEquipment\\sys-information\\sys-information.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsInventory\\menu-ticket\\menu-ticket.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsInventory\\menu-ticket\\menu-ticket.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\componentsInventory\\menu-ticket\\menu-ticket.component.spec.ts"
+                },
+                {
+                    "blank": 10,
+                    "code": 40,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\componentsInventory\\menu-ticket\\menu-ticket.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\devices\\devices.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\devices\\devices.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\devices\\devices.component.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 43,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\diagram\\diagram.component.css"
+                },
+                {
+                    "blank": 18,
+                    "code": 61,
+                    "comment": 4,
+                    "filename": "src\\app\\pages\\diagram\\diagram.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\diagram\\diagram.component.spec.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 47,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\diagram\\diagram.component.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 45,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\about\\report-problem\\report-problem.component.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\about\\report-problem\\report-problem.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\about\\report-problem\\report-problem.component.spec.ts"
+                },
+                {
+                    "blank": 11,
+                    "code": 69,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\dialogs\\about\\report-problem\\report-problem.component.ts"
+                },
+                {
+                    "blank": 8,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\about\\terms-conditions\\terms-conditions.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\about\\terms-conditions\\terms-conditions.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\about\\terms-conditions\\terms-conditions.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\about\\terms-conditions\\terms-conditions.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\add-inventory\\add-inventory.component.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 77,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\dialogs\\add-inventory\\add-inventory.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\add-inventory\\add-inventory.component.spec.ts"
+                },
+                {
+                    "blank": 17,
+                    "code": 58,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\add-inventory\\add-inventory.component.ts"
+                },
+                {
+                    "blank": 8,
+                    "code": 46,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\change-photo\\change-photo.component.css"
+                },
+                {
+                    "blank": 5,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\change-photo\\change-photo.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\change-photo\\change-photo.component.spec.ts"
+                },
+                {
+                    "blank": 12,
+                    "code": 33,
+                    "comment": 3,
+                    "filename": "src\\app\\pages\\dialogs\\change-photo\\change-photo.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\contracts\\contracts.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\contracts\\contracts.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\contracts\\contracts.component.spec.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\contracts\\contracts.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\contracts\\edit-contract\\edit-contract.component.css"
+                },
+                {
+                    "blank": 5,
+                    "code": 46,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\dialogs\\contracts\\edit-contract\\edit-contract.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\contracts\\edit-contract\\edit-contract.component.spec.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 74,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\dialogs\\contracts\\edit-contract\\edit-contract.component.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 37,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\dialogs\\create-ticket-inventory\\create-ticket-inventory.component.css"
+                },
+                {
+                    "blank": 7,
+                    "code": 142,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\create-ticket-inventory\\create-ticket-inventory.component.html"
+                },
+                {
+                    "blank": 8,
+                    "code": 138,
+                    "comment": 3,
+                    "filename": "src\\app\\pages\\dialogs\\create-ticket-inventory\\create-ticket-inventory.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\delete-row-inventory\\delete-row-inventory.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\dialogs\\delete-row-inventory\\delete-row-inventory.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\delete-row-inventory\\delete-row-inventory.component.spec.ts"
+                },
+                {
+                    "blank": 14,
+                    "code": 51,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\delete-row-inventory\\delete-row-inventory.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\delete-users\\delete-users.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\delete-users\\delete-users.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\delete-users\\delete-users.component.spec.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\delete-users\\delete-users.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 35,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\edit-row-inventory\\edit-row-inventory.component.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 77,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\dialogs\\edit-row-inventory\\edit-row-inventory.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\edit-row-inventory\\edit-row-inventory.component.spec.ts"
+                },
+                {
+                    "blank": 15,
+                    "code": 71,
+                    "comment": 8,
+                    "filename": "src\\app\\pages\\dialogs\\edit-row-inventory\\edit-row-inventory.component.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 37,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\add-edit-faq\\add-edit-faq.component.css"
+                },
+                {
+                    "blank": 7,
+                    "code": 38,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\add-edit-faq\\add-edit-faq.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\add-edit-faq\\add-edit-faq.component.spec.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 52,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\add-edit-faq\\add-edit-faq.component.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 37,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\create-faq\\create-faq\\create-faq.component.css"
+                },
+                {
+                    "blank": 8,
+                    "code": 39,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\create-faq\\create-faq\\create-faq.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\create-faq\\create-faq\\create-faq.component.spec.ts"
+                },
+                {
+                    "blank": 11,
+                    "code": 53,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\create-faq\\create-faq\\create-faq.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\delete-faq\\delete-faq\\delete-faq.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\delete-faq\\delete-faq\\delete-faq.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\delete-faq\\delete-faq\\delete-faq.component.spec.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\delete-faq\\delete-faq\\delete-faq.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\edit-faq\\edit-faq\\edit-faq.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\edit-faq\\edit-faq\\edit-faq.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\edit-faq\\edit-faq\\edit-faq.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\helpCenter\\edit-faq\\edit-faq\\edit-faq.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\info-row-inventory\\info-row-inventory.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 87,
+                    "comment": 5,
+                    "filename": "src\\app\\pages\\dialogs\\info-row-inventory\\info-row-inventory.component.html"
+                },
+                {
+                    "blank": 17,
+                    "code": 82,
+                    "comment": 8,
+                    "filename": "src\\app\\pages\\dialogs\\info-row-inventory\\info-row-inventory.component.ts"
+                },
+                {
+                    "blank": 12,
+                    "code": 44,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\add-edit-knowledge-base-entry\\add-edit-knowledge-base-entry.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 121,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\add-edit-knowledge-base-entry\\add-edit-knowledge-base-entry.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\add-edit-knowledge-base-entry\\add-edit-knowledge-base-entry.component.spec.ts"
+                },
+                {
+                    "blank": 37,
+                    "code": 130,
+                    "comment": 5,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\add-edit-knowledge-base-entry\\add-edit-knowledge-base-entry.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\create-knowledge-base-entry\\create-knowledge-base-entry.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\create-knowledge-base-entry\\create-knowledge-base-entry.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\create-knowledge-base-entry\\create-knowledge-base-entry.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\create-knowledge-base-entry\\create-knowledge-base-entry.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\delete-knowledge-base-entry\\delete-knowledge-base-entry.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\delete-knowledge-base-entry\\delete-knowledge-base-entry.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\delete-knowledge-base-entry\\delete-knowledge-base-entry.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\delete-knowledge-base-entry\\delete-knowledge-base-entry.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\edit-knowledge-base-entry\\edit-knowledge-base-entry.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\edit-knowledge-base-entry\\edit-knowledge-base-entry.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\edit-knowledge-base-entry\\edit-knowledge-base-entry.component.spec.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\knowledgeBase\\edit-knowledge-base-entry\\edit-knowledge-base-entry.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\tickets\\create-ticket-alert\\create-ticket-alert.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\tickets\\create-ticket-alert\\create-ticket-alert.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\tickets\\create-ticket-alert\\create-ticket-alert.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\tickets\\create-ticket-alert\\create-ticket-alert.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 33,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\update-file\\update-file.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 35,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\update-file\\update-file.component.html"
+                },
+                {
+                    "blank": 20,
+                    "code": 88,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogs\\update-file\\update-file.component.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 57,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogsTickets\\dialog-edit\\dialog-edit.component.css"
+                },
+                {
+                    "blank": 8,
+                    "code": 75,
+                    "comment": 19,
+                    "filename": "src\\app\\pages\\dialogsTickets\\dialog-edit\\dialog-edit.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogsTickets\\dialog-edit\\dialog-edit.component.spec.ts"
+                },
+                {
+                    "blank": 34,
+                    "code": 191,
+                    "comment": 5,
+                    "filename": "src\\app\\pages\\dialogsTickets\\dialog-edit\\dialog-edit.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogsTickets\\dialog-evidence\\dialog-evidence.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogsTickets\\dialog-evidence\\dialog-evidence.component.html"
+                },
+                {
+                    "blank": 7,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogsTickets\\dialog-evidence\\dialog-evidence.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 39,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogsTickets\\dialog-info\\dialog-info.component.css"
+                },
+                {
+                    "blank": 10,
+                    "code": 111,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogsTickets\\dialog-info\\dialog-info.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogsTickets\\dialog-info\\dialog-info.component.spec.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 105,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\dialogsTickets\\dialog-info\\dialog-info.component.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 73,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\equipment\\equipment.component.css"
+                },
+                {
+                    "blank": 9,
+                    "code": 91,
+                    "comment": 27,
+                    "filename": "src\\app\\pages\\equipment\\equipment.component.html"
+                },
+                {
+                    "blank": 14,
+                    "code": 110,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\equipment\\equipment.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 35,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\graphics\\graphics.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 98,
+                    "comment": 12,
+                    "filename": "src\\app\\pages\\graphics\\graphics.component.html"
+                },
+                {
+                    "blank": 57,
+                    "code": 606,
+                    "comment": 8,
+                    "filename": "src\\app\\pages\\graphics\\graphics.component.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 71,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\helpCenter\\faqs\\faqs.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 51,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\helpCenter\\faqs\\faqs.component.html"
+                },
+                {
+                    "blank": 8,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\helpCenter\\faqs\\faqs.component.spec.ts"
+                },
+                {
+                    "blank": 11,
+                    "code": 71,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\helpCenter\\faqs\\faqs.component.ts"
+                },
+                {
+                    "blank": 10,
+                    "code": 63,
+                    "comment": 4,
+                    "filename": "src\\app\\pages\\helpCenter\\guides\\guides.component.css"
+                },
+                {
+                    "blank": 8,
+                    "code": 104,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\helpCenter\\guides\\guides.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\helpCenter\\guides\\guides.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\helpCenter\\guides\\guides.component.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\helpCenter\\help-center-routing.module.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\helpCenter\\helpCenter.module.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 54,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\helpCenter\\support\\support.component.css"
+                },
+                {
+                    "blank": 8,
+                    "code": 54,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\helpCenter\\support\\support.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\helpCenter\\support\\support.component.spec.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 70,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\helpCenter\\support\\support.component.ts"
+                },
+                {
+                    "blank": 8,
+                    "code": 134,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\historical\\historical.component.css"
+                },
+                {
+                    "blank": 5,
+                    "code": 128,
+                    "comment": 43,
+                    "filename": "src\\app\\pages\\historical\\historical.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\historical\\historical.component.spec.ts"
+                },
+                {
+                    "blank": 27,
+                    "code": 154,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\historical\\historical.component.ts"
+                },
+                {
+                    "blank": 10,
+                    "code": 206,
+                    "comment": 19,
+                    "filename": "src\\app\\pages\\home\\home.component.css"
+                },
+                {
+                    "blank": 11,
+                    "code": 138,
+                    "comment": 14,
+                    "filename": "src\\app\\pages\\home\\home.component.html"
+                },
+                {
+                    "blank": 10,
+                    "code": 45,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\home\\home.component.ts"
+                },
+                {
+                    "blank": 41,
+                    "code": 255,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\inventory\\device-list\\device-list.component.css"
+                },
+                {
+                    "blank": 15,
+                    "code": 173,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\inventory\\device-list\\device-list.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\inventory\\device-list\\device-list.component.spec.ts"
+                },
+                {
+                    "blank": 37,
+                    "code": 167,
+                    "comment": 3,
+                    "filename": "src\\app\\pages\\inventory\\device-list\\device-list.component.ts"
+                },
+                {
+                    "blank": 37,
+                    "code": 253,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\inventory\\inventory.component.css"
+                },
+                {
+                    "blank": 14,
+                    "code": 144,
+                    "comment": 20,
+                    "filename": "src\\app\\pages\\inventory\\inventory.component.html"
+                },
+                {
+                    "blank": 39,
+                    "code": 300,
+                    "comment": 6,
+                    "filename": "src\\app\\pages\\inventory\\inventory.component.ts"
+                },
+                {
+                    "blank": 8,
+                    "code": 75,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\knowledge\\knowledge.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 60,
+                    "comment": 4,
+                    "filename": "src\\app\\pages\\knowledge\\knowledge.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\knowledge\\knowledge.component.spec.ts"
+                },
+                {
+                    "blank": 18,
+                    "code": 110,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\knowledge\\knowledge.component.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 48,
+                    "comment": 4,
+                    "filename": "src\\app\\pages\\pages-routing.module.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 130,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\pages.module.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 43,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\profile\\profile.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 24,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\profile\\profile.component.html"
+                },
+                {
+                    "blank": 6,
+                    "code": 25,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\profile\\profile.component.ts"
+                },
+                {
+                    "blank": 34,
+                    "code": 289,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\reports\\reports.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\alerts\\alerts.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\alerts\\alerts.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\alerts\\alerts.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\alerts\\alerts.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\alerts\\components\\components.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\alerts\\components\\components.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\alerts\\components\\components.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\alerts\\components\\components.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\alerts\\components\\steppers\\steppers.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\alerts\\components\\steppers\\steppers.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\alerts\\components\\steppers\\steppers.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\alerts\\components\\steppers\\steppers.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\home-tickets\\home-tickets.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\home-tickets\\home-tickets.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\home-tickets\\home-tickets.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\home-tickets\\home-tickets.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\inventory-tickets\\components\\components.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\inventory-tickets\\components\\components.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\inventory-tickets\\components\\components.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\inventory-tickets\\components\\components.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\inventory-tickets\\components\\steppers\\steppers.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\inventory-tickets\\components\\steppers\\steppers.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\inventory-tickets\\components\\steppers\\steppers.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\inventory-tickets\\components\\steppers\\steppers.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\inventory-tickets\\inventory-tickets.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\inventory-tickets\\inventory-tickets.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\inventory-tickets\\inventory-tickets.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\inventory-tickets\\inventory-tickets.component.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\tickets-alerts-inventory-routing.module.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets-alerts-inventory\\tickets-alerts-inventory.module.ts"
+                },
+                {
+                    "blank": 14,
+                    "code": 167,
+                    "comment": 2,
+                    "filename": "src\\app\\pages\\tickets\\tickets.component.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 181,
+                    "comment": 12,
+                    "filename": "src\\app\\pages\\tickets\\tickets.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets\\tickets.component.spec.ts"
+                },
+                {
+                    "blank": 15,
+                    "code": 139,
+                    "comment": 0,
+                    "filename": "src\\app\\pages\\tickets\\tickets.component.ts"
+                },
+                {
+                    "blank": 45,
+                    "code": 240,
+                    "comment": 3,
+                    "filename": "src\\app\\pages\\updateProfile\\updateProfile.component.css"
+                },
+                {
+                    "blank": 10,
+                    "code": 78,
+                    "comment": 1,
+                    "filename": "src\\app\\pages\\updateProfile\\updateProfile.component.html"
+                },
+                {
+                    "blank": 32,
+                    "code": 152,
+                    "comment": 28,
+                    "filename": "src\\app\\pages\\updateProfile\\updateProfile.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\app\\pipes\\img-equipment.pipe.spec.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "src\\app\\pipes\\img-equipment.pipe.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\app\\pipes\\roles.pipe.spec.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "src\\app\\pipes\\roles.pipe.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\app\\pipes\\safe.pipe.spec.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\pipes\\safe.pipe.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\account\\account.service.spec.ts"
+                },
+                {
+                    "blank": 16,
+                    "code": 68,
+                    "comment": 3,
+                    "filename": "src\\app\\services\\account\\account.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\graphic\\graphic.service.spec.ts"
+                },
+                {
+                    "blank": 12,
+                    "code": 36,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\graphic\\graphic.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\helpCenter\\help-center.service.spec.ts"
+                },
+                {
+                    "blank": 10,
+                    "code": 42,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\helpCenter\\help-center.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\inventory\\inventory.service.spec.ts"
+                },
+                {
+                    "blank": 17,
+                    "code": 69,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\inventory\\inventory.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\knowledgeBase\\knowledge-base.service.spec.ts"
+                },
+                {
+                    "blank": 8,
+                    "code": 27,
+                    "comment": 1,
+                    "filename": "src\\app\\services\\knowledgeBase\\knowledge-base.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\reportProblem\\repor-problem.service.spec.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 24,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\reportProblem\\repor-problem.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\reports\\reports.service.spec.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 57,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\reports\\reports.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\tickets\\tickets.service.spec.ts"
+                },
+                {
+                    "blank": 11,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "src\\app\\services\\tickets\\tickets.service.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\assets\\.gitkeep"
+                },
+                {
+                    "filename": "src\\assets\\docs\\Plantilla_Equipos.xlsx",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\ALUX ISOTIPO.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\Alux-logo-inicio-sesion.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\balancer.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\imageIniciarSesion.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\imagePerfilUsuario.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\imgAlarmas.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\imgConocimiento.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\imgGraficas.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\imgInventario.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\imgTickets.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\imgUsers.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\logo-interiores-alux.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\server.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\storage.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\img\\switch.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 158,
+                    "comment": 0,
+                    "filename": "src\\assets\\json\\knowledge_base_data.json"
+                },
+                {
+                    "blank": 5,
+                    "code": 1198,
+                    "comment": 2500,
+                    "filename": "src\\assets\\manuales\\alarmas.pdf"
+                },
+                {
+                    "blank": 26,
+                    "code": 727,
+                    "comment": 2131,
+                    "filename": "src\\assets\\manuales\\conocimiento.pdf"
+                },
+                {
+                    "blank": 1,
+                    "code": 812,
+                    "comment": 3026,
+                    "filename": "src\\assets\\manuales\\graficas.pdf"
+                },
+                {
+                    "blank": 3,
+                    "code": 4017,
+                    "comment": 1278,
+                    "filename": "src\\assets\\manuales\\iniciarSesion.pdf"
+                },
+                {
+                    "blank": 3,
+                    "code": 791,
+                    "comment": 5533,
+                    "filename": "src\\assets\\manuales\\inventario.pdf"
+                },
+                {
+                    "blank": 0,
+                    "code": 92,
+                    "comment": 0,
+                    "filename": "src\\assets\\manuales\\manual1.pdf"
+                },
+                {
+                    "blank": 1,
+                    "code": 1517,
+                    "comment": 782,
+                    "filename": "src\\assets\\manuales\\perfilUsuario.pdf"
+                },
+                {
+                    "blank": 2,
+                    "code": 2367,
+                    "comment": 107,
+                    "filename": "src\\assets\\manuales\\tickets.pdf"
+                },
+                {
+                    "blank": 1,
+                    "code": 583,
+                    "comment": 1970,
+                    "filename": "src\\assets\\manuales\\usuarios-admin.pdf"
+                },
+                {
+                    "blank": 7,
+                    "code": 13,
+                    "comment": 15,
+                    "filename": "src\\custom-theme.scss"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 2,
+                    "filename": "src\\environments\\environment.prod.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 14,
+                    "filename": "src\\environments\\environment.ts"
+                },
+                {
+                    "filename": "src\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 2,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "src\\index.html"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\main.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 1,
+                    "comment": 58,
+                    "filename": "src\\polyfills.ts"
+                },
+                {
+                    "blank": 24,
+                    "code": 138,
+                    "comment": 10,
+                    "filename": "src\\styles.css"
+                },
+                {
+                    "blank": 4,
+                    "code": 19,
+                    "comment": 4,
+                    "filename": "src\\test.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "tsconfig.app.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 1,
+                    "filename": "tsconfig.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 1,
+                    "filename": "tsconfig.spec.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "typings.d.ts"
+                }
+            ]
+        }
+    ]
+}

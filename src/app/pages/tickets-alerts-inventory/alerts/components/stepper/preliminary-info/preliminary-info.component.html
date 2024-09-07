@@ -1,0 +1,42 @@
+<img src="https://cdn2.iconfinder.com/data/icons/buno-ui-interface/32/__check_checkmark_ok-256.png" alt="">
+<br>
+<br>
+<h1 class="title">Detalles del ticket</h1>
+<div class="test">
+    <div class="testp">
+        <div class="test1">
+            <h3> <span class="info">Título del ticket: </span><b>{{preliminaryInfo.titleTicket}}</b> </h3>
+            <h3> <span class="info">Contrato: </span><b>{{preliminaryInfo.contract}}</b> </h3>
+            <h3> <span class="info">Parte afectada: </span><b>{{preliminaryInfo.affectedPart}}</b> </h3>
+            <h3> <span class="info">Host: </span><b>{{preliminaryInfo.host}}</b> </h3>
+            <h3> <span class="info">Estado del host: </span><b>{{preliminaryInfo.statusHost}}</b> </h3>
+            <h3> <span class="info">Marca: </span><b>{{preliminaryInfo.brand}}</b> </h3>
+            <h3> <span class="info">Módelo: </span><b>{{preliminaryInfo.model}}</b> </h3>
+            <h3> <span class="info">Serial: </span><b>{{preliminaryInfo.serial}}</b> </h3>
+            <br>
+            <h1 class="solution">Solución de soporte</h1>
+            <h3> <span class="info">Respuesta: </span><b>{{preliminaryInfo.solution}}</b> </h3>
+            <h3> <span class="info">Responsable: </span><b>{{preliminaryInfo.supportAssignment}}</b> </h3>
+            <h3> <span class="info">Fecha de solución: </span><b>{{preliminaryInfo.dateSolution | date:'shortDate'}}</b> </h3>
+        </div>
+        <div class="test2">
+            <div class="test21">
+                <h3> <span class="info">Estado del ticket: </span><b>{{preliminaryInfo.statusTicket}}</b> </h3>
+                <h3> <span class="info">Fecha de registro del ticket: </span><b>{{preliminaryInfo.ticketRegistrationDate | date:'shortDate'}}</b> </h3>
+                <h3> <span class="info">Fecha de alerta: </span><b>{{preliminaryInfo.dateAlert | date:'shortDate'}}</b> </h3>
+                <h3> <span class="info">Duración de la alerta: </span><b>{{preliminaryInfo.alertDuration}}</b> </h3>
+                <h3> <span class="info">Usuario: </span><b>{{preliminaryInfo.userClient}}</b> </h3>
+                <h3> <span class="info">Teléfono del usuario: </span><b>{{preliminaryInfo.userPhone}}</b> </h3>
+                <h3> <span class="info">Email del usuario: </span><b>{{preliminaryInfo.userEmail}}</b> </h3>
+                <h3> <span class="info">Ubicación: </span><b>{{preliminaryInfo.location}}</b> </h3>
+            </div>
+            <br>
+            <div *ngIf="isShown" class="div-test1">
+                <h1 class="solution2">Solución de soporte(Reasignación)</h1>
+                <h3> <span class="info">Respuesta: </span><b>{{preliminaryInfo.solutionReassig}}</b> </h3>
+                <h3> <span class="info">Responsable: </span><b>{{preliminaryInfo.responsableReassig}}</b> </h3>
+                <h3> <span class="info">Fecha de solución: </span><b>{{preliminaryInfo.dateSolutionReassig | date:'shortDate'}}</b> </h3>
+            </div>
+        </div>
+    </div>
+</div>

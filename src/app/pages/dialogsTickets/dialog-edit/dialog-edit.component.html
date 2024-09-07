@@ -1,0 +1,102 @@
+<form class="new-person-form" [formGroup]="ticketResponse">
+  <div>
+      <h1 class="title">
+          <strong>
+              <i class="fas fa-ticket-alt ticket"></i> Respuesta al ticket {{ticketName}}: <strong class="black">
+                  {{data.info.Serial}}</strong>
+          </strong>
+      </h1>
+      <h4>
+          <strong class="title">*Instrucciones para responder ticket:</strong>
+          <p> 1.- Cambia  el  estatus dependiendo la acción deseada.</p>
+          <p> 2.- Agrega una descrpción de solución realizada.</p>
+          <p> 3.- Selecciona  la  fecha de solucion.</p>
+          <p> 4.- El campo de  adjuntar  evidencia (NO ES OBLIGATORIO).</p>
+          <p> 5.- No se puede reasignar al mismo operador</p>
+      </h4>
+      <br>
+  </div>
+  <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+      <mat-form-field appearance="legacy" fxFlex="50" floatLabel="always">
+        <mat-label>Estatus:</mat-label>
+        <mat-select  formControlName="status">
+            <mat-option *ngFor="let status of statusList" [value]="status.value">
+                {{status.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="legacy" fxFlex="50" floatLabel="always">
+        <mat-label>Fecha de Solución: </mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="closeDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+  </mat-card> 
+  <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+    <mat-form-field appearance="legacy" fxFlex="50" floatLabel="always" >
+        <mat-label>Reasignar a: </mat-label>
+            <mat-select formControlName="reassignToOperator">
+                <mat-option *ngFor="let operator of suportListIp" [value]="operator.value">
+                    {{operator.viewValue}}
+                </mat-option>
+            </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" fxFlex="50" floatLabel="always">
+        <mat-label>Excalar a:</mat-label>
+        <mat-select formControlName="escalateToOperator">
+            <mat-option *ngFor="let operator of suportListIt" [value]="operator.value">
+                {{operator.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+  </mat-card>
+  <!--
+  <mat-card fxLayout="column"  fxLayoutAlign="start center" fxLayoutGap="15px">
+  </mat-card>
+  -->
+  <mat-card fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="15px">
+        <mat-form-field fxFlexFill appearance="fill" floatLabel="always">
+            <mat-label>Descripción de la Solución:</mat-label>
+            <textarea matInput placeholder="Descripción" formControlName="responseComments"
+                cols="10" rows=""></textarea>
+        </mat-form-field>
+</mat-card>
+
+<mat-card fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="15px">
+    <mat-form-field fxFlexFill appearance="fill" floatLabel="always">
+        <mat-label>Descripción de escalación:</mat-label>
+        <textarea matInput placeholder="Descripción" formControlName="responseEscalateTo"
+            cols="10" rows=""></textarea>
+    </mat-form-field>
+</mat-card>
+
+<!--
+<mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field appearance="fill" fxFlex="50" floatLabel="always">
+            <mat-label>Fecha Solución: </mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="closeDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+     <mat-form-field appearance="fill" fxFlex="50" floatLabel="always">
+        <mat-label>Tiempo de Respuesta:</mat-label>
+        <input matInput placeholder=""  class="disabled"  formControlName="responseTime" readonly>
+    </mat-form-field>
+</mat-card>
+-->
+
+
+  <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+      <span class="imagenRespuesta" style="color: #0b95c2; font-size: 18px;">Imagen de Respuesta:</span>
+      <input id="file" name="file" type="file" (change)="onFileChange($event)">
+  </mat-card>
+
+</form>
+
+<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+ <!--  <button mat-flat-button class="btn-accept" (click)="updateTicket()" >Responder ticket</button> -->
+  <button mat-flat-button class="btn-accept" (click)="closeTicket()" >Actualizar ticket</button>
+  <button mat-flat-button class="btn-cancel" (click)="closeDialog()">Cancelar</button>
+</mat-card> 

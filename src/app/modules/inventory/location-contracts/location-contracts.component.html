@@ -1,0 +1,138 @@
+<div>
+	<nav fxLayout="column" fxLayoutAlign="none">
+		<ul id="map-breadcrumb">
+			<li *ngFor="let crumb of breadcrumbs.getCrumbs(); let i = index; let last = last">
+				<ng-template [ngIf]="crumb.state == 'enabled'" [ngIfElse]="crumbDisabled">
+					<a class="crumb-enabled nav-link" href="#" (click)="crumb.callback(); (false)">
+						{{ crumb.name }}
+					</a>
+				</ng-template>
+
+				<ng-template #crumbDisabled>
+					<span class="crumb-disabled">{{ crumb.name }}</span>
+				</ng-template>
+
+				<ng-template [ngIf]="!last">
+					<span class="crumb-separator">/</span>
+				</ng-template>
+			</li>
+		</ul>
+	</nav>
+
+	<div fxLayout="row" id="map-container">
+		<div fxLayout="row" fxLayoutAlign="none" id="contractsMap"></div>
+
+		<div id="data-container" fxFlex="25" fxLayout="row">
+			<div fxFlex="100" fxLayout="column">
+				<p>
+					<mat-toolbar>
+						<button
+							mat-icon-button
+							class="example-icon"
+							aria-label="Example icon-button with menu icon">
+							<mat-icon>menu</mat-icon>
+						</button>
+						<span>Map</span>
+					</mat-toolbar>
+				</p>
+				<mat-accordion>
+					<mat-expansion-panel
+						*ngFor="let country of countries"
+						[expanded]="country.IsExpanded"
+						(click)="expandToggle(country)">
+						<mat-expansion-panel-header>
+							{{ country.IsExpanded }}
+							<mat-panel-title>{{ country.Name }}</mat-panel-title>
+						</mat-expansion-panel-header>
+						<mat-list>
+							<mat-list-item>
+								<p matline>&bull; Contratos : {{ country.NumContracts }}</p>
+							</mat-list-item>
+							<mat-list-item>
+								<p matline>&bull; Ciudades : {{ country.NumCities }}</p>
+							</mat-list-item>
+							<mat-list-item>
+								<p matline>&bull; DataCenters : {{ country.NumDataCenters }}</p>
+							</mat-list-item>
+							<mat-list-item>
+								<p matline>&bull; Equipos : {{ country.NumEquipments }}</p>
+							</mat-list-item>
+						</mat-list>
+					</mat-expansion-panel>
+				</mat-accordion>
+
+				<!--
+				<div style="margin-top: 20px; display: inline-block">
+					<button (click)="add()" style="width: 60px; height: 60px; size: 16px">+</button>
+					<button (click)="remove()" style="width: 60px; height: 60px; size: 16px">
+						-
+					</button>
+				</div>
+             -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--
+<div id="map-container">
+	<div
+		id="inventory-map"
+		leaflet
+		[leafletOptions]="options"
+		[leafletLayers]="countryMapLayer"
+		(leafletMapReady)="onMapReady($event)"
+		(click)="changeFlag()"></div>
+</div>
+-->
+
+<!--
+
+
+
+<div fxLayout="column" fxFill>
+	<div id="navigation" fxFlex="100" fxLayout="column">
+		<ul>
+			<li>MAP</li>
+			<li>ESTADO</li>
+			<li>CONTRATO</li>
+			<li>DATACENTER</li>
+		</ul>
+	</div>
+	<div fxLayout="column" fxFlex="100" fxLayout="column">
+		<div id="map-container" fxFlex="75" fxLayout="row">
+			<div
+				id="inventory-map"
+				leaflet
+				[leafletOptions]="options"
+				[leafletLayers]="countryMapLayer"
+				(leafletMapReady)="onMapReady($event)"
+				(click)="changeFlag()"></div>
+		</div>
+		<div id="data-container" fxFlex="25" fxLayout="row">s</div>
+	</div>
+-->
+<!--
+  <div id="map-container">
+		<div
+			id="inventory-map"
+			leaflet
+			[leafletOptions]="options"
+			[leafletLayers]="countryMapLayer"
+			(leafletMapReady)="onMapReady($event)"
+			(click)="changeFlag()"></div>
+
+
+	<div class="map-overlay">
+		<div
+			id="states-map"
+			[ngClass]="{locked: mapIsLocked}"
+			leaflet
+			[leafletOptions]="statesMapOptions"
+			(leafletMapReady)="onStatesMapReady($event)"></div>
+	</div>
+
+	</div>
+
+	</div>
+</div>      -->

@@ -1,0 +1,56 @@
+<form class="new-person-form" [formGroup]="formCreateFaq">
+	<div>
+		<div class="title-bar">
+			<h1 class="title">Agregar Pregunta</h1>
+			<img class="icon" src="../../../../../../assets/img/preguntaBlanco.png" alt="" />
+		</div>
+		<br />
+		<h4>
+			<h4 class="sub-title">*Llena los campos para agregar una nueva pregunta</h4>
+			<!-- <p>1.- Registra los campos corresponientes</p> -->
+		</h4>
+		<mat-card fxLayout="row">
+			<mat-form-field fxFlex="100">
+				<mat-label>Area:</mat-label>
+				<!-- <textarea formControlName="area" matInput placeholder="Area"></textarea> -->
+				<mat-select formControlName="area">
+					<mat-option value="Desarrollo">Desarrollo</mat-option>
+					<mat-option value="Recursos Humanos">Recursos Humanos</mat-option>
+					<mat-option value="Finanzas">Finanzas</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</mat-card>
+		<mat-card fxLayout="row">
+			<mat-form-field fxFlex="100">
+				<mat-label>Pregunta:</mat-label>
+				<textarea formControlName="question" matInput placeholder="Pregunta"></textarea>
+			</mat-form-field>
+		</mat-card>
+		<mat-card fxLayout="row">
+			<mat-form-field fxFlex="100">
+				<mat-label>Respuesta:</mat-label>
+				<textarea formControlName="response" matInput placeholder="Respuesta"></textarea>
+			</mat-form-field>
+		</mat-card>
+		<!--</mat-card>-->
+		<mat-card fxLayout="row">
+			<mat-form-field fxFlex="100">
+				<mat-label>Tipo de pregunta:</mat-label>
+				<br />
+				<!-- <textarea
+					formControlName="questiontype"
+					matInput
+					placeholder="Tipo de pregunta"></textarea> -->
+				<mat-select formControlName="questiontype">
+					<mat-option value="General">General</mat-option>
+					<mat-option value="Específico">Específico</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</mat-card>
+	</div>
+</form>
+
+<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+	<button mat-flat-button class="btn-accept" (click)="createNewFaq()">Guardar</button>
+	<button mat-flat-button class="btn-cancel" (click)="closeDialog()">Cancelar</button>
+</mat-card>

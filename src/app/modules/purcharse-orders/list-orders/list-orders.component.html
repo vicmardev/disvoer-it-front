@@ -1,0 +1,267 @@
+<div
+	class="father"
+	fxFlex="100"
+	fxLayout="column"
+	fxLayoutAlign="center space-between"
+	fxLayoutGap="20px"
+	fxFill>
+	<div
+		fxLayout="row wrap"
+		fxFlex="100"
+		fxLayoutAlign="space-between start"
+		fxLayoutGap="20px">
+		<div fxLayout="row wrap-reverse" fxFlex="100" fxLayoutAlign="space-between center">
+			<div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="center space-between">
+				<div
+					fxLayout="row wrap"
+					fxLayoutAlign="space-between start"
+					fxFlex="100"
+					fxLayoutGap="20px"
+					class="add-filter">
+					<div fxLayout="row wrap" class="buttons-add">
+						<div class="buttons-headers"></div>
+						<div class="buttons-headers"></div>
+					</div>
+					<div class="buttons-add"></div>
+					<div class="filter buttons-add-filter">
+						<div class="options-filters">
+							<div>
+								<button
+									mat-fab
+									class="maLe add-button"
+									matTooltip="Agregar Orden"
+									(click)="openDialog()">
+									<mat-icon>add</mat-icon>
+								</button>
+							</div>
+							<br />
+							<div>
+								<button
+									mat-fab
+									class="filter-button"
+									matTooltip="Quitar Filtros"
+									[ngClass]="!filterApplied ? 'filter-disabled' : 'filter-enabled'"
+									(click)="clearFilter()"
+									[disabled]="!filterApplied"></button>
+							</div>
+						</div>
+						<br />
+						<div>
+							<p>
+								<mat-form-field appearance="outline" color="warn">
+									<mat-label>Filtrar ordenes</mat-label>
+									<input
+										type="text"
+										matInput
+										placeholder="Buscar orden"
+										(keyup)="filtrar($event)" />
+									<mat-icon matSuffix>search</mat-icon>
+								</mat-form-field>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div fxFill class="table-div">
+					<table
+						mat-table
+						[dataSource]="dataSource"
+						class="mat-elevation-z8"
+						multiTemplateDataRows>
+						<ng-container matColumnDef="Numero de Orden">
+							<th *matHeaderCellDef class="header-table">Numero de Orden</th>
+							<td
+								*matCellDef="let element"
+								class="content-table"
+								[ngClass]="{highlight: element === selectedRowIndex}"
+								(click)="updateList(element)">
+								{{ element.NumOrder }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="Fecha de recepcion">
+							<th *matHeaderCellDef class="header-table">Fecha de recepcion</th>
+							<td
+								*matCellDef="let element"
+								class="content-table"
+								[ngClass]="{highlight: element === selectedRowIndex}"
+								(click)="updateList(element)">
+								{{ element.DateReceptionEmail | date: 'shortDate' }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="Estatus">
+							<th *matHeaderCellDef class="header-table">
+								<mat-label>Estatus</mat-label>
+								<mat-select
+									placeholder="Filtrar"
+									*ngIf="uniqueStatus.size > 1"
+									[(ngModel)]="selectFields.Status"
+									(selectionChange)="filterSelect($event, 'Status')">
+									<mat-option value="ALL">Todos</mat-option>
+									<mat-option *ngFor="let status of uniqueStatus" value="{{ status }}">
+										{{ status }}
+									</mat-option>
+								</mat-select>
+							</th>
+							<td
+								*matCellDef="let element"
+								class="content-table"
+								[ngClass]="{highlight: element === selectedRowIndex}"
+								(click)="updateList(element)">
+								{{ element.Status }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="Usuario">
+							<th *matHeaderCellDef class="header-table">Usuario</th>
+							<td
+								*matCellDef="let element"
+								class="content-table"
+								[ngClass]="{highlight: element === selectedRowIndex}"
+								(click)="updateList(element)">
+								{{ element.User }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="Usuario final">
+							<th *matHeaderCellDef class="header-table">Usuario final</th>
+							<td
+								*matCellDef="let element"
+								class="content-table"
+								[ngClass]="{highlight: element === selectedRowIndex}"
+								(click)="updateList(element)">
+								{{ element.UserClient }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="Empresa duena">
+							<th *matHeaderCellDef class="header-table">Empresa dueña</th>
+							<td
+								*matCellDef="let element"
+								class="content-table"
+								[ngClass]="{highlight: element === selectedRowIndex}"
+								(click)="updateList(element)">
+								{{ element.OwnerCompany }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="Tipo de equipo">
+							<th *matHeaderCellDef class="header-table">
+								<mat-label>Tipo de equipo</mat-label>
+								<mat-select
+									placeholder="Filtrar"
+									*ngIf="uniqueTypePart.size > 1"
+									[(ngModel)]="selectFields.TypePart"
+									(selectionChange)="filterSelect($event, 'TypePart')">
+									<mat-option value="ALL">Todos</mat-option>
+									<mat-option
+										*ngFor="let typePart of uniqueTypePart"
+										value="{{ typePart }}">
+										{{ typePart }}
+									</mat-option>
+								</mat-select>
+							</th>
+							<td
+								*matCellDef="let element"
+								class="content-table"
+								[ngClass]="{highlight: element === selectedRowIndex}"
+								(click)="updateList(element)">
+								{{ element.TypePart }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="Marca">
+							<th *matHeaderCellDef class="header-table">
+								<mat-label>Marca</mat-label>
+								<mat-select
+									placeholder="Filtrar"
+									*ngIf="uniqueBrand.size > 1"
+									[(ngModel)]="selectFields.Brand"
+									(selectionChange)="filterSelect($event, 'Brand')">
+									<mat-option value="ALL">Todos</mat-option>
+									<mat-option *ngFor="let brand of uniqueBrand" value="{{ brand }}">
+										{{ brand }}
+									</mat-option>
+								</mat-select>
+							</th>
+							<td
+								*matCellDef="let element"
+								class="content-table"
+								[ngClass]="{highlight: element === selectedRowIndex}"
+								(click)="updateList(element)">
+								{{ element.Brand }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="Servicio">
+							<th *matHeaderCellDef class="header-table">
+								<mat-label>Servicio</mat-label>
+								<mat-select
+									placeholder="Filtrar"
+									*ngIf="uniqueServices.size > 1"
+									[(ngModel)]="selectFields.Services"
+									(selectionChange)="filterSelect($event, 'Services')">
+									<mat-option value="ALL">Todos</mat-option>
+									<mat-option
+										*ngFor="let service of uniqueServices"
+										value="{{ service }}">
+										{{ service }}
+									</mat-option>
+								</mat-select>
+							</th>
+							<td
+								*matCellDef="let element"
+								class="content-table"
+								[ngClass]="{highlight: element === selectedRowIndex}"
+								(click)="updateList(element)">
+								{{ element.Services }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="Total de equipos">
+							<th *matHeaderCellDef class="header-table">Total de equipos</th>
+							<td
+								*matCellDef="let element"
+								class="content-table"
+								[ngClass]="{highlight: element === selectedRowIndex}"
+								(click)="updateList(element)">
+								{{ element.TotalEquipments }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="Acciones">
+							<th *matHeaderCellDef class="header-table">Acciones</th>
+							<td *matCellDef="let element; let i = index" class="content-table">
+								<div class="acciones">
+									<button
+										mat-icon-button
+										[matMenuTriggerFor]="menu"
+										aria-label="Example icon-button with a menu">
+										<mat-icon>more_vert</mat-icon>
+									</button>
+								</div>
+								<mat-menu #menu="matMenu">
+									<button mat-menu-item (click)="generatePDF(element)">
+										<mat-icon>cloud_download</mat-icon>
+										<span>Descargar archivo</span>
+									</button>
+									<button mat-menu-item (click)="editOrder(element)">
+										<mat-icon>question_answer</mat-icon>
+										<span>Responder</span>
+									</button>
+									<button mat-menu-item (click)="updateOrder(element)">
+										<mat-icon>edit</mat-icon>
+										<span>Editar</span>
+									</button>
+									<button mat-menu-item (click)="deleteOrder(element)">
+										<mat-icon>delete_forever</mat-icon>
+										<span>Eliminar</span>
+									</button>
+								</mat-menu>
+							</td>
+						</ng-container>
+						<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+						<tr
+							mat-row
+							*matRowDef="let row; columns: displayedColumns"
+							class="example-element-row"></tr>
+					</table>
+					<mat-paginator
+						[pageSizeOptions]="[14, 20, 50]"
+						showFirstLastButtons
+						aria-label="paginator"></mat-paginator>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,250 @@
+<div fxLayout="column">
+	<div class="dialog-header" fxLayout="row" fxLayoutAlign="space-between" fxFill>
+		<ul class="contract-info">
+			<li>
+				<span>Contrato:</span>
+				{{ this.data.contract.Contract }}
+			</li>
+			<li>
+				<span>DataCenter:</span>
+				{{ this.data.dataCenter.DataCenter }}
+			</li>
+			<li>
+				<span>Status:</span>
+				{{ this.data.contract.Status | inventoryStatus }}
+			</li>
+		</ul>
+
+		<div>
+			<!-- <mat-form-field appearance="outline" matTooltip="Filtrar por  campos">
+				<mat-label>Filtrar tabla</mat-label>
+				<input
+					matInput
+					placeholder="Buscar por ..."
+					(keyup)="applySearchFilter($event)" />
+				<mat-icon matSuffix>search</mat-icon>
+			</mat-form-field> -->
+			<div fxLayoutGap="20px">
+				<button
+					class="filter-button"
+					mat-fab
+					matTooltip="Quitar filtros"
+					[ngClass]="!filterApplied ? 'filter-disabled' : 'filter-enabled'"
+					(click)="clearFilters()"
+					[disabled]="!filterApplied"></button>
+			</div>
+		</div>
+	</div>
+	<div fxFlex="100" class="equipmentsTable" fxLayout="column" fxFill>
+		<mat-progress-bar
+			class="audio-progress-bar"
+			mode="indeterminate"
+			*ngIf="!loadedTableData"></mat-progress-bar>
+
+		<table
+			mat-table
+			[dataSource]="tableDataSource"
+			class="mat-elevation-z8"
+			matTableExporter
+			multiTemplateDataRows
+			#exporter="matTableExporter">
+			<!-- PartType -->
+			<ng-container matColumnDef="partType">
+				<th mat-header-cell *matHeaderCellDef>
+					<mat-label>Parte</mat-label>
+					<mat-select
+						class="header-filter"
+						placeholder="Filtrar"
+						*ngIf="uniqueParts.size >= 2"
+						[(ngModel)]="selectFields.TypePartName"
+						(selectionChange)="filterSelect($event, 'TypePartName')">
+						<mat-option value="ALL">Todos</mat-option>
+						<mat-option *ngFor="let part of uniqueParts" value="{{ part }}">
+							{{ part }}
+						</mat-option>
+					</mat-select>
+				</th>
+				<td mat-cell *matCellDef="let row">
+					{{ row.TypePartName }}
+				</td>
+			</ng-container>
+			<!-- PartType -->
+
+			<!-- Model -->
+			<ng-container matColumnDef="model">
+				<th mat-header-cell *matHeaderCellDef>Modelo</th>
+				<td mat-cell *matCellDef="let row">
+					{{ row.Model }}
+				</td>
+			</ng-container>
+			<!-- Model -->
+
+			<!-- Brand- -->
+			<ng-container matColumnDef="brand">
+				<th mat-header-cell *matHeaderCellDef>
+					<mat-label>Marca</mat-label>
+					<mat-select
+						placeholder="Filtrar"
+						*ngIf="uniqueBrands.size > 1"
+						[(ngModel)]="selectFields.NameBrand"
+						(selectionChange)="filterSelect($event, 'NameBrand')">
+						<mat-option value="ALL">Todos</mat-option>
+						<mat-option *ngFor="let brand of uniqueBrands" value="{{ brand }}">
+							{{ brand }}
+						</mat-option>
+					</mat-select>
+				</th>
+				<td mat-cell *matCellDef="let row">
+					{{ row.NameBrand }}
+				</td>
+			</ng-container>
+			<!-- Brand -->
+
+			<!-- Serial -->
+			<ng-container matColumnDef="serial">
+				<th mat-header-cell *matHeaderCellDef>Serial</th>
+				<td mat-cell *matCellDef="let row">
+					{{ row.Serial }}
+				</td>
+			</ng-container>
+			<!-- Serial -->
+
+			<!-- Provider -->
+			<ng-container matColumnDef="provider">
+				<th mat-header-cell *matHeaderCellDef>
+					<mat-label>Proveedor</mat-label>
+					<mat-select
+						placeholder="Filtrar"
+						[(ngModel)]="selectFields.ProviderName"
+						(selectionChange)="filterSelect($event, 'ProviderName')"
+						*ngIf="uniqueProviders.size >= 2">
+						<mat-option value="ALL">Todos</mat-option>
+						<mat-option *ngFor="let provider of uniqueProviders" value="{{ provider }}">
+							{{ provider }}
+						</mat-option>
+					</mat-select>
+				</th>
+				<td mat-cell *matCellDef="let row">
+					{{ row.ProviderName }}
+				</td>
+			</ng-container>
+			<!-- Provider -->
+
+			<!-- SerialProvider- -->
+			<ng-container matColumnDef="serialProvider">
+				<th mat-header-cell *matHeaderCellDef>Serial proveedor</th>
+				<td mat-cell *matCellDef="let row">
+					{{ row.SerialProvider }}
+				</td>
+			</ng-container>
+			<!-- SerialProvider -->
+
+			<!-- SLA -->
+			<ng-container matColumnDef="sla">
+				<th mat-header-cell *matHeaderCellDef>
+					<mat-label>SLA</mat-label>
+					<mat-select
+						placeholder="Filtrar"
+						[(ngModel)]="selectFields.NameSLA"
+						*ngIf="!uniqueSLA?.has(null) && uniqueSLA.size >= 2"
+						(selectionChange)="filterSelect($event, 'NameSLA')">
+						<mat-option value="ALL">Todos</mat-option>
+						<mat-option *ngFor="let sla of uniqueSLA" value="{{ sla }}">
+							{{ sla }}
+						</mat-option>
+					</mat-select>
+				</th>
+				<td mat-cell *matCellDef="let row">
+					{{ row.DataCenterEquipment.NameSLA }}
+				</td>
+			</ng-container>
+			<!-- SLA -->
+
+			<!-- Months -->
+			<ng-container matColumnDef="months">
+				<th mat-header-cell *matHeaderCellDef>
+					<mat-label>Duración</mat-label>
+					<mat-select
+						placeholder="Filtrar"
+						[(ngModel)]="selectFields.ContracTimeName"
+						*ngIf="!uniqueContractTime?.has(null) && uniqueContractTime.size >= 2"
+						(selectionChange)="filterSelect($event, 'ContracTimeName')">
+						<mat-option value="ALL">Todos</mat-option>
+						<mat-option
+							*ngFor="let contract of uniqueContractTime"
+							value="{{ contract }}">
+							{{ contract }}
+						</mat-option>
+					</mat-select>
+				</th>
+				<td mat-cell *matCellDef="let row">
+					{{ row.DataCenterEquipment.ContracTimeName }}
+				</td>
+			</ng-container>
+			<!-- SLA -->
+
+			<!-- ServiceTag -->
+			<ng-container matColumnDef="serviceTag">
+				<th mat-header-cell *matHeaderCellDef>Service Tag</th>
+				<td mat-cell *matCellDef="let row">
+					{{ row.DataCenterEquipment.ServiceTag }}
+				</td>
+			</ng-container>
+			<!-- ServiceTag -->
+
+			<!-- IP -->
+			<ng-container matColumnDef="ip">
+				<th mat-header-cell *matHeaderCellDef>SSH</th>
+				<td mat-cell class="sla-cell" *matCellDef="let element">
+					<img
+						src="../assets/img/putty.png"
+						matTooltip="putty"
+						width="30px"
+						(click)="openTerminal('putty')" />
+					|
+					<img
+						src="../assets/img/moba.png"
+						matTooltip="moba"
+						width="30px"
+						(click)="openTerminal('moba')" />
+				</td>
+			</ng-container>
+			<!-- IP -->
+
+			<!-- Actions -->
+			<ng-container matColumnDef="actions">
+				<th mat-header-cell *matHeaderCellDef>Acciones</th>
+				<td mat-cell class="acciones-cell" *matCellDef="let element; let i = index">
+					<button
+						mat-icon-button
+						[matMenuTriggerFor]="menu"
+						(menuOpened)="selectEquipment(element)"
+						aria-label="Example icon-button with a menu">
+						<mat-icon>more_vert</mat-icon>
+					</button>
+					<mat-menu #menu="matMenu" (menuClosed)="deselectEquipment()">
+						<button mat-menu-item (click)="editEquipment(element)">
+							<mat-icon>edit</mat-icon>
+							<span>Editar</span>
+						</button>
+					</mat-menu>
+				</td>
+			</ng-container>
+			<!-- Actions -->
+
+			<tr mat-header-row *matHeaderRowDef="tableColumns">></tr>
+			<tr
+				mat-row
+				*matRowDef="let row; columns: tableColumns"
+				[ngClass]="{
+					highlight: row.IdEquipment === selectedIdEquipment
+				}"
+				class="example-element-row"></tr>
+		</table>
+		<mat-paginator
+			[pageSizeOptions]="[12, 24, 36]"
+			showFirstLastButtons
+			aria-label="Select page of periodic elements"></mat-paginator>
+	</div>
+	<div class="table-footer"></div>
+</div>

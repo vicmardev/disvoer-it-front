@@ -1,0 +1,259 @@
+.title{
+    text-align: center !important;
+    color:#0f4282 !important;
+    font-size: 32px;
+}
+.btnRefresh{
+  color: #0099CC;
+  font-size: 25px;
+}
+.cardBlueLight{
+  background-color: #0098cc80  !important; 
+  font-size: 22px;
+  color: white;
+}
+.cardBlueDark{
+  background-color: #223976a8  !important; 
+  font-size: 22px;
+  color: white !important;
+}
+.tranparent{
+  background: #ff000000;
+}
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+.whithe{
+  color: white !important;
+  text-align: center;
+}
+
+.mgLeft{
+  display: inline-block;
+  margin:0 auto;
+}
+
+.centerText{
+  width: 100%;
+  height: 10px;
+  background-color: antiquewhite;
+}
+
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+
+.example-small-box, .example-large-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.example-small-box {
+  height: 100px;
+  width: 100px;
+}
+
+.example-large-box {
+  height: 300px;
+  width: 300px;
+}
+
+.page{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1%;
+  height: 800px;
+  // background-color: red;
+}
+
+.item_1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-right: 1%;
+  height: 95%;
+  width: 27%;
+
+  background-color: rgba(0, 0, 255, 0.1);
+  // background-color: red;
+  
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px grey;
+}
+
+//  5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+
+.item_group{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 68%;
+  height: 95%;
+  // background-color: red;
+}
+
+.item_group_right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 95%;
+  height: 95%;
+}
+
+.item_2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 90%;
+}
+
+.backgroundStyle{
+  border-radius: 10px;
+  background-color: rgba(0, 0, 255, 0.1);
+  box-shadow: 10px 10px 10px grey;
+
+}
+
+.item_3{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 49%;
+}
+
+.backgroundStyle{
+  border-radius: 10px;
+  background-color: rgba(0, 0, 255, 0.1);
+  box-shadow: 10px 10px 10px grey;
+
+}
+
+.item_4{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 49%;
+
+}
+
+  .graphic_1{
+    height: 49%;
+    //background-color: orange;
+    border-radius: 10px;
+  }
+
+  .graphic_2{
+    margin-top: 3%;
+    height: 48%;
+    // background-color: yellow;
+    border-radius: 49px;
+  }
+
+  .graphic_3{
+    height: 10%;
+    width: 40%;
+  }
+
+  .graphic_4{
+    height: 100%;
+    width: 26%;
+  }
+
+  .graphic_5{
+    height: 100%;
+    width: 33%;
+  }
+
+  .graphic_6{
+    height: 100%;
+    width: 30%;
+  }
+
+  .graphic_7{
+    height: 100%;
+    width: 33%;
+  }
+
+  .graphic_8{
+    height: 80%;
+    width: 33%;
+  }
+
+  .graphic_9{
+    width: 80%;
+    height: 100%;
+  }
+
+  .graphic_10{
+    height: 100%;
+    width: 49%;
+  }
+
+  .graphic_11{
+    height: 50%;
+    width: 49%;
+  }
+
+  .formatHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .marginHeader{
+    margin-left: 40%;
+  }
+
+  .header{
+    font-family: "Roboto";    
+    background-color: #253972;
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1{
+    display: flex;
+    justify-content: center;
+  }
+
+  #barras{
+    // background-color: orange;
+    margin-left: -22%;
+  }
+
+  #pieStatusContract{
+    margin-top: 2%;
+    margin-left: -10%;
+    margin-bottom: 1%;
+  }
+
+  .top{
+    margin-top: 0.5%;
+  }
+
+  .card{
+    height: 49%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .card_2{
+    height: 49%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }

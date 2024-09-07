@@ -1,0 +1,34 @@
+<h1>
+	Contratos de :
+	<span class="blueDark">{{ arrayUser.firstName }} {{ arrayUser.lastName }}</span>
+</h1>
+<mat-card fxLayout="row wrap">
+	<!--  <h3 class="blue">Agregar nuevos contratos a la lista:</h3>  -->
+	<mat-form-field fxFlexFill>
+		<mat-label class="blue">Agregar nuevos contratos</mat-label>
+		<br />
+		<input matInput placeholder="" fxFlex="30" [(ngModel)]="newContract" />
+	</mat-form-field>
+	<button
+		mat-raised-button
+		class="btnAdd"
+		(click)="addContract(newContract)"
+		[disabled]="newContract.length < 10">
+		<i class="fas fa-plus">Agregar</i>
+	</button>
+	<mat-selection-list #contract [multiple]="false">
+		<mat-list-option *ngFor="let contracts of arrayUser.contrato; index as i">
+			<span>
+				{{ i + 1 }}- {{ contracts }}
+				<i
+					class="fas fa-trash-alt delItem"
+					(click)="delete(contracts, i)"
+					*ngIf="arrayUser.contrato.length >= 2">
+					Eliminar
+				</i>
+			</span>
+		</mat-list-option>
+	</mat-selection-list>
+	<br />
+	<p class="orange">Total de contratos : {{ arrayUser.contrato.length }}</p>
+</mat-card>

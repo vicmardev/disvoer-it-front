@@ -1,0 +1,62 @@
+<div id="container-login" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="center center"
+    fxLayoutGap="5em">
+
+    <img id="img-logo" src="assets/img/DiscovertLogonotbg.png" alt="logo-DiscoverIT">
+
+    <mat-card id="form-login-container" class="animate__animated animate__fadeIn">
+        <mat-card-header>
+            <mat-card-title class="tex">Regístrate</mat-card-title>
+        </mat-card-header>
+        <br />
+        <br />
+        <form class="example-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <mat-card-content>
+                <p>
+                    <mat-form-field class="example-full-width">
+                        <mat-icon mat-list-icon matSuffix>person_outline</mat-icon>
+                        <mat-label>Nombre(s)</mat-label>
+                        <input matInput required formControlName="firstName" />
+                        <mat-error> Ingresa tu nombre </mat-error>
+                    </mat-form-field>
+
+                </p>
+                <p>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Apellidos</mat-label>
+                        <mat-icon mat-list-icon matSuffix>person_outline</mat-icon>
+                        <input matInput required formControlName="lastName" />
+                        <mat-error> Ingresa tus apellidos </mat-error>
+                    </mat-form-field>
+                </p>
+
+                <p>
+                    <mat-form-field class="example-full-width">
+                        <mat-icon mat-list-icon matSuffix>mail_outline</mat-icon>
+                        <mat-label>Correo</mat-label>
+                        <input type="text" matInput placeholder="Correo" formControlName="email" required />
+                        <mat-error *ngIf="form.email.errors"> Ingresa una dirección de correo electrónico correcta
+                        </mat-error>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field class="example-full-width">
+                        <mat-icon mat-list-icon matSuffix>event_note_outline</mat-icon>
+                        <mat-label>No. de Contrato</mat-label>
+                        <input matInput required formControlName="contrato" />
+                    </mat-form-field>
+                </p>
+                <br>
+            </mat-card-content>
+
+            <br />
+            <mat-card-content fxLayoutAlign="center center">
+                <button id="registerButton" mat-raised-button color="primary" class="btn-block"
+                    [disabled]="registerForm.invalid ">
+                    Registrarse
+                </button>
+                <a routerLink="/login/login" mat-flat-button id="tex">Cancelar</a>
+            </mat-card-content>
+        </form>
+    </mat-card>
+
+</div>

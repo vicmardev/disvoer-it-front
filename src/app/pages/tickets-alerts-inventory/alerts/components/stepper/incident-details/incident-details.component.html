@@ -1,0 +1,48 @@
+<div>
+    <h1 class="center">2.- Información del Ticket.</h1>
+    <img class="image" src="https://cdn4.iconfinder.com/data/icons/buno-info-signs/32/__info_about_information-2-256.png" alt="#">
+
+    <h3 style="text-align: center;">
+        <button id="boton-fake" style="text-align: center; " mat-button (click)="openDialogFake()">
+            <span class="info">Parte afectada: </span><b style="font-size: 133%;">{{affectedPart}}</b>
+        </button>
+    </h3>
+        
+    <div class="box-content" fxLayout="row" fxLayoutAlign="center">
+        <div fxLayout="column" style="width: 45%;">
+            <h3><span class="info">Tema de alerta: </span><b>{{titleTicket}}</b></h3>
+            <h3><span class="info">Host afectado: </span><b>{{host}}</b> </h3>
+            <h3><span class="info">Servicio afectado: </span><b>{{affectedPart}}</b></h3>
+            <h3><span class="info">Estatus alarma: </span><b>{{statusHost}}</b></h3>
+            <h3><span class="info">Duración alarma: </span><b>{{alertDuration}}</b></h3>
+            <h3><span class="info">Contrato: </span> <b>{{contract}}</b> </h3>
+            <h3><span class="info">Ubicación: </span><b>{{location}}</b></h3>
+            <h3><span class="info">Detalles incidencia: </span><b>{{response}}</b></h3>
+            <h3><span class="info">Asignado a: </span><b>{{supportAssignment}}</b></h3>
+        </div>
+        <div fxLayout="column">
+            <h3>
+                <span class="client">Creado por: </span><b>{{incidentDetails.userClient}}</b>
+            </h3>
+            <h3>
+                <span class="client">Correo: </span><b>{{incidentDetails.userEmail}}</b>
+            </h3>
+            <h3 *ngIf="incidentDetails.ObservationSupport != ''">
+                <span class="client">Solicitud soporte: </span> <b>{{incidentDetails.ObservationSupport}}</b>
+            </h3>
+            <h3 *ngIf="incidentDetails.ObservationResponseUser != ''">
+                <span class="client">Respuesta usuario: </span> <b>{{incidentDetails.ObservationResponseUser}}</b>
+            </h3>
+        </div>
+        <div fxLayout="column">
+
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center">
+        <!-- <button (click)="openDialog()" type="submit" mat-raised-button class="btn-back">Editar</button> -->
+        <button mat-button class="btn-admin" (click)="openDialogInfo()"  *ngIf="incidentDetails.ObservationSupport === ''">Solicitar detalles</button>
+        <button mat-button class="btn-user" (click)="openDialogResponseClient()"  *ngIf="(incidentDetails.ObservationSupport != '' && incidentDetails.ObservationResponseUser === '' )">Responder usuario</button>
+        <button type="submit" mat-raised-button class="btn-accept" style="width: auto;"matStepperNext>Siguiente</button>
+
+    </div>
+</div>

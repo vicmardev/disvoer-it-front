@@ -1,0 +1,49 @@
+.title {
+	text-align: center;
+	color: #0996c4;
+}
+
+.black {
+	color: #00000082;
+}
+.disabled {
+	color: #8b8a8a8f !important;
+}
+
+.bar-title{
+  height: 35px;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar-title2{
+  height: 35px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-icon{
+  width: 25px;
+  height: auto;
+  margin-right: 0.5%;
+}
+
+
+.text-button{
+  font-size: 20px;
+  margin-left: 0.5%;
+}
+
+.container-buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.save-button, .cancel-button{
+  margin-right: 5px;
+  margin-left: 5px;
+}

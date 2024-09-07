@@ -1,0 +1,233 @@
+.dox{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  color: #07293c;
+  font-size: 100%;
+}
+
+.last, .next{
+  width: 18%;
+}
+
+th {
+  text-align: center !important;
+  background-color: #0099cc;
+  color: #fdfcfb !important;
+  font-size: 18px;
+}
+td {
+  text-align: center !important;
+  font-size: 18px;
+  padding: 0.75rem !important;
+}
+
+.cell-size{
+  width: 15%;
+}
+
+.cell-size-small{
+  width: 10%;
+}
+.green{
+  text-align: center !important;
+  color: #fdfcfb !important;
+    background-color: #5fe1b2 !important;
+    font-size: 18px;
+
+}
+
+.green {
+  text-align: center !important;
+  color: #fdfcfb !important;
+  background-color: #5fe1b2 !important;
+  font-size: 18px;
+}
+.orange {
+  text-align: center !important;
+  color: #fdfcfb !important;
+  background-color: #fbac94 !important;
+  font-size: 18px;
+}
+.red {
+  text-align: center !important;
+  color: #fdfcfb !important;
+  background-color: #f1879f !important;
+  font-size: 18px;
+}
+.gray {
+  text-align: center !important;
+  color: #fdfcfb !important;
+  background-color: #808080cf !important ;
+  font-size: 18px;
+}
+.orange {
+  background-color: coral;
+  color: white !important;
+}
+.red {
+  background-color: #ff0101ad;
+  color: white !important;
+}
+.mat-row:hover {
+  background-color: #abd0f06e;
+  cursor: pointer;
+  color: white !important;
+}
+.footBarraTab {
+  width: auto;
+  height: 50px;
+  background-color: #0c4464;
+}
+.green {
+  background-color: #7fdc7f;
+  color: white !important;
+}
+.blue {
+  background-color: #0099d2;
+  color: white !important;
+}
+
+.blue-color {
+  color: #0099d2;
+  /* background-color: rgba(255, 255, 255, 0.37) !important; */
+  border-radius: 1rem;
+}
+.chart {
+  display: flex;
+  flex: 1 1 100%;
+}
+
+.title {
+  text-align: center !important;
+  color: #0f4282 !important;
+  font-size: 32px;
+}
+.coutTotal {
+  text-align: center !important;
+  color: orange !important;
+  font-size: 32px;
+}
+
+mat-panel-title {
+  font-size: 19px !important;
+  color: #0c4464;
+}
+.cursor {
+  cursor: pointer;
+}
+table {
+  width: 100%;
+}
+.marTop {
+  margin-top: 25px;
+}
+.center {
+  text-align: center !important;
+}
+.timer, .titleTables, .last, .next {
+  font-size: 18px;
+  color: #07293c;
+}
+.countTimer {
+  color: red !important;
+}
+.alarmOk {
+  color: #2ca18c;
+  font-size: 18px;
+}
+.alarmWaning {
+  color: #ff8a65ab;
+  font-size: 18px;
+}
+.alarmDanger {
+  color: #f0466b9e;
+  font-size: 18px;
+}
+.alrmOk{
+ color: #0099CC;
+ font-size: 18px;
+}
+.btnClear{
+    font-size: 23px;
+    color: #60e2b4;
+}
+.link{
+  text-decoration: none;
+  color: #000;
+}
+
+.paginContainer{
+  display: flex;
+  justify-content: center;
+}
+
+#paginator{
+  width: 94%;
+  margin-top: 10%;
+  background-color: rgba(245, 245, 245, 0.804);
+  color: black;
+}
+
+
+.host-grid {
+  display: grid;
+  width: 100%;
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  gap: 1rem;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(770px, 1fr));
+  grid-auto-rows: minmax(200px, auto);
+  margin-bottom: -10rem;
+}
+
+/* responsive view */
+@media only screen and (width: 600px) {
+  #all-alarms-chart{
+    display: none;
+  }
+}
+
+@media only screen and (width: 768px) {
+  #all-alarms-chart{
+    display: none;
+  }
+}
+
+@media only screen and (width: 800px) {
+  #all-alarms-chart{
+    display: none;
+  }
+}
+
+@media only screen and (width: 900px) {
+  #all-alarms-chart{
+    display: none;
+  }
+}
+
+@media only screen and (width: 1024px) {
+  #all-alarms-chart{
+    display: none;
+  }
+}
+
+@media only screen and (width: 1080px) {
+  #all-alarms-chart{
+    display: none;
+  }
+}
+
+@media only screen and (width: 1200px) {
+  #all-alarms-chart{
+    display: none;
+  }
+}
+
+@media only screen and (width: 1280px) {
+  #all-alarms-chart{
+    display: none;
+  }
+}
+
+

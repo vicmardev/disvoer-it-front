@@ -1,0 +1,162 @@
+/* $okColor: #2cba86; */
+$okColor: green;
+$warningColor: #ff8a65;
+$criticalColor: #f0466b;
+/* $okColor: #2cba86;
+$warningColor: #ff8a65;
+$criticalColor: #f0466b;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: stretch;
+  align-self: stretch;
+  background: #e3f4f8ef;
+  color: rgb(0, 0, 0);
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 700px;
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card:hover {
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+  transform: translateY(-3px) scale(1.05);
+}
+
+.ok {
+  color: $okColor;
+} 
+
+.warning {
+  color: $warningColor;
+}
+
+.critical{
+  color: $criticalColor;
+}
+
+.unknown{
+  color: #808080cf;
+}
+
+.down{
+  color: $criticalColor;
+}
+
+.badge {
+  font-size: 1.5rem;
+}
+
+.img {
+height: 25rem;
+width: 25rem;
+}
+.container {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-around;
+}
+.container-table{
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-around;
+}
+
+.right-padding {
+  margin-right: 0.5rem;
+}
+
+
+.mat-card-header{
+  display: flex;
+  justify-content: center;
+} */
+
+
+
+
+
+
+.container {
+  /* background-image: url('../../../../assets/img/7.png'); */
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 42rem;
+  width: 700px;
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
+.mat-card-header{
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.img {
+  height: 70%;
+  width: 70%;
+  }
+
+  .outline{
+  animation: blinker 1s linear infinite;
+}
+  @keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+  .badge {
+    font-size: 1.5rem;
+  }
+
+  .ok {
+    color: $okColor;
+  } 
+  
+  .warning {
+    color: $warningColor;
+  }
+  
+  .critical{
+    color: $criticalColor;
+  }
+  
+  .unknown{
+    color: #808080cf;
+  }
+  
+  .down{
+    color: $criticalColor;
+  }
+
+  .container-filters{
+    display: flex;
+    justify-content: space-between;
+  }

@@ -1,0 +1,25 @@
+@import '../../inventory/validcontracts/styles/vars.scss';
+@import '../../inventory/validcontracts/styles/tables.scss';
+div.header {
+
+  .filter-button {
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: center;
+
+    &.filter-disabled {
+      background-image: url('../../../../assets/icons/filter.png');
+      background-color: #808080;
+    }
+
+    &.filter-enabled {
+      background-image: url('../../../../assets/icons/filter_remove.png');
+      background-color: #203b79;
+    }
+  }
+}
+
+
+
+
+

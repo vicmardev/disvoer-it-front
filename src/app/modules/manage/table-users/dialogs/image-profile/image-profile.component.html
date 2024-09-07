@@ -1,0 +1,14 @@
+<div class="dox">
+	<i mat-dialog-close class="fas fa-times"></i>
+</div>
+<img
+	matTooltip="Sin foto de perfil"
+	id="user-img"
+	src="https://www.shareicon.net/data/512x512/2016/08/05/806962_user_512x512.png"
+	class="avatar-table circleImgCards"
+	*ngIf="!user.avatarImagePath" />
+<img
+	id="user-img"
+	src="{{ avatarUrl + user.avatarImagePath }}"
+	class="avatar-table circleImgCards"
+	*ngIf="user.avatarImagePath" />

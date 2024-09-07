@@ -1,0 +1,149 @@
+<form class="new-person-form" [formGroup]="formMakeTicket">
+    <div>
+        <h1 class="title">
+            <strong>
+                <i class="fas fa-ticket-alt ticket"></i> Levantamiento de ticket de soporte: <strong class="black">{{data.info.Serial}}</strong>
+            </strong>
+        </h1>
+        <h4>
+            <strong class="title">*Instrucciones para crear ticket:</strong>
+            <p> 1.- Registra los  campos correspondientes.</p>
+            <p> 2.- El campo de adjuntar evidencia o codigo de error (NO ES OBLIGATORIO).</p>
+            <p> 3.- Completa la información y selecciona "Generar ticket".</p>
+        </h4>
+        <br>
+    </div>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlex="50">
+            <mat-label>Contrato:</mat-label>
+            <input matInput placeholder="Contrato" formControlName="Contrato">
+        </mat-form-field>
+        <mat-form-field fxFlex="50">
+            <mat-label>Nombre del Cliente:</mat-label>
+            <input matInput placeholder="clientName" formControlName="clientName">
+        </mat-form-field>
+    </mat-card>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlex="50">
+            <mat-label>Nombre completo del Solictante:</mat-label>
+            <input matInput placeholder="Modelo" formControlName="userName">
+        </mat-form-field>
+        <mat-form-field fxFlex="50">
+            <mat-label>Teléfono fijo o celular:</mat-label>
+            <input matInput placeholder="Modelo" formControlName="telephone">
+        </mat-form-field>
+    </mat-card>
+    
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlexFill appearance="legacy">
+            <mat-label>Dirección física donde se encuentra el activo afectado:</mat-label>
+            <textarea matInput placeholder="Dirección" cdkAutosizeMinRows="10" formControlName="adressEquipmet" cdkAutosizeMaxRows="10" cols="10" rows=""></textarea>
+        </mat-form-field>
+    </mat-card>
+
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlex="25">
+            <mat-label>Marca:</mat-label>
+            <input matInput placeholder="No Contrato" formControlName="brand">
+        </mat-form-field>
+        <mat-form-field fxFlex="25">
+            <mat-label>Modelo:</mat-label>
+            <input matInput placeholder="Modelo" formControlName="model">
+        </mat-form-field>
+        <mat-form-field fxFlex="25">
+            <mat-label>Equipo:</mat-label>
+            <input matInput placeholder="No Contrato" formControlName="equipment">
+        </mat-form-field>
+        <mat-form-field fxFlex="25">
+            <mat-label>No Serie:</mat-label>
+            <input matInput placeholder="No Contrato" formControlName="noSerie">
+        </mat-form-field>
+    </mat-card>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlex="100">
+            <mat-label>Título o tema de afectación:</mat-label>
+            <input matInput placeholder="Modelo" formControlName="title">
+        </mat-form-field>
+    </mat-card>
+    
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlexFill appearance="legacy">
+            <mat-label>Descripción de afectación</mat-label>
+            <textarea matInput placeholder="Dirección" cdkAutosizeMinRows="10" formControlName="description"
+                cdkAutosizeMaxRows="10" cols="10" rows=""></textarea>
+        </mat-form-field>
+    </mat-card>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlex="100">
+            <mat-label>Correo:</mat-label>
+            <input matInput placeholder="Modelo" formControlName="email">
+        </mat-form-field>
+    </mat-card>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlex="50">
+            <mat-label>Número de parte alertada/afectada:</mat-label>
+            <input matInput placeholder="Modelo" formControlName="affectationPart">
+        </mat-form-field>
+        <mat-form-field fxFlex="50">
+            <mat-label>Indicar el sistema operativo del equipo:</mat-label>
+            <input matInput placeholder="Modelo" formControlName="operatingSystem">
+        </mat-form-field>
+    </mat-card>
+
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+
+        <mat-form-field appearance="legacy" fxFlex="50">
+            <mat-label>Severidad</mat-label>
+            <br>
+            <mat-select  formControlName="severity">
+                <mat-option *ngFor="let sev of severidad" [value]="sev.value">
+                    {{sev.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy" fxFlex="50">
+            <mat-label>Clientes</mat-label>
+            <br>
+            <mat-select   formControlName="client">
+                <mat-option *ngFor="let client of clientList" [value]="client.value">
+                    {{client.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field appearance="legacy" fxFlex="50">
+            <mat-label>Tipo de afectación </mat-label>
+            <br>
+            <mat-select formControlName="issueType"  >
+                <mat-option *ngFor="let issue of listIssue" [value]="issue.value">
+                    {{issue.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="legacy" fxFlex="50">
+            <mat-label>Asignar a:</mat-label>
+            <br>
+            <mat-select  formControlName="assignedSupportOperator"  *ngIf="data.info.Equipment === 'Server' || data.info.Equipment === 'Storage' ">
+                <mat-option *ngFor="let support of suportListIt" [value]="support.value">
+                    {{support.viewValue}}
+                </mat-option>
+            </mat-select>
+            <mat-select formControlName="assignedSupportOperator" *ngIf="data.info.Equipment === 'Switch' || data.info.Equipment === 'Balancer' " >
+                <mat-option *ngFor="let issue of suportListIp" [value]="issue.value" >
+                    {{issue.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card> 
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <span style="color: #0b95c2; font-size: 18px;">Adjuntar evidencia: Código de error que se muestra</span>
+        <input id="file" name="file" type="file" (change)="onFileChange($event)">
+    </mat-card>
+</form>
+
+ <mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+    <button mat-flat-button class="btn-accept" (click)="craeteNewTicket()" [disabled]="!formMakeTicket.valid" routerLink="/dash/ticketsAlerts/inventoryTickets">Generar ticket</button>
+    <button mat-flat-button class="btn-cancel" (click)="closeDialog()">Cancelar</button>
+</mat-card> 

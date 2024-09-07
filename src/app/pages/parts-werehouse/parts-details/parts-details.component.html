@@ -1,0 +1,55 @@
+<mat-progress-bar
+	class="audio-progress-bar"
+	mode="indeterminate"
+	*ngIf="!tableInfo"></mat-progress-bar>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" multiTemplateDataRows>
+	<ng-container matColumnDef="serialNumber">
+		<mat-header-cell *matHeaderCellDef class="header-table">S/N</mat-header-cell>
+		<mat-cell *matCellDef="let element">
+			{{ element.SerialNumber }}
+		</mat-cell>
+	</ng-container>
+	<ng-container matColumnDef="status">
+		<mat-header-cell *matHeaderCellDef class="header-table">
+			Disponibilidad
+		</mat-header-cell>
+		<mat-cell *matCellDef="let element">
+			{{ element.Available ? 'Disponible' : 'No disponible' }}
+		</mat-cell>
+	</ng-container>
+	<ng-container matColumnDef="client">
+		<mat-header-cell *matHeaderCellDef class="header-table">CLIENTE</mat-header-cell>
+		<mat-cell *matCellDef="let element">
+			{{ element.client }}
+		</mat-cell>
+	</ng-container>
+	<ng-container matColumnDef="contract">
+		<mat-header-cell *matHeaderCellDef class="header-table">No. Contrato</mat-header-cell>
+		<mat-cell *matCellDef="let element">
+			{{ element.contract }}
+		</mat-cell>
+	</ng-container>
+	<ng-container matColumnDef="ticket">
+		<mat-header-cell *matHeaderCellDef class="header-table">For Ticket</mat-header-cell>
+		<mat-cell *matCellDef="let element">
+			{{ element.IdTicket }}
+		</mat-cell>
+	</ng-container>
+	<ng-container matColumnDef="replaceDate">
+		<mat-header-cell *matHeaderCellDef class="header-table">
+			Fecha de reemplazo
+		</mat-header-cell>
+		<mat-cell *matCellDef="let element">
+			{{ element.DateExit | date: 'shortDate' }}
+		</mat-cell>
+	</ng-container>
+
+	<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+	<mat-row
+		*matRowDef="let row; columns: displayedColumns"
+		class="example-element-row"></mat-row>
+</table>
+<mat-paginator
+	[pageSizeOptions]="[10, 20, 50]"
+	showFirstLastButtons
+	aria-label="paginator"></mat-paginator>

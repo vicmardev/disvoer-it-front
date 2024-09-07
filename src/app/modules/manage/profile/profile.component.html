@@ -1,0 +1,121 @@
+<div class="patern" fxLayoutAlign="center center">
+	<div class="child1">
+		<div class="child10">
+			<strong><h1 class="profile-text">Mi perfil</h1></strong>
+			<br />
+			<img
+				mat-card-avatar
+				src="{{ imgUrl }}"
+				class="image"
+				alt="#"
+				*ngIf="!user.avatarImagePath"
+				matTooltip="Click para cambiar foto" />
+			<img
+				mat-card-avatar
+				*ngIf="user.avatarImagePath"
+				src="{{ AvatarImgUrl + user.avatarImagePath }}"
+				class="image"
+				alt="#"
+				(click)="openDialog()"
+				matTooltip="Click para cambiar foto" />
+		</div>
+		<div class="child11">
+			<strong>
+				<h2 class="profile-text">Rol: {{ nameUser.role }}</h2>
+			</strong>
+		</div>
+		<br />
+		<br />
+	</div>
+	<div class="child2">
+		<br />
+		<br />
+		<div class="child20">
+			<div class="update">
+				<h1 class="profile-text">Actualizar Datos</h1>
+				<mat-slide-toggle
+					[(ngModel)]="check"
+					(change)="validateCheck()"></mat-slide-toggle>
+			</div>
+			<br />
+			<form class="updateForm" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+				<mat-list>
+					<mat-list-item>
+						<p class="general">
+							<mat-form-field>
+								<mat-label>Nombre del usuario</mat-label>
+								<input formControlName="firstName" matInput />
+							</mat-form-field>
+						</p>
+					</mat-list-item>
+					<mat-list-item>
+						<p class="general">
+							<mat-form-field>
+								<mat-label>Apellidos</mat-label>
+								<input formControlName="lastName" matInput />
+							</mat-form-field>
+						</p>
+					</mat-list-item>
+					<mat-list-item>
+						<p class="general">
+							<mat-form-field>
+								<mat-label>Correo</mat-label>
+								<input formControlName="email" matInput />
+							</mat-form-field>
+						</p>
+					</mat-list-item>
+
+					<mat-list-item>
+						<mat-form-field>
+							<input
+								matInput
+								placeholder="Contraseña"
+								[type]="hide ? 'password' : 'text'"
+								formControlName="password" />
+							<mat-icon matSuffix (click)="hide = !hide">
+								{{ hide ? 'visibility_off' : 'visibility' }}
+							</mat-icon>
+							<mat-hint *ngIf="form.password.value">Ingresa una contraseña</mat-hint>
+						</mat-form-field>
+					</mat-list-item>
+					<br />
+					<mat-list-item>
+						<mat-form-field class="campo">
+							<input
+								matInput
+								placeholder="Confirmar contraseña"
+								[type]="hideConfirm ? 'password' : 'text'"
+								formControlName="confirmPassword" />
+							<mat-icon matSuffix (click)="hideConfirm = !hideConfirm">
+								{{ hideConfirm ? 'visibility_off' : 'visibility' }}
+							</mat-icon>
+							<mat-hint *ngIf="form.confirmPassword.value">
+								Ingresa una contraseña
+							</mat-hint>
+						</mat-form-field>
+					</mat-list-item>
+					<mat-list-item>
+						<p class="general">Cambiar Contraseña</p>
+					</mat-list-item>
+					<mat-list-item>
+						<p class="general">*Dejar en blanco para conservar la misma contraseña</p>
+					</mat-list-item>
+					<br />
+				</mat-list>
+				<br />
+				<div class="buttons">
+					<button
+						type="submit"
+						id="buttonProfile"
+						formControlName="accept"
+						mat-raised-button
+						class="btn-block">
+						Guardar
+					</button>
+				</div>
+			</form>
+		</div>
+		<br />
+		<br />
+	</div>
+</div>

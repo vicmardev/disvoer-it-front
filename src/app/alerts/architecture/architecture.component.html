@@ -1,0 +1,25 @@
+<div class="row">
+	<button mat-fab color="primary" (click)="directionMode(direction)">
+		<div *ngIf="direction">
+			<mat-icon>swap_horiz</mat-icon>
+		</div>
+		<div *ngIf="!direction">
+			<mat-icon>swap_vert</mat-icon>
+		</div>
+	</button>
+</div>
+
+<div class="org">
+	<div class="vertical" *ngIf="direction">
+		<ngx-org-chart
+			[nodes]="nodes"
+			direction="vertical"
+			(itemClick)="test($event)"></ngx-org-chart>
+	</div>
+	<div class="horizontal" *ngIf="!direction">
+		<ngx-org-chart
+			[nodes]="nodes"
+			direction="horizontal"
+			(itemClick)="test($event)"></ngx-org-chart>
+	</div>
+</div>

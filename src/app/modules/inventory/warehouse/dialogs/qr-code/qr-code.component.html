@@ -1,0 +1,46 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+	<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+		<div class="qrcodeImage" fxLayout="column" fxLayoutAlign="center center">
+			<div fxFlex="35" fxLayout="column" fxLayoutAlign="center center">
+				<b class="label">{{ partObject.Brand }}</b>
+				<b class="label">{{ partObject.Model }}</b>
+			</div>
+
+			<qrcode
+				class="label"
+				#parent
+				[allowEmptyString]="true"
+				[cssClass]="'center'"
+				[colorDark]="'#000000ff'"
+				[colorLight]="'#ffffffff'"
+				[qrdata]="qrCodeData"
+				[width]="256"
+				[elementType]="elementType"
+				[errorCorrectionLevel]="'L'"
+				[margin]="4"
+				[scale]="2"></qrcode>
+
+			<b class="label">PN: {{ partObject.PartNumber }}</b>
+			<b class="label">SN: {{ partObject.OperationParts[0].SerialNumber }}</b>
+		</div>
+		<div fxLayout="column" fxLayoutAlign="center center">
+			<b class="label">Rack: {{ rackData.NameRack }}</b>
+			<b class="label">Columna: {{ rackData.Column }}</b>
+			<b class="label">Fila: {{ rackData.Row }}</b>
+		</div>
+	</div>
+
+	<div class="downloadButton" fxLayoutGap="15px">
+		<!-- not a svg -->
+		<button mat-raised-button color="primary" (click)="saveAsImage(parent)">
+			Descargar código QR
+		</button>
+
+		<button mat-raised-button color="primary" (click)="onPrint()">
+			Imprimir código QR
+		</button>
+	</div>
+	<div class="downloadButton" fxLayoutGap="15px">
+		<button mat-raised-button color="btn-cancel" (click)="onSucces()">Cerrar</button>
+	</div>
+</div>

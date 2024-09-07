@@ -1,0 +1,101 @@
+<div class="page">
+	<!--  <div class="animate__animated animate__fadeIn"> -->
+	<div class="animate__animated animate__slideInDown">
+		<div class="slider">
+			<input type="radio" name="testimonial" id="t-1" />
+			<input type="radio" name="testimonial" id="t-2" />
+			<input type="radio" name="testimonial" id="t-3" checked />
+			<input type="radio" name="testimonial" id="t-4" />
+			<input type="radio" name="testimonial" id="t-5" />
+			<div class="testimonials">
+				<label class="item" for="t-1">
+					<img src="assets/img/DiscovertLogonotbg.png" alt="picture" />
+					<p>Iniciar Sesión</p>
+					<br />
+					<br />
+					<br />
+					<p>
+						<a href="../assets/manuales/iniciarSesion.pdf" target="_blank">
+							<button mat-flat-button class="btn btn-success">
+								<i class="fas fa-download" matTooltip="Descargar Manual"></i>
+							</button>
+						</a>
+					</p>
+				</label>
+				<label class="item" for="t-2">
+					<img src="assets/img/DiscovertLogonotbg.png" alt="picture" />
+					<p>Perfil Usuario</p>
+					<br />
+					<br />
+					<br />
+					<p>
+						<a href="../assets/manuales/perfilUsuario.pdf" target="_blank">
+							<button mat-flat-button class="btn btn-success">
+								<i class="fas fa-download" matTooltip="Descargar Manual"></i>
+							</button>
+						</a>
+					</p>
+				</label>
+
+				<label class="item" for="t-3">
+					<img src="assets/img/DiscovertLogonotbg.png" alt="picture" />
+					<p>Gráficas</p>
+					<br />
+					<br />
+					<br />
+					<p>
+						<a href="../assets/manuales/graficas.pdf" target="_blank">
+							<button mat-flat-button class="btn btn-success">
+								<i class="fas fa-download" matTooltip="Descargar Manual"></i>
+							</button>
+						</a>
+					</p>
+				</label>
+
+				<label class="item" for="t-4">
+					<img src="assets/img/DiscovertLogonotbg.png" alt="picture" />
+					<p>Tickets</p>
+					<br />
+					<br />
+					<br />
+					<p>
+						<a href="../assets/manuales/tickets.pdf" target="_blank">
+							<button mat-flat-button class="btn btn-success">
+								<i class="fas fa-download" matTooltip="Descargar Manual"></i>
+							</button>
+						</a>
+					</p>
+				</label>
+
+				<label class="item" for="t-5">
+					<img src="assets/img/DiscovertLogonotbg.png" alt="picture" />
+					<p>Inventario</p>
+					<br />
+					<br />
+					<br />
+					<p>
+						<a href="../assets/manuales/inventario.pdf" target="_blank">
+							<button mat-flat-button class="btn btn-success">
+								<i class="fas fa-download" matTooltip="Descargar Manual"></i>
+							</button>
+						</a>
+					</p>
+				</label>
+			</div>
+			<div class="dots">
+				<label for="t-1"></label>
+				<label for="t-2"></label>
+				<label for="t-3"></label>
+				<label for="t-4"></label>
+				<label for="t-5"></label>
+			</div>
+		</div>
+	</div>
+
+	<div class="foot">
+		<span class="text-foot">
+			¿No encuentras la solución que buscas?
+			<a class="nav-link" [routerLink]="['/dash/helpCenter/support']">Contáctanos.</a>
+		</span>
+	</div>
+</div>

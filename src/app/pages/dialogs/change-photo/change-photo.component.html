@@ -1,0 +1,43 @@
+<div class="box-modal">
+	<div class="title">
+		<i id="tittle" class="fas fa-exclamation-circle"></i>
+		<span class="tittle">
+			Nota: para una mejor optimización recomendamos un tamaño de fotografía
+			<br />
+			<strong>no mayor a 1MB.(PNG, JPG, JPEG)</strong>
+		</span>
+	</div>
+	<br />
+	<div class="box1">
+		<div class="img1">
+			<image-cropper
+				class="imgUser1"
+				[imageChangedEvent]="imageChangedEvent"
+				[maintainAspectRatio]="true"
+				[aspectRatio]="4 / 4"
+				format="png"
+				(imageCropped)="imageCropped($event)"
+				(imageLoaded)="imageLoaded()"
+				(cropperReady)="cropperReady()"
+				(loadImageFailed)="loadImageFailed()"
+				*ngIf="flagImg"></image-cropper>
+		</div>
+		<div class="img2">
+			<img class="imgUser2" [src]="croppedImage" *ngIf="flagImg" />
+			<input type="file" (change)="fileChangeEvent($event)" />
+		</div>
+	</div>
+	<br />
+	<br />
+	<div class="buttons">
+		<button
+			mat-button
+			color="primary"
+			class="btn-md"
+			type="button"
+			(click)="save()"
+			*ngIf="flagImg">
+			Guardar
+		</button>
+	</div>
+</div>

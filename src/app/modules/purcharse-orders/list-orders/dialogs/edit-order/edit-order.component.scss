@@ -1,0 +1,90 @@
+.container{
+    width: 100%;    
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+.header{
+    text-align: center;
+}
+.containerform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    background-size: 110% 130%;
+    background-repeat: no-repeat;
+    /*
+    border-left: 15px solid #0099cc;*/
+}
+
+.form{
+    width: 100%;
+}
+
+.child1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.child2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.child4{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.child3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.btn-block {
+    background-color: #0C4464 ;
+      color: white;
+    }
+.button{
+    display: flex;
+    justify-content: space-around;
+}
+
+.fileArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.field{
+    width: 22%;
+}
+
+.evidence{
+    font-size: 20px;
+    color: #0C4464;
+}
+
+h2{
+    color: #0C4464;
+}
+.child4{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.fieldArea{
+    width: 48%;
+}
+
+
+.disabled{
+    color: #8b8a8a8f !important;
+}

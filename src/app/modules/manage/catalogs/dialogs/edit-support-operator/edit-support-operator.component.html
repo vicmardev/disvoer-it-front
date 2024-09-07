@@ -1,0 +1,47 @@
+<div class="title-bar">
+	<span>Editar Operador</span>
+</div>
+<br />
+<form class="addSupportOperator" [formGroup]="formEditOperator">
+	<p>
+		<mat-form-field appearance="legacy">
+			<mat-label>Nombre</mat-label>
+			<br />
+			<input placeholder="Nombre" formControlName="name" matInput />
+		</mat-form-field>
+	</p>
+	<p>
+		<mat-form-field appearance="legacy">
+			<mat-label>Nivel de Escalación</mat-label>
+			<br />
+			<mat-select formControlName="levelscalation">
+				<mat-option *ngFor="let level of levelList" [value]="level.IdLevelScalation">
+					{{ level.Name }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</p>
+	<p>
+		<mat-form-field appearance="legacy">
+			<mat-label>Correo</mat-label>
+			<br />
+			<input placeholder="email@email.com" formControlName="email" matInput />
+		</mat-form-field>
+	</p>
+	<p>
+		<mat-form-field appearance="legacy">
+			<mat-label>Teléfono</mat-label>
+			<br />
+			<input placeholder="00000000000" formControlName="telephone" matInput />
+		</mat-form-field>
+	</p>
+</form>
+
+<div class="group">
+	<button mat-flat-button class="btn-accept save-button" (click)="editOperator()">
+		Guardar
+	</button>
+	<button mat-flat-button class="btn-cancel cancel-button" (click)="closeDialog()">
+		Cancelar
+	</button>
+</div>

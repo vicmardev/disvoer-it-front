@@ -1,0 +1,12 @@
+
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+    <h1>Confirmar si deseas crear ticket, del host <b class="blue">{{data.info.Hostname}}.</b></h1>
+    <div fxLayout="row">
+      <button mat-flat-button class="btn-cancel" (click)="closeDialog()">
+        Cancelar
+      </button> 
+      <button mat-flat-button class="btn-accept mgleft" (click)="createNewTicket()">
+        Crear ticket
+      </button>
+    </div>
+</div>

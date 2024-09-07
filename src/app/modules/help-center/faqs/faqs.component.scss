@@ -1,0 +1,233 @@
+/* .add-button{
+  margin: 7px;
+}
+
+#mat-accordion{
+  background-color: red;
+  width: 50%;
+}
+
+.qwerty {
+  margin-top: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.mat-expansion-panel{
+  width: 50%;
+  background-color: green;
+}
+
+.class-wrapper-footer{
+  text-align: center;
+}*/
+.text-foot {
+  font-size: 120%;
+}
+a:link, a:visited, a:active {
+  text-decoration:none;
+  color: #0099cc;
+}
+
+/* Titulo de pagina */
+.title {
+  text-align: center;
+  color: #0099cc;
+  font-size: 32px;
+}
+
+.class-wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-top: 30px;
+  width: 43% !important;
+}
+/*
+.box-content-1 {
+  background-color: #0099cc;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-left: 17px solid #0C4464;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}*/
+
+.box-content-1 {
+  width: 80%;
+  background-color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-left: 17px solid #0C4464;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.box-expansion-1 {
+  background-color:  whitesmoke;
+}
+/*
+.box-expansion-1:hover, .box-expansion-1:active {
+  background-color:  #0099cc;
+}
+.mat-accordion-1:hover, .box-expansion-1:active{
+  background-color:  #0099cc;
+}
+.expansion-panel-header-0 :hover, .box-expansion-1:active{
+  background-color:  #0099cc;
+}*/
+
+/*
+.box-content-0 {
+   background-color: #0C4464;
+   margin-left: 10px;
+   margin-right: 10px;
+   border-left: 17px solid #0099cc;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ }*/
+
+ .box-content-0 {
+  width: 80%;
+  background-color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-left: 17px solid #0099cc;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.box-expansion-0 {
+  background-color:  whitesmoke;
+}
+/*
+.box-expansion-0:hover, .box-expansion-0:active {
+  background-color:  #0C4464;
+}
+.mat-accordion-0:hover, .box-expansion-0:active{
+  background-color:  #0C4464;
+}
+.expansion-panel-header-0 :hover, .box-expansion-0:active{
+  background-color:  #0C4464;
+}
+.mat-expansion-indicator{
+  display: none !important;
+}*/
+
+mat-accordion {
+  background-color: red;
+}
+
+hr {
+  border: 1px solid rgb(184, 184, 184);
+}
+
+.text {
+  font-size: 100% !important;
+  color: #0099cc;
+}
+.text-foot {
+  font-size: 120%;
+}
+
+.xxx {
+  margin-top: 15px;
+  margin-left: 0;
+  width: 70px;
+}
+
+.qwerty {
+  margin-top: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.header-align,
+.mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.header-align,
+.mat-form-field + .mat-form-field {
+  margin-left: 1px;
+}
+
+.questions{
+  color: #0C4464;
+  font-size: 20px;
+}
+.answer{
+  color: #0C4464;
+  font-size: 18px;
+}
+
+.title-question{
+  width: 90%;
+}
+
+.menu-question{
+  width: 10%;
+  margin-top: -8px;
+}
+
+.add-button{
+  margin: 7px;
+}
+
+.login-wrapper{
+  width: 100%;
+}
+
+.class-wrapper-footer{
+  text-align: center;
+
+
+}
+
+.question-box{
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.icon{
+  color: #0C4464;
+}
+
+span .mat-expansion-indicator{
+  color: #0C4464;
+}
+
+span .mat-expansion-indicator::after {
+  border-width: 0 5px 4px 0 !important;
+  color: #0C4464 !important;
+}
+
+
+.mat-expansion-indicator::after{
+  border-width: 0 5px 4px 0 !important;
+  color: #0C4464 !important;
+}
+.ng-tns-c233-15::after{
+  border-width: 0 5px 4px 0 !important;
+  color: #0C4464 !important;
+}
+.ng-trigger::after {
+  border-width: 0 5px 4px 0 !important;
+  color: #0C4464 !important;
+}
+.ng-trigger-indicatorRotate::after{
+  border-width: 0 5px 4px 0 !important;
+  color: #0C4464 !important;
+}
+.ng-star-inserted::after{
+  border-width: 0 5px 4px 0 !important;
+  color: #0C4464 !important;
+}
+
+#mat-accordion > .mat-accordion .mat-expansion-panel .mat-expansion-panel-header .mat-expansion-indicator::after {
+  color: #0C4464 !important;
+}
+
+/*
+#mat-acordion mat-card-title mat-accordion mat-expansion-panel mat-expansion-panel-header mat-panel-title span.answer span.ng-star-inserted::after{
+  color: #0C4464 !important;
+<<<<<<< HEAD:src/app/modules/help-center/faqs/faqs.component.scss
+}*/

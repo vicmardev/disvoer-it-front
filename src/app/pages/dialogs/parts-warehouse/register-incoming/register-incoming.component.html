@@ -1,0 +1,155 @@
+<div id="container">
+	<div *ngIf="data.info == 'incoming'" class="bar-title">
+		<img
+			*ngIf="data.info == 'incoming'"
+			class="img-icon"
+			src="../../../../../assets/img/entradaBlanco.png"
+			alt="" />
+		<img
+			*ngIf="data.info == 'outgoing'"
+			class="img-icon"
+			src="../../../../../assets/img/salidaBlanco.png"
+			alt="" />
+		<span class="title">
+			{{ data.info == 'incoming' ? 'Entrada de Equipo' : 'Salida de Equipo' }}
+		</span>
+	</div>
+
+	<div *ngIf="data.info == 'outgoing'" class="bar-title2">
+		<img
+			*ngIf="data.info == 'incoming'"
+			class="img-icon"
+			src="../../../../../assets/img/entradaBlanco.png"
+			alt="" />
+		<img
+			*ngIf="data.info == 'outgoing'"
+			class="img-icon"
+			src="../../../../../assets/img/salidaBlanco.png"
+			alt="" />
+		<span class="title">
+			{{ data.info == 'incoming' ? 'Entrada de Equipo' : 'Salida de Equipo' }}
+		</span>
+	</div>
+	<br />
+
+	<form class="new-person-form" [formGroup]="logEquipmentForm">
+		<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="15px">
+			<mat-form-field fxFlex="45" style="font-size: 17px">
+				<mat-label>Tipo de parte</mat-label>
+				<mat-select formControlName="TypePart">
+					<mat-option
+						*ngFor="let partType of partTypeSelectorValues"
+						[value]="partType.value">
+						{{ partType.viewValue }}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+
+			<mat-form-field fxFlex="45" style="font-size: 17px">
+				<mat-label>Marca</mat-label>
+				<input matInput placeholder="Brand" formControlName="Brand" />
+			</mat-form-field>
+		</div>
+
+		<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="15px">
+			<mat-form-field fxFlex="45" style="font-size: 17px">
+				<mat-label>Modelo</mat-label>
+				<input matInput placeholder="Modelo" formControlName="Model" />
+			</mat-form-field>
+
+			<mat-form-field fxFlex="45" style="font-size: 17px" formGroupName="OperationPart">
+				<mat-label>Número Serial</mat-label>
+				<input matInput placeholder="# serial" formControlName="SerialNumber" />
+			</mat-form-field>
+		</div>
+
+		<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="15px">
+			<mat-form-field fxFlex="45" style="font-size: 17px">
+				<mat-label>Número de parte</mat-label>
+				<input matInput placeholder="# parte" formControlName="PartNumber" />
+			</mat-form-field>
+			<mat-form-field
+				fxFlex="45"
+				style="font-size: 17px"
+				formGroupName="OperationPart"
+				*ngIf="data.info == 'outgoing'">
+				<mat-label>Ticket</mat-label>
+				<input matInput placeholder="id ticket" formControlName="IdTicket" />
+			</mat-form-field>
+		</div>
+
+		<div
+			fxLayout="row wrap"
+			fxLayoutAlign="center center"
+			fxLayoutGap="15px"
+			formGroupName="Rack">
+			<mat-form-field fxFlex="24" style="font-size: 17px">
+				<mat-label>Store</mat-label>
+				<mat-select formControlName="IdStore">
+					<mat-option *ngFor="let store of storeSelectorValues" [value]="store.value">
+						{{ store.viewValue }}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+
+			<mat-form-field fxFlex="24" style="font-size: 17px">
+				<mat-label>Rack</mat-label>
+				<input matInput placeholder="Rack" formControlName="NameRack" />
+			</mat-form-field>
+
+			<mat-form-field fxFlex="24" style="font-size: 17px">
+				<mat-label>Columna</mat-label>
+				<input matInput placeholder="# parte" formControlName="Column" />
+			</mat-form-field>
+
+			<mat-form-field fxFlex="24" style="font-size: 17px">
+				<mat-label>Fila</mat-label>
+				<input matInput placeholder="# parte" formControlName="Row" />
+			</mat-form-field>
+		</div>
+	</form>
+	<br />
+
+	<div class="QR-container">
+		<div
+			*ngIf="useQR && qrInfo == undefined; else askForQR"
+			fxLayout="column"
+			fxLayoutAlign="center center"
+			fxLayoutGap="15px">
+			<qr-reader (qrInfo)="onCodeResult($event)"></qr-reader>
+			<button mat-flat-button class="btn-cancel QR-button" (click)="useQR = !useQR">
+				<img class="QR-icon" src="../../../../../assets/img/QRBlanco.png" alt="" />
+				<span class="text-button">Deshabilitar Escaneo QR</span>
+			</button>
+		</div>
+
+		<ng-template #askForQR>
+			<button
+				mat-flat-button
+				class="btn-accept QR-button"
+				(click)="useQR = !useQR; qrInfo = undefined">
+				<img class="QR-icon" src="../../../../../assets/img/QRBlanco.png" alt="" />
+				<span class="text-button">Escaneo QR</span>
+			</button>
+		</ng-template>
+	</div>
+	<br />
+
+	<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+		<button
+			mat-flat-button
+			class="btn-accept"
+			(click)="createNewEquipt()"
+			[disabled]="!logEquipmentForm.valid">
+			{{ data.info == 'incoming' ? 'Registrar' : 'Retirar' }}
+		</button>
+
+		<button mat-flat-button class="btn-cancel" (click)="closeDialog()">Cancelar</button>
+	</mat-card>
+</div>
+<!-- only show qr code if operation part is registered -->
+<div *ngIf="qrCodeData != undefined">
+	<app-qr-code
+		[componentData]="qrCodeData"
+		(success)="closeDialog(); closeSnack()"></app-qr-code>
+</div>

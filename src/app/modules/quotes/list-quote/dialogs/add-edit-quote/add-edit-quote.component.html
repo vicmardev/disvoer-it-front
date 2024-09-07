@@ -1,0 +1,146 @@
+<div class="container">
+	<div *ngIf="data.quote != undefined; else add">
+		<h1 class="title">
+			<strong>
+				<mat-icon>edit</mat-icon>
+
+				Editar cotización:
+				<strong class="black">{{ data.quote.Id }}</strong>
+			</strong>
+		</h1>
+		<br />
+	</div>
+
+	<ng-template #add>
+		<h1 class="title">
+			<strong>
+				<mat-icon>edit</mat-icon>
+
+				Agregar cotización
+			</strong>
+		</h1>
+		<br />
+	</ng-template>
+
+	<form class="new-person-form" [formGroup]="quoteForm">
+		<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="15px">
+			<mat-form-field fxFlex="30" style="font-size: 17px">
+				<mat-label>Cliente</mat-label>
+				<mat-select formControlName="IdCustomer">
+					<mat-option
+						*ngFor="let customer of customerSelectorValues"
+						[value]="customer.value">
+						{{ customer.viewValue }}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<span></span>
+
+			<mat-form-field fxFlex="30" style="font-size: 17px">
+				<mat-label>Cotización</mat-label>
+				<mat-select formControlName="IdQuote">
+					<mat-option
+						*ngFor="let quote of statusQuoteSelectorValues"
+						[value]="quote.value">
+						{{ quote.viewValue }}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+
+			<mat-form-field fxFlex="30" style="font-size: 17px">
+				<mat-label>Lead</mat-label>
+				<input matInput placeholder="Lead" formControlName="Lead" />
+			</mat-form-field>
+		</div>
+
+		<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="15px">
+			<mat-form-field fxFlex="15" style="font-size: 17px">
+				<mat-label>Currency</mat-label>
+				<mat-select formControlName="Currency">
+					<mat-option
+						*ngFor="let currency of currencyValues"
+						[value]="currency.viewValue">
+						{{ currency.viewValue }}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<mat-form-field fxFlexFill fxFlex="20" style="font-size: 17px">
+				<mat-label>Subtotal</mat-label>
+				<input
+					matInput
+					placeholder="Subtotal"
+					fxFlex="100"
+					formControlName="Subtotal"
+					type="number"
+					(change)="calculateTotal($event)" />
+			</mat-form-field>
+			<mat-form-field fxFlexFill fxFlex="20" style="font-size: 17px">
+				<mat-label>IVA</mat-label>
+				<input
+					matInput
+					placeholder="IVA"
+					fxFlex="100"
+					formControlName="IVA"
+					type="number"
+					readonly />
+			</mat-form-field>
+			<mat-form-field fxFlexFill fxFlex="30" style="font-size: 17px">
+				<mat-label>Total</mat-label>
+				<input
+					matInput
+					placeholder="Total"
+					fxFlex="100"
+					formControlName="Total"
+					[value]="total | currency" />
+			</mat-form-field>
+		</div>
+
+		<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="15px">
+			<mat-form-field fxFlex="45" style="font-size: 17px">
+				<mat-label>Status</mat-label>
+				<mat-select formControlName="Status">
+					<mat-option *ngFor="let status of statusSelectorValues" [value]="status.value">
+						{{ status.viewValue }}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<mat-form-field fxFlexFill fxFlex="45" style="font-size: 17px">
+				<mat-label>Folio</mat-label>
+				<input matInput placeholder="Folio" fxFlex="100" formControlName="Folio" />
+			</mat-form-field>
+		</div>
+		<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="15px">
+			<mat-form-field fxFlexFill fxFlex="100" style="font-size: 17px">
+				<mat-label>UrlFile</mat-label>
+				<input matInput placeholder="UrlFile" fxFlex="100" formControlName="UrlFile" />
+			</mat-form-field>
+		</div>
+		<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="15px">
+			<mat-form-field fxFlexFill fxFlex="100" style="font-size: 17px">
+				<mat-label>Remark</mat-label>
+				<textarea
+					matInput
+					placeholder="Remark"
+					fxFlex="100"
+					formControlName="Remark"></textarea>
+			</mat-form-field>
+		</div>
+	</form>
+
+	<mat-card
+		fxLayout="row"
+		fxLayoutAlign="center center"
+		fxLayoutGap="15px"
+		class="container-buttons">
+		<button mat-flat-button class="btn-cancel .cancel-button" (click)="cancel()">
+			Cancelar
+		</button>
+		<button
+			mat-flat-button
+			class="btn-accept .save-button"
+			(click)="onSubmit()"
+			[disabled]="quoteForm.invalid || submiting">
+			Guardar
+		</button>
+	</mat-card>
+</div>

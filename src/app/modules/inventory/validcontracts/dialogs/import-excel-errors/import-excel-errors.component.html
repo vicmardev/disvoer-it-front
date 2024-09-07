@@ -1,0 +1,70 @@
+<div fxLayout="column">
+	<h2 class="title">Se encontraron errores al procesar la hoja: {{ data.sheet }}</h2>
+	<div fxFlex="100" class="" fxLayout="column" fxFill>
+		<table
+			mat-table
+			[dataSource]="dataSource"
+			class="mat-elevation-z8"
+			matTableExporter
+			multiTemplateDataRows
+			#exporter="matTableExporter">
+			<!-- Error -->
+			<ng-container matColumnDef="error">
+				<th mat-header-cell *matHeaderCellDef>Error</th>
+				<td mat-cell *matCellDef="let row">
+					{{ row.error }}
+				</td>
+			</ng-container>
+			<!-- Error -->
+
+			<!-- Fila -->
+			<ng-container matColumnDef="row">
+				<th mat-header-cell *matHeaderCellDef>Fila</th>
+				<td mat-cell *matCellDef="let row">
+					{{ row.row + 1 }}
+				</td>
+			</ng-container>
+			<!-- Fila -->
+
+			<!-- Columna- -->
+			<ng-container matColumnDef="column">
+				<th mat-header-cell *matHeaderCellDef>Columna</th>
+				<td mat-cell *matCellDef="let row">
+					{{ row.column }}
+				</td>
+			</ng-container>
+			<!-- Columna -->
+
+			<!-- Valor -->
+			<ng-container matColumnDef="value">
+				<th mat-header-cell *matHeaderCellDef>Valor</th>
+				<td mat-cell *matCellDef="let row">
+					{{ row.Serial }}
+				</td>
+			</ng-container>
+			<!-- Valor -->
+
+			<!-- Reason -->
+			<ng-container matColumnDef="reason">
+				<th mat-header-cell *matHeaderCellDef>Razón</th>
+				<td mat-cell *matCellDef="let row">
+					{{ row.reason }}
+				</td>
+			</ng-container>
+			<!-- Reason -->
+
+			<tr mat-header-row *matHeaderRowDef="columns"></tr>
+			<tr mat-row *matRowDef="let row; columns: columns"></tr>
+		</table>
+		<mat-paginator
+			[pageSizeOptions]="[12, 24, 36]"
+			showFirstLastButtons
+			aria-label="Select page of periodic elements"></mat-paginator>
+	</div>
+
+	<div fxFlex="100" fxLayout="row" fxLayoutAlign="center space-between" fxFill>
+		<span class="footBarraTab"></span>
+	</div>
+</div>
+
+<button mat-flat-button class="btn-cancel" (click)="close()">Cerrar</button>

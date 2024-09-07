@@ -1,0 +1,146 @@
+
+#tableHost{
+    width: 100%;
+}
+
+#paginatorAlarms{
+    width: 100%;
+}
+
+
+.headerBlue{
+    text-align: center !important;
+    background-color: #0099cc;
+    color: #fdfcfb !important;
+    font-size: 18px;
+}
+
+.title{
+    text-align: center !important;
+    color:#0f4282 !important;
+    font-size: 32px;
+}
+td{
+    text-align: center;
+}
+.green{
+    color: #2efb04;
+    font-size: 24px;
+}
+.red{
+    color: red;
+    font-size: 24px;
+}
+.orange{
+    color: #f3a708eb;
+    font-size: 24px;
+}
+.highlight {
+    background-color: #2196f338;
+    cursor: pointer;
+  }
+ .titleTables{
+    text-align: center !important;
+     color: #07293c !important;
+     font-size: 24px;
+ } 
+
+ /*NEW VARS*/
+
+ .title-grap{
+    width: 100%;
+  }
+
+  .title-test{
+    background: #0099cc;
+    text-align: center;
+    color: white;
+  }
+
+ #listBadge {
+    /*margin-top: 8px;*/
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    place-content: stretch center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+
+  .barTitle {
+    background: #0099cc;
+    color: white;
+    
+    /*top: 8px;*/
+    margin-bottom: 0px;
+    text-align: center;
+    height: 32px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+
+
+
+  .left {
+    width: 25%;
+  }
+  
+  .right {
+    width: 75%;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .row1 {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+
+  /* CHILDS */
+
+  .child-1{
+    width: auto;
+  }
+
+  .child-2{
+    width: 100%;
+  }
+  .child-3{
+    margin-top: 12%;
+    width: auto;
+  }
+
+  .child-4{
+    margin-left: 1%;
+  }
+
+  .column1 {
+    width: 20%;
+  }
+
+  .column {
+    width: 80%;
+  }
+
+  .spinner{
+    margin-top: 15%;
+    margin-left: 15%;
+  }
+
+  .firstElement{
+    width: auto;
+    margin-top: 1%;
+    margin-right: 1%;
+  }
+
+  .secondElement{
+    width: 19%;
+  }

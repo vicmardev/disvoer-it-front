@@ -1,0 +1,49 @@
+.container {
+	display: flex;
+	justify-content: space-evenly;
+    margin-top: 65px;
+}
+
+.brands, 
+.customers, 
+.suppliers, 
+.SLAs, 
+.stores, 
+.operators, 
+.typeParts {
+	width: 250px;
+	height: 210px;
+	background: rgb(33, 59, 114);
+	background: linear-gradient(
+		180deg,
+		rgba(33, 59, 114, 1) 10%,
+		rgba(0, 145, 198, 1) 100%
+	);
+	border: 1px;
+	border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom: 35px solid #213b72;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icon-card{
+    margin-top: 35px;
+    width: 150px;
+    height: 131px;
+    z-index: 10;
+}
+
+.title-card{
+    font-size: 23px;
+    color: white;
+    margin-top: 34px;
+    margin-bottom: -44px;
+}
+
+a:hover{
+    text-decoration: none;
+}

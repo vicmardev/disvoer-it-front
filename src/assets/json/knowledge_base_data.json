@@ -1,0 +1,159 @@
+[
+  {
+    "name": "Redes Ip",
+    "type": "DeviceFieldUse",
+    "children": [
+      {
+        "name": "Balanceadores",
+        "type": "DeviceType",
+        "children": [
+          {
+            "name": "F5", 
+            "type": "DeviceBrand",
+            "children": [
+              {
+                "name": "BIG-IP 2000S", 
+                "type": "Device",
+                "children": [
+                  {
+                    "name": "Datasheet", 
+                    "type": "Filepath",
+                    "filepath":"https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf"
+                  },
+                  {
+                    "name": "Trouble Shooting", 
+                    "type": "Filepath",
+                    "filepath":"http://www.africau.edu/images/default/sample.pdf"
+                  },
+                  {
+                    "name": "Manual", 
+                    "type": "Filepath",
+                    "filepath":"https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf"
+                  }
+                ]
+              }
+            ]
+
+          }
+        ]
+      },
+      {
+        "name": "Switch",
+        "type": "DeviceType",
+        "children": [
+          {
+            "name": "CISCO",
+            "type": "DeviceBrand",
+            "children": [
+              {
+                "name": "BIG-IP 5584", 
+                "type": "Device",
+                "children": [
+                  {
+                    "name": "Datasheet", 
+                    "type": "Filepath",
+                    "filepath":"https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf"
+                  },
+                  {
+                    "name": "Trouble Shooting", 
+                    "type": "Filepath",
+                    "filepath":"http://www.africau.edu/images/default/sample.pdf"
+                  },
+                  {
+                    "name": "Manual", 
+                    "type": "Filepath",
+                    "filepath":"https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf"
+                  }
+                ]
+          }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Servicios It",
+    "type": "DeviceFieldUse",
+    "children": [
+      {
+        "name": "Servidores",
+        "type": "DeviceType",
+        "children": [
+           {
+              "name":"Huawei",
+              "type": "DeviceBrand",
+              "children": [
+                {
+                  "name": "RH5288 V3", 
+                  "type": "Device",
+                  "filepath":"http://www.africau.edu/images/default/sample.pdf"
+                },
+                {
+                  "name": "1288H V5", 
+                  "type": "Device",
+                  "filepath":"https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf"
+              },
+                {
+                  "name": "RH1288 V2-8S", 
+                  "type": "Device",
+                  "filepath":"http://www.africau.edu/images/default/sample.pdf"
+                }
+              ]
+           },
+           {
+              "name":"HP",
+              "type": "DeviceBrand",
+              "children": [
+                {
+                  "name": "RH5288 V3", 
+                  "type": "Device",
+                  "filepath":"https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf"
+                },
+                {
+                  "name": "1288H V5", 
+                  "type": "Device",
+                  "filepath":"http://www.africau.edu/images/default/sample.pdf"
+                },
+                {
+                  "name": "RH1288 V2-8S", 
+                  "type": "Device",
+                  "filepath":"https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf"
+                }
+              ]
+           },
+           {
+             "name":"LENOVO",
+             "type": "DeviceBrand"
+            },
+           {
+             "name":"DELL",
+             "type": "DeviceBrand"
+           },
+           {
+             "name":"IBM",
+             "type": "DeviceBrand"
+           },
+           {
+             "name":"ORACLE",
+             "type": "DeviceBrand"
+           },
+           {
+             "name":"CISCO",
+             "type": "DeviceBrand"
+           }
+        ]
+      },
+      {
+        "name": "Stores",
+        "type": "DeviceType",
+        "children": [
+          {
+            "name": "OCTOPIAN",
+            "type": "DeviceBrand"
+          }
+        ]
+      }
+    ]
+  }
+]

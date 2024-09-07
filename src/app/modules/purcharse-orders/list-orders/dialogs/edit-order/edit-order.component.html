@@ -1,0 +1,130 @@
+<div class="container">
+	<div class="containerform">
+		<br />
+		<div class="header">
+			<h2 class="instructions">Responder</h2>
+		</div>
+		<form [formGroup]="updatewForm" (ngSubmit)="updateOrder()" class="form">
+			<div class="child1">
+				<mat-form-field class="field disabled">
+					<mat-label>Numero de orden</mat-label>
+					<input
+						formControlName="NumOrden"
+						matInput
+						type="number"
+						(keypress)="numericOnly($event)"
+						[readonly]="true" />
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field disabled">
+					<mat-label>Cliente</mat-label>
+					<input formControlName="NoProvider" matInput [readonly]="true" />
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field disabled">
+					<mat-label>Fecha de recepcion</mat-label>
+					<input
+						formControlName="DateReceptionEmail"
+						matInput
+						[matDatepicker]="DateReceptionEmail"
+						[readonly]="true" />
+					<mat-datepicker-toggle
+						matSuffix
+						[for]="DateReceptionEmail"></mat-datepicker-toggle>
+					<mat-datepicker #DateReceptionEmail></mat-datepicker>
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field disabled">
+					<mat-label>Tipo de equipo</mat-label>
+					<input
+						formControlName="IdTypeEquipments"
+						matInput
+						type="text"
+						[readonly]="true" />
+					<mat-error class="error-field">Campo obligatio, favor de llenarlo</mat-error>
+				</mat-form-field>
+			</div>
+			<br />
+			<div class="child2">
+				<mat-form-field class="field disabled">
+					<mat-label>Marca</mat-label>
+					<input formControlName="IdBrand" matInput type="text" [readonly]="true" />
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field disabled">
+					<mat-label>Servicio</mat-label>
+					<input formControlName="Services" matInput type="text" [readonly]="true" />
+					<mat-error class="error-field">Campo obligatrio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field disabled">
+					<mat-label>Total de equipos</mat-label>
+					<input
+						type="number"
+						(keypress)="numericOnly($event)"
+						formControlName="TotalEquipments"
+						matInput
+						[readonly]="true" />
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field disabled">
+					<mat-label>Empresa dueña</mat-label>
+					<input formControlName="OwnCompany" matInput type="text" [readonly]="true" />
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+			</div>
+			<br />
+			<div class="child3">
+				<mat-form-field class="field disabled">
+					<mat-label>Usuario final</mat-label>
+					<input formControlName="UserClient" matInput [readonly]="true" />
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field disabled">
+					<mat-label>Correo usuario final</mat-label>
+					<input formControlName="EmailUserFinal" matInput [readonly]="true" />
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field disabled">
+					<mat-label>SubTotal</mat-label>
+					<input type="number" formControlName="Subtotal" matInput [readonly]="true" />
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field">
+					<mat-label>Estatus</mat-label>
+					<mat-select placeholder="Estatus" matInput formControlName="IdStatus" required>
+						<mat-option *ngFor="let status of statusList" [value]="status.IdStatus">
+							{{ status.Status }}
+						</mat-option>
+					</mat-select>
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+			</div>
+			<div class="child3">
+				<mat-form-field class="field">
+					<mat-label>Comentarios</mat-label>
+					<textarea
+						name="comments"
+						id=""
+						cols="5"
+						rows="1"
+						formControlName="Comments"
+						matInput></textarea>
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<div class="field"></div>
+				<div class="field"></div>
+				<div class="field"></div>
+			</div>
+			<div class="fileArea"></div>
+			<br />
+			<div class="button">
+				<button type="submit" id="buttonProfile" mat-raised-button class="btn-block">
+					Actualizar orden
+				</button>
+			</div>
+		</form>
+		<br />
+		<br />
+		<br />
+	</div>
+</div>

@@ -1,0 +1,141 @@
+$fontSize: 14px;
+th {
+  text-align: center !important;
+  background-color: #0099cc;
+  color: #fdfcfb !important;
+  font-size: $fontSize;
+}
+td {
+  text-align: center !important;
+  font-size: $fontSize;
+  padding: 0.75rem !important;
+}
+
+.cell-size{
+  width: 15%;
+}
+
+.cell-size-small{
+  width: 10%;
+}
+.green{
+  text-align: center !important;
+  color: #fdfcfb !important;
+    background-color: #5fe1b2 !important;
+    font-size: $fontSize;
+
+}
+
+.green {
+  text-align: center !important;
+  color: #fdfcfb !important;
+  background-color: #5fe1b2 !important;
+  font-size: $fontSize;
+}
+.orange {
+  text-align: center !important;
+  color: #fdfcfb !important;
+  background-color: #fbac94 !important;
+  font-size: $fontSize;
+}
+.red {
+  text-align: center !important;
+  color: #fdfcfb !important;
+  background-color: #f1879f !important;
+  font-size: $fontSize;
+}
+.gray {
+  text-align: center !important;
+  color: #fdfcfb !important;
+  background-color: #808080cf !important ;
+  font-size: $fontSize;
+}
+.orange {
+  background-color: coral;
+  color: white !important;
+}
+.red {
+  background-color: #ff0101ad;
+  color: white !important;
+}
+.mat-row:hover {
+  background-color: #abd0f06e;
+  cursor: pointer;
+  color: white !important;
+}
+.footBarraTab {
+  width: auto;
+  height: 50px;
+  background-color: #0c4464;
+}
+.green {
+  background-color: #7fdc7f;
+  color: white !important;
+}
+.blue {
+  background-color: #0099d2;
+  color: white !important;
+}
+.chart {
+  display: flex;
+  flex: 1 1 100%;
+}
+
+.title {
+  text-align: center !important;
+  color: #0f4282 !important;
+  font-size: 32px;
+}
+.coutTotal {
+  text-align: center !important;
+  color: orange !important;
+  font-size: 32px;
+}
+
+mat-panel-title {
+  font-size: 19px !important;
+  color: #0c4464;
+}
+.cursor {
+  cursor: pointer;
+}
+table {
+  width: 100%;
+}
+.marTop {
+  margin-top: 25px;
+}
+.center {
+  text-align: center !important;
+}
+.timer {
+  font-size: 17px;
+  color: #0099cc;
+}
+.countTimer {
+  color: red !important;
+}
+.alarmOk {
+  color: #2ca18c;
+  font-size: $fontSize;
+}
+.alarmWaning {
+  color: #ff8a65ab;
+  font-size: $fontSize;
+}
+.alarmDanger {
+  color: #f0466b9e;
+  font-size: $fontSize;
+}
+.alrmOk{
+ color: #0099CC;
+ font-size: $fontSize;
+}
+.btnClear{
+    font-size: 23px;
+    color: #60e2b4;
+}
+.link{
+  text-decoration: none;
+  color: #000;
+}

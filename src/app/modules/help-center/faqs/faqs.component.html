@@ -1,0 +1,142 @@
+<div class="example-button-container">
+	<button
+		mat-fab
+		color="warn"
+		matTooltip="Agregar pregunta"
+		(click)="createFaqDialog()"
+		*ngIf="user.role != 'User'"
+		class="add-button">
+		<mat-icon>add</mat-icon>
+	</button>
+</div>
+
+<div
+	class="login-wrapper"
+	fxLayout="row"
+	fxLayout.sm="column"
+	fxLayout.xs="column"
+	fxLayoutAlign="center center"
+	fxLayoutGap="5em">
+	<div class="question-box">
+		<div class="class-wrapper" *ngFor="let faq of lisQuestions; index as i">
+			<mat-card class="box-content-{{ i % 2 }}" id="mat-accordion">
+				<mat-card-title>
+					<div class="qwerty">
+						<span class="title">{{ faq._id }}</span>
+					</div>
+				</mat-card-title>
+				<br />
+				<mat-accordion
+					class="header-align mat-accordion-{{ i % 2 }}"
+					*ngFor="let item of faq.questions">
+					<mat-expansion-panel class="box-expansion-{{ i % 2 }}">
+						<mat-expansion-panel-header class="dox expansion-panel-header-{{ i % 2 }}">
+							<mat-panel-title class="xxx">
+								<div class="title-question">
+									<h4>
+										<span class="questions">{{ item.Question }}</span>
+									</h4>
+								</div>
+								<div class="menu-question">
+									<button
+										mat-icon-button
+										[matMenuTriggerFor]="menu"
+										aria-label="Example icon-button with a menu"
+										*ngIf="user.role != 'User'"
+										class="icon">
+										<mat-icon>more_vert</mat-icon>
+									</button>
+									<mat-menu #menu="matMenu">
+										<button mat-menu-item (click)="faqEditDialog(item)">
+											<mat-icon>edit</mat-icon>
+											<span>Editar</span>
+										</button>
+										<button mat-menu-item (click)="deleteFaqDialog(item)">
+											<mat-icon>delete</mat-icon>
+											<span>Eliminar</span>
+										</button>
+									</mat-menu>
+								</div>
+							</mat-panel-title>
+						</mat-expansion-panel-header>
+						<span class="answer">{{ item.Response }}</span>
+					</mat-expansion-panel>
+				</mat-accordion>
+			</mat-card>
+		</div>
+	</div>
+</div>
+<br />
+<br />
+<div class="class-wrapper-footer">
+	<span class="text-foot">
+		¿No encuentras la solución que buscas?
+		<a class="nav-link" [routerLink]="['/dash/helpCenter/support']">Contáctanos.</a>
+	</span>
+</div>
+
+<!-- <div class="example-button-container">
+	<button
+		mat-fab
+		color="warn"
+		matTooltip="Agregar pregunta"
+		(click)="createFaqDialog()"
+		*ngIf="user.role != 'User'"
+		class="add-button">
+		<mat-icon>add</mat-icon>
+	</button>
+</div>
+<div class="container-boxes">
+	<div *ngFor="let faq of lisQuestions; index as i">
+		<mat-card class="box-content-{{ i % 2 }}" id="mat-accordion">
+			<mat-card-title>
+				<div class="qwerty">
+					<span class="title">{{ faq._id }}</span>
+				</div>
+			</mat-card-title>
+			<br />
+			<mat-accordion
+				class="header-align mat-accordion-{{ i % 2 }}"
+				*ngFor="let item of faq.questions">
+				<mat-expansion-panel class="box-expansion-{{ i % 2 }}">
+					<mat-expansion-panel-header class="dox expansion-panel-header-{{ i % 2 }}">
+						<mat-panel-title class="xxx">
+							<div class="title-question">
+								<h4>
+									<span class="questions">{{ item.Question }}</span>
+								</h4>
+							</div>
+							<div class="menu-question">
+								<button
+									mat-icon-button
+									[matMenuTriggerFor]="menu"
+									aria-label="Example icon-button with a menu"
+									*ngIf="user.role != 'User'"
+									class="icon">
+									<mat-icon>more_vert</mat-icon>
+								</button>
+								<mat-menu #menu="matMenu">
+									<button mat-menu-item (click)="faqEditDialog(item)">
+										<mat-icon>edit</mat-icon>
+										<span>Editar</span>
+									</button>
+									<button mat-menu-item (click)="deleteFaqDialog(item)">
+										<mat-icon>delete</mat-icon>
+										<span>Eliminar</span>
+									</button>
+								</mat-menu>
+							</div>
+						</mat-panel-title>
+					</mat-expansion-panel-header>
+					<span class="answer">{{ item.Response }}</span>
+				</mat-expansion-panel>
+			</mat-accordion>
+		</mat-card>
+	</div>
+</div>
+<div class="class-wrapper-footer">
+	<span class="text-foot">
+		¿No encuentras la solución que buscas?
+		<a class="nav-link" [routerLink]="['/dash/helpCenter/support']">Contáctanos.</a>
+	</span>
+</div> -->

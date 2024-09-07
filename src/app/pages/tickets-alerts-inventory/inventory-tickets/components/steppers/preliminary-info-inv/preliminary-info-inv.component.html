@@ -1,0 +1,41 @@
+<img src="https://cdn2.iconfinder.com/data/icons/buno-ui-interface/32/__check_checkmark_ok-256.png" alt="">
+<br>
+<br>
+<h1 class="title">Detalles del ticket</h1>
+<div fxLayout="row" fxLayoutAlign="center" class="patern1">
+    <div fxLayout="column" class="div-test">
+        <h3> <span class="info">Descripción del ticket: </span><b>{{preliminaryInfo && preliminaryInfo.description}}</b> </h3>
+        <h3> <span class="info">Contrato: </span><b>{{preliminaryInfo && preliminaryInfo.contract}}</b></h3>
+        <h3> <span class="info">Parte afectada: </span><b>{{preliminaryInfo && preliminaryInfo.affectationPart}}</b> </h3>
+        <!-- <h3> <span class="info">Host: </span><b></b> </h3>
+        <h3> <span class="info">Estado del host: </span><b></b> </h3> -->
+        <h3> <span class="info">Marca: </span><b>{{preliminaryInfo && preliminaryInfo.brand}}</b> </h3>
+        <h3> <span class="info">Módelo: </span><b>{{preliminaryInfo && preliminaryInfo.model}}</b> </h3>
+        <h3> <span class="info">Serial: </span><b>{{preliminaryInfo && preliminaryInfo.equipmentSerial}}</b> </h3>
+    </div>
+    <div fxLayout="column" class="div-test1">
+        <h3> <span class="info">Estado del ticket: </span><b>{{preliminaryInfo && preliminaryInfo.status}}</b> </h3>
+        <h3> <span class="info">Fecha de registro del ticket: </span><b>{{preliminaryInfo && preliminaryInfo.created | date:'shortDate'}}</b> </h3>
+        <!-- <h3> <span class="info">Fecha de alerta: </span><b></b> </h3> -->
+        <!-- <h3> <span class="info">Duración de la alerta: </span><b></b> </h3> -->
+        <h3> <span class="info">Usuario: </span><b>{{preliminaryInfo && preliminaryInfo.clientName}}</b> </h3>
+        <h3> <span class="info">Teléfono del usuario: </span><b>{{preliminaryInfo && preliminaryInfo.telephone}}</b> </h3>
+        <h3> <span class="info">Email del usuario: </span><b>{{preliminaryInfo && preliminaryInfo.email}}</b> </h3>
+        <h3> <span class="info">Ubicación: </span><b>{{preliminaryInfo && preliminaryInfo.adressEquipmet}}</b> </h3>
+    </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center" class="patern2">
+    <div fxLayout="column" class="div-test">
+        <h1 class="solution">Solución de soporte</h1>
+        <h3> <span class="info">Respuesta: </span><b>{{preliminaryInfo && preliminaryInfo.solution}}</b> </h3>
+        <h3> <span class="info">Responsable: </span><b>{{preliminaryInfo && preliminaryInfo.assignedSupportOperator}}</b> </h3>
+        <h3> <span class="info">Fecha de solución: </span><b>{{preliminaryInfo && preliminaryInfo.dateSolution | date:'shortDate'}}</b> </h3>
+    </div>
+    <div fxLayout="column" *ngIf="isShown" class="div-test1">
+        <h1 class="solution2">Solución de soporte(Reasignación)</h1>
+        <h3> <span class="info">Respuesta: </span><b> {{preliminaryInfo && preliminaryInfo.solutionReassig}} </b> </h3>
+        <h3> <span class="info">Responsable: </span><b>  {{preliminaryInfo && preliminaryInfo.responsableReassig}}  </b> </h3>
+        <h3> <span class="info">Fecha de solución: </span><b>  {{preliminaryInfo && preliminaryInfo.dateSolutionReassig  | date:'shortDate' }}  </b> </h3>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+<form class="new-person-form" [formGroup]="formAddBudget">
+	<div>
+		<h1 class="title">
+			<strong>
+				Contrato: {{ data.info.Contract }}
+				<strong class="black"></strong>
+			</strong>
+		</h1>
+		<br />
+	</div>
+	<mat-card fxLayout="row wrap">
+		<mat-form-field fxFlexFill class="field">
+			<mat-label>Ingresa Presupuesto RRHH</mat-label>
+			<mat-icon matSuffix>attach_money</mat-icon>
+			<input
+				type="text"
+				[value]="budgetHR"
+				(blur)="formatCurrency_TaxableValueRRHH($event)"
+				matInput
+				placeholder="Presupuesto"
+				formControlName="budgetHumanResources" />
+		</mat-form-field>
+		<mat-form-field fxFlexFill class="field">
+			<mat-label>Ingresa Presupuesto Proveedores</mat-label>
+			<input
+				type="text"
+				[value]="budgetProviders"
+				(blur)="formatCurrency_TaxableValueProviders($event)"
+				matInput
+				placeholder="Presupuesto"
+				formControlName="budgetProviders" />
+			<mat-icon matSuffix>attach_money</mat-icon>
+		</mat-form-field>
+		<mat-form-field fxFlexFill class="field">
+			<mat-label>Presupuesto total</mat-label>
+			<input
+				[disabled]="inputState"
+				type="text"
+				[value]="generalBudget"
+				matInput
+				placeholder="Presupuesto"
+				formControlName="budget" />
+			<mat-icon matSuffix>attach_money</mat-icon>
+		</mat-form-field>
+		<mat-form-field fxFlexFill class="field">
+			<mat-label>Agregar Ingeniero</mat-label>
+			<mat-icon matSuffix>supervised_user_circle</mat-icon>
+			<mat-select multiple disableOptionCentering formControlName="operatorsList">
+				<mat-option
+					[value]="operator.IdSupportOPerators"
+					*ngFor="let operator of operators">
+					{{ operator.Name }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<mat-form-field fxFlexFill class="field">
+			<mat-label>Seleccionar divisa</mat-label>
+			<mat-select formControlName="currencyList">
+				<mat-option [value]="currency.IdCurrency" *ngFor="let currency of currencies">
+					{{ currency.CurrencyCode }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</mat-card>
+</form>
+
+<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+	<button
+		mat-flat-button
+		class="btn-cancel"
+		(click)="closeDialog()"
+		*ngIf="this.flagControl">
+		Cancelar
+	</button>
+	<button
+		mat-flat-button
+		class="btn-accept"
+		(click)="onSubmit()"
+		[disabled]="formAddBudget.invalid"
+		*ngIf="this.flagControl">
+		Aceptar
+	</button>
+	<button
+		mat-flat-button
+		class="btn-accept"
+		(click)="closeDialog()"
+		*ngIf="!this.flagControl">
+		Cerrar
+	</button>
+</mat-card>

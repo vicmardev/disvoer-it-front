@@ -1,0 +1,13 @@
+<div fxLayoutAlign="center center" fxLayout="column">
+	<h1 mat-dialog-title>
+		<i class="fas fa-exclamation-triangle"></i>
+		¿Seguro que deseas eliminar esta cotización?
+	</h1>
+	<div fxLayoutAlign="center center" mat-dialog-content>
+		<h3>Esta acción es permanente y no puede deshacerse.</h3>
+	</div>
+	<div fxLayoutAlign="center center" mat-dialog-actions>
+		<button (click)="closeDialog()" color="warn" mat-raised-button>Cancelar</button>
+		<button (click)="deleteQuote()" class="btn-cancel" mat-raised-button>Eliminar</button>
+	</div>
+</div>

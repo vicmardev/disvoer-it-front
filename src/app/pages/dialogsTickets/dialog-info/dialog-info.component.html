@@ -1,0 +1,121 @@
+<form class="new-person-form" [formGroup]="ticketResponse">
+  <div>
+      <h1 class="title">
+          <strong>
+              <i class="fas fa-ticket-alt ticket"></i> Ticket {{ticketName}}: <strong class="black">
+                  {{data.info.Serial}}</strong>
+          </strong>
+      </h1>
+      <br>
+  </div>
+  <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+      <mat-form-field fxFlex="50">
+          <mat-label>Equipo:</mat-label>
+          <input matInput placeholder="No Contrato" formControlName="equipment" class="disabled" readonly>
+      </mat-form-field>
+      <mat-form-field fxFlex="50">
+          <mat-label>Modelo:</mat-label>
+          <input matInput placeholder="Modelo" formControlName="model" class="disabled" readonly>
+      </mat-form-field>
+  </mat-card>
+  <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px" class="disabled" readonly>
+      <mat-form-field fxFlex="100">
+          <mat-label>Titulo o tema de afectación:</mat-label>
+          <input matInput placeholder="Modelo" formControlName="title" class="disabled" readonly>
+      </mat-form-field>
+  </mat-card>
+  <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px" class="disabled" readonly>
+      <mat-form-field fxFlex="100">
+          <mat-label>Nombre del solictante:</mat-label>
+          <input matInput placeholder="Modelo" formControlName="userName" class="disabled" readonly>
+      </mat-form-field>
+  </mat-card>
+  <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px" class="disabled" readonly>
+      <mat-form-field fxFlex="100">
+          <mat-label>Correo:</mat-label>
+          <input matInput placeholder="Modelo" formControlName="email" class="disabled" readonly>
+      </mat-form-field>
+  </mat-card>
+  <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+      <mat-form-field fxFlexFill appearance="fill">
+          <mat-label>Descripción de afectación</mat-label>
+          <textarea matInput placeholder="Dirección" cdkAutosizeMinRows="10" formControlName="description"
+              cdkAutosizeMaxRows="10" cols="10" rows="" class="disabled" readonly></textarea>
+      </mat-form-field>
+  </mat-card>
+  <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+      <mat-form-field appearance="fill" fxFlex="50">
+          <mat-label>Severidad</mat-label>
+          <input matInput placeholder="Modelo" formControlName="severity" class="disabled" readonly>
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxFlex="50">
+          <mat-label>Clientes</mat-label>
+          <input matInput placeholder="Modelo" formControlName="client" class="disabled" readonly>
+
+      </mat-form-field>
+  </mat-card>
+  <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+      <mat-form-field appearance="fill" fxFlex="50">
+          <mat-label>Tipo de afectación</mat-label>
+          <input matInput placeholder="Modelo" formControlName="issueType" class="disabled" readonly>
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxFlex="50">
+          <mat-label>Asignar a:</mat-label>
+          <input matInput placeholder="Modelo" formControlName="assignedSupportOperator" class="disabled" readonly>
+      </mat-form-field>
+      <mat-form-field appearance="fill" fxFlex="50">
+        <mat-label>Estatus:</mat-label>
+        <input matInput placeholder="Modelo" formControlName="status" class="disabled" readonly>
+    </mat-form-field>
+  </mat-card>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field  appearance="fill" fxFlex="50">
+            <mat-label>Reasignado a:</mat-label>
+        <input matInput placeholder="EscalateTo" formControlName="reassignToOperator" class="disabled" readonly>
+        </mat-form-field>
+        <mat-form-field  appearance="fill" fxFlex="50">
+            <mat-label>Escalo a:</mat-label>
+        <input matInput placeholder="EscalateTo" formControlName="escalateToOperator" class="disabled" readonly>
+        </mat-form-field>
+    </mat-card>
+  <br>
+  <h1 class="title cRed"  >
+    <strong>
+        <i class="fas fa-clipboard-check"></i> Respuesta Soporte: <strong class="black"></strong>
+    </strong>
+</h1>
+<mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+    <mat-form-field appearance="fill" fxFlex="50">
+        <mat-label class="cRed">Fecha de Solución:</mat-label>
+        <input matInput placeholder="dateSolution" formControlName="responseDate" class="disabled" readonly>
+    </mat-form-field>
+</mat-card>
+
+
+<mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+    <mat-form-field fxFlexFill appearance="fill">
+        <mat-label class="cRed">Solucion de la afectación.</mat-label>
+        
+        <textarea matInput placeholder="Comentarios" cdkAutosizeMinRows="8" cdkAutosizeMaxRows="10" cols="10" rows="" class="disabled" readonly>
+            {{data.info.responseComments}} {{data.info.reassignToOperator}}
+        </textarea>
+   
+    </mat-form-field>    
+</mat-card>
+
+<mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+    <mat-form-field fxFlexFill appearance="fill">
+        <mat-label class="cRed">Descripción de escalación:</mat-label>
+        
+        <textarea matInput placeholder="Comentarios" cdkAutosizeMinRows="8" cdkAutosizeMaxRows="10" cols="10" rows="" class="disabled" readonly>
+            {{data.info.responseEscalateTo}} {{data.info.escalateToOperator}}
+        </textarea>
+   
+    </mat-form-field>    
+</mat-card>
+
+</form>
+
+<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+  <button mat-flat-button class="btn-accept" (click)="closeDialog()" >OK</button>
+</mat-card> 

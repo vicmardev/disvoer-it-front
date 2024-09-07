@@ -1,0 +1,93 @@
+<form class="new-person-form" [formGroup]="formCreatePart" >
+    <div>
+        <h1 class="title">
+            <strong>
+                <mat-icon>memory</mat-icon>
+                Agregar pieza
+            </strong>
+        </h1>
+    </div>
+    <mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+        <mat-form-field fxFlex="45" class="field" >
+            <mat-label>Tipo</mat-label>
+            <input matInput placeholder="Tarjeta" formControlName="type">
+        </mat-form-field>
+        <mat-form-field fxFlex="45" class="field">
+            <mat-label>Marca</mat-label>
+            <input matInput placeholder="HP" formControlName="brand">
+        </mat-form-field>
+    </mat-card>
+    <br>
+    <mat-card fxLayout="row" fxLayoutAlign="center center" class="mat-card" fxLayoutGap="15px">
+        <div class="cardpatern">
+            <div class="card">
+                <mat-form-field  class="field">
+                    <mat-label>Modelo</mat-label>
+                    <input matInput placeholder="Modelo" formControlName="model">
+                </mat-form-field>
+                <mat-form-field  class="field">
+                    <mat-label>Numero de serie</mat-label>
+                    <input matInput placeholder="988765" formControlName="serialNumber">
+                </mat-form-field>
+            </div>
+            <div class="card">
+                <mat-form-field  class="field">
+                    <mat-label>Numero de pieza</mat-label>
+                    <input matInput placeholder="12345" formControlName="partNumber">
+                </mat-form-field>
+                <mat-form-field  class="field">
+                    <mat-label>Capacidad</mat-label>
+                    <input matInput placeholder="1 GB" formControlName="capacity">
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-card>
+    <br>
+    <mat-card fxLayout="row" fxLayoutAlign="center center" class="mat-card" fxLayoutGap="15px">
+        <div class="cardpatern">
+            <div class="card">
+                <!--
+                <mat-form-field  class="field">
+                    <mat-label>Cantidad</mat-label>
+                    <input matInput placeholder="2" formControlName="quantity">
+                </mat-form-field>
+                -->
+                <mat-form-field  class="field">
+                    <mat-label>Contrato</mat-label>
+                    <input matInput placeholder="988765" formControlName="contract">
+                </mat-form-field>
+                <mat-form-field  class="field">
+                    <mat-label>Status</mat-label>
+                        <input matInput placeholder="1" formControlName="status" class="disabled" readonly>
+                </mat-form-field>
+            </div>
+            <div class="card">
+                <mat-form-field  class="field">
+                    <mat-label>Proveedor</mat-label>
+                    <mat-select formControlName="supplier">
+                        <mat-option *ngFor="let supplier of suppliersParts" [value]="supplier.value">
+                            {{supplier.value}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-card>
+    <br>
+    <mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+                <mat-form-field  fxFlexFill appearance="fill">
+                    <mat-label>Descripcion</mat-label>
+                    <br><br>
+                    <textarea matInput placeholder="Dirección" 
+                    cdkAutosizeMinRows="10" 
+                    formControlName="Address"
+                    cdkAutosizeMaxRows="10"
+                    cols="10" rows="1" formControlName="description"></textarea>
+                </mat-form-field>
+    </mat-card>
+</form>
+<br>
+<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+    <button mat-flat-button class="btn-accept" (click)="createPart()">Guardar</button>
+    <button mat-flat-button class="btn-cancel" (click)="closeDialog()">Cancelar</button>
+</mat-card>

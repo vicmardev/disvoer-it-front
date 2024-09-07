@@ -1,0 +1,125 @@
+<div class="title-bar">
+	<span>Agregar Proveedor</span>
+</div>
+<br />
+<form class="addProvider" [formGroup]="formAddProvider">
+	<div class="box1">
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>Nombre</mat-label>
+				<br />
+				<input placeholder="Nombre" formControlName="name" matInput />
+			</mat-form-field>
+		</p>
+
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>Nombre de Contacto</mat-label>
+				<br />
+				<input placeholder="Nombre de Contacto" formControlName="namecontact" matInput />
+			</mat-form-field>
+		</p>
+
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>Teléfono de Contacto</mat-label>
+				<br />
+				<input
+					placeholder="Teléfono de Contacto"
+					formControlName="phonecontact"
+					matInput
+					type="number" />
+			</mat-form-field>
+		</p>
+
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>Correo de Contacto</mat-label>
+				<br />
+				<input placeholder="Correo de Contacto" formControlName="emailcontact" matInput />
+			</mat-form-field>
+		</p>
+
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>Ciudad</mat-label>
+				<br />
+				<input placeholder="Ciudad" formControlName="city" matInput />
+			</mat-form-field>
+		</p>
+	</div>
+	<div class="box2">
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>País</mat-label>
+				<br />
+				<input placeholder="País" formControlName="country" matInput />
+			</mat-form-field>
+		</p>
+
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>Delegación</mat-label>
+				<br />
+				<input placeholder="Delegación" formControlName="delegation" matInput />
+			</mat-form-field>
+		</p>
+
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>Código Postal</mat-label>
+				<br />
+				<input
+					placeholder="Código Postal"
+					formControlName="postalcode"
+					matInput
+					type="number" />
+			</mat-form-field>
+		</p>
+
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>No. Interior</mat-label>
+				<br />
+				<input
+					placeholder="No. Interior"
+					formControlName="internalnumber"
+					matInput
+					type="number" />
+			</mat-form-field>
+		</p>
+
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>No. Exterior</mat-label>
+				<br />
+				<input
+					placeholder="No. Exterior"
+					formControlName="externalnumber"
+					matInput
+					type="number" />
+			</mat-form-field>
+		</p>
+	</div>
+	<div class="box3">
+		<p>
+			<mat-form-field class="comments" appearance="legacy">
+				<mat-label>Comentarios</mat-label>
+				<br />
+				<textarea
+					placeholder="Comentarios"
+					formControlName="comments"
+					matInput></textarea>
+			</mat-form-field>
+		</p>
+	</div>
+</form>
+
+<div class="box-buttons">
+	<button mat-flat-button class="btn-accept save-button" (click)="addProvider()">
+		Guardar
+	</button>
+	<button mat-flat-button class="btn-cancel cancel-button" (click)="closeDialog()">
+		Cancelar
+	</button>
+</div>

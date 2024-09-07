@@ -1,0 +1,27 @@
+#notB {
+  background-color: red;
+  color: white;
+}
+
+#saveB, #notB{
+    margin-left: 24px;
+    margin-right: 24px;
+    font-size: 105%;
+}
+
+.title {
+  color: #0099cc;
+}
+
+input, textarea {
+  padding-top: 10px;
+}
+
+textarea{
+    height: 43px;
+}
+
+mat-form-field{
+    width: 400px;
+}
+

@@ -1,0 +1,251 @@
+<br />
+<h3 class="center">
+	<!--     <span class="title coutTotal">Total de alarmas : {{totalAlarmCount}}</span>  -->
+</h3>
+<div
+	fxLayout="row"
+	fxLayoutGap="30px"
+	fxLayout.xs="column"
+	fxLayout.sm="column"
+	fxLayout.md="colum"
+	fxLayoutAlign="center">
+	<!-- OK alarm pie chart -->
+	<div
+		class="chartalarmOk child-1 cursor"
+		matTooltip="Mostrar alarmas ok"
+		*ngIf="chartOptionsOk">
+		<apx-chart
+			#alarmOk
+			[series]="chartOptionsOk.series"
+			[chart]="chartOptionsOk.chart"
+			[xaxis]="chartOptionsOk.xaxis"
+			[labels]="chartOptionsOk.labels"
+			[colors]="chartOptionsOk.colors"
+			[title]="chartOptionsOk.title"
+			(click)="makeTableAlert('ok')"></apx-chart>
+	</div>
+
+	<!-- Warning alarm pie chart -->
+	<div
+		class="alarmWarning child-2 cursor"
+		matTooltip="Mostrar alarmas warning"
+		*ngIf="chartOptionsWarning">
+		<apx-chart
+			#alarmWarning
+			[series]="chartOptionsWarning.series"
+			[chart]="chartOptionsWarning.chart"
+			[xaxis]="chartOptionsWarning.xaxis"
+			[labels]="chartOptionsWarning.labels"
+			[colors]="chartOptionsWarning.colors"
+			[title]="chartOptionsWarning.title"
+			(click)="makeTableAlert('warning')"></apx-chart>
+	</div>
+	<!-- Critical alarm pie chart -->
+	<div
+		class="alarmDanger child-3 cursor"
+		matTooltip="Mostrar alarmas critical"
+		*ngIf="chartOptionsDanger">
+		<apx-chart
+			#alarmDanger
+			[series]="chartOptionsDanger.series"
+			[chart]="chartOptionsDanger.chart"
+			[xaxis]="chartOptionsDanger.xaxis"
+			[labels]="chartOptionsDanger.labels"
+			[colors]="chartOptionsDanger.colors"
+			[title]="chartOptionsDanger.title"
+			(click)="makeTableAlert('critical')"></apx-chart>
+	</div>
+	<!-- All alarms pie chart -->
+	<div
+		id="all-alarms-chart"
+		class="alarmTotal child-4 cursor"
+		matTooltip="Mostrar todas las alarmas"
+		*ngIf="chartOptionsTotal">
+		<apx-chart
+			#alarmTotal
+			[series]="chartOptionsTotal.series"
+			[chart]="chartOptionsTotal.chart"
+			[xaxis]="chartOptionsTotal.xaxis"
+			[labels]="chartOptionsTotal.labels"
+			[colors]="chartOptionsTotal.colors"
+			[title]="chartOptionsTotal.title"
+			(click)="makeTableAlert('')"
+			[stroke]="chartOptionsTotal.stroke"></apx-chart>
+	</div>
+</div>
+<div fxLayout="row" fxLayoutAlign="space-between center">
+	<h3
+		[ngClass]="{
+			alarmOk: titleTable === 'Alertas Correctas',
+			alarmWaning: titleTable === 'Alertas Advetencia',
+			alarmDanger: titleTable === 'Alertas Peligrosas',
+			alrmOk: titleTable === 'Todas las alertas'
+		}">
+		<i class="fas fa-bell"></i>
+		{{ titleTable }}
+		<br />
+		<i
+			class="fas fa-sync cursor"
+			(click)="getServiceAlarms(); updateAlarmCount(); getAllAlarms()"></i>
+		Última Actualización: {{ lastUpdate }}
+		<br />
+		<i class="fas fa-clock"></i>
+		Tiempo para actualizar
+		<span>{{ seconds }}</span>
+		seg.
+	</h3>
+	<div class="header">
+		<button
+			class="filter-button"
+			mat-fab
+			matTooltip="Quitar filtros"
+			[ngClass]="!filterApplied ? 'filter-disabled' : 'filter-enabled'"
+			(click)="clearFilters()"
+			[disabled]="!filterApplied"></button>
+	</div>
+</div>
+<div *ngIf="flagAlarm">
+	<table mat-table [dataSource]="dataAlarms" class="mat-elevation-z8">
+		<ng-container matColumnDef="Attemps">
+			<th class="cell-size-small" mat-header-cell *matHeaderCellDef>Clear alert</th>
+			<td
+				class="cell-size-small"
+				mat-cell
+				*matCellDef="let element"
+				(click)="clearAlarm(element)">
+				<i class="fas fa-exchange-alt btnClear"></i>
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="Duration">
+			<th class="cell-size" mat-header-cell *matHeaderCellDef>Duracion de alarma</th>
+			<td class="cell-size" mat-cell *matCellDef="let element">
+				{{ element.Duration }}
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="Created">
+			<th class="cell-size" mat-header-cell *matHeaderCellDef>Fecha de Creación</th>
+			<td class="cell-size" mat-cell *matCellDef="let element">
+				{{ element.Created | date: 'shortDate' }}
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="Hostname">
+			<th class="cell-size" mat-header-cell *matHeaderCellDef>
+				<mat-label>Host</mat-label>
+				<mat-select
+					class="alias-header"
+					placeholder="Hosts"
+					(selectionChange)="filterSelects($event, alarmFilters?.hosts)"
+					[(ngModel)]="selectors.hosts">
+					<mat-option *ngFor="let op of alarmFilters?.hosts.values" [value]="op.value">
+						{{ op.viewValue }}
+					</mat-option>
+				</mat-select>
+			</th>
+			<td class="cell-size" mat-cell *matCellDef="let element">
+				{{ element.Hostname }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="Notification">
+			<th class="cell-size" mat-header-cell *matHeaderCellDef>Notificación</th>
+			<td class="cell-size" mat-cell *matCellDef="let element">
+				{{ element.Notification }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="PluginOutput">
+			<th class="cell-size" mat-header-cell *matHeaderCellDef>Respuesta NAGIOS</th>
+			<td class="cell-size" mat-cell *matCellDef="let element">
+				{{ element.PluginOutput }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="ServiceName">
+			<th class="cell-size" mat-header-cell *matHeaderCellDef>
+				<mat-label>Componente</mat-label>
+				<mat-select
+					class="alias-header"
+					placeholder="Componente"
+					[(ngModel)]="selectors.components"
+					(selectionChange)="filterSelects($event, alarmFilters?.components)">
+					<mat-option
+						*ngFor="let op of alarmFilters?.components.values"
+						[value]="op.value">
+						{{ op.viewValue }}
+					</mat-option>
+				</mat-select>
+			</th>
+			<td class="cell-size" mat-cell *matCellDef="let element">
+				{{ element.ServiceName }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="Status">
+			<th class="cell-size-small" mat-header-cell *matHeaderCellDef>
+				<mat-label>Estatus</mat-label>
+				<mat-select
+					class="alias-header"
+					placeholder="Status"
+					[(ngModel)]="selectors.status"
+					(selectionChange)="filterSelects($event, alarmFilters?.status)">
+					<mat-option *ngFor="let op of alarmFilters?.status.values" [value]="op.value">
+						{{ op.viewValue }}
+					</mat-option>
+				</mat-select>
+			</th>
+			<td
+				class="cell-size-small"
+				mat-cell
+				*matCellDef="let element"
+				[ngClass]="{
+					green: element.Status === 'ok',
+					orange: element.Status === 'warning',
+					red: element.Status === 'critical',
+					gray: element.Status === 'unknown'
+				}">
+				{{ element.Status }}
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="Service">
+			<th class="cell-size-small" mat-header-cell *matHeaderCellDef>Acciones</th>
+			<td class="cell-size-small" mat-cell *matCellDef="let element">
+				<button
+					mat-icon-button
+					[matMenuTriggerFor]="menu"
+					aria-label="Example icon-button with a menu"
+					(click)="highLightOn = true; selectedRow = element._id">
+					<mat-icon>more_vert</mat-icon>
+				</button>
+				<mat-menu #menu="matMenu">
+					<button mat-menu-item (click)="openDialogTicket(element)">
+						<img
+							src="https://cdn3.iconfinder.com/data/icons/approved-and-checked/85/approved_tick_ticket_letter_checked_accepted-256.png"
+							width="35px" />
+						<span>Crear Ticket</span>
+					</button>
+					<button mat-menu-item>
+						<a href="http://discoverit.virwo.com/dash/know" target="_blank" class="link">
+							<mat-icon>library_books</mat-icon>
+							<span>Documentacion</span>
+						</a>
+					</button>
+					<button mat-menu-item (click)="goTickets()">
+						<mat-icon>remove_red_eye</mat-icon>
+						<span>Ver Tickets</span>
+					</button>
+				</mat-menu>
+			</td>
+		</ng-container>
+
+		<tr mat-header-row *matHeaderRowDef="displayAlarmColumns"></tr>
+		<tr mat-row *matRowDef="let row; columns: displayAlarmColumns"></tr>
+	</table>
+	<mat-paginator
+		[pageSizeOptions]="[10, 50, 100]"
+		showFirstLastButtons
+		aria-label="Select page of periodic elements"></mat-paginator>
+</div>
+<div class="table-footer"></div>
+
+<!--
+      [ngClass]="{'blueHeaders':flagTotal  === true,'green': typeFilterAlarm ==='ok','orange':typeFilterAlarm === 'warning', 'red':typeFilterAlarm === 'critical'}"
+   -->

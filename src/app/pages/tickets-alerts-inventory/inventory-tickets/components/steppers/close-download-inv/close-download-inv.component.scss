@@ -1,0 +1,16 @@
+.info{
+    font-size: 20px;
+    color: cornflowerblue;
+    text-align: center;
+}
+
+.download-button{
+    margin-left: 48%;
+    width: 54px;
+    transition: transform .2s;
+    cursor: -webkit-grab; cursor: pointer;
+}
+
+.download-button:hover{
+    transform: scale(1.3);
+}

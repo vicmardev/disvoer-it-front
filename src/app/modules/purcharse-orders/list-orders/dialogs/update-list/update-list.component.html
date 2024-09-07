@@ -1,0 +1,47 @@
+<div class="patern">
+	<div class="child">
+		<h2 class="instructions">Historial de comentarios</h2>
+		<div class="table">
+			<table
+				mat-table
+				[dataSource]="dataSource"
+				class="mat-elevation-z8 table-data"
+				multiTemplateDataRows>
+				<ng-container matColumnDef="Status">
+					<th *matHeaderCellDef class="header-table">Estatus</th>
+					<td *matCellDef="let element" class="content-table">
+						{{ element.Status }}
+					</td>
+				</ng-container>
+				<ng-container matColumnDef="Comments">
+					<th *matHeaderCellDef class="header-table">Comentarios</th>
+					<td *matCellDef="let element" class="content-table">
+						{{ element.Comments }}
+					</td>
+				</ng-container>
+				<ng-container matColumnDef="User">
+					<th *matHeaderCellDef class="header-table">Usuario</th>
+					<td *matCellDef="let element" class="content-table">
+						{{ element.User }}
+					</td>
+				</ng-container>
+				<ng-container matColumnDef="Date">
+					<th *matHeaderCellDef class="header-table">Fecha de actualizacion</th>
+					<td *matCellDef="let element" class="content-table">
+						{{ element.Date | date: 'shortDate' }}
+					</td>
+				</ng-container>
+				<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+				<tr
+					mat-row
+					*matRowDef="let row; columns: displayedColumns"
+					class="example-element-row"></tr>
+			</table>
+			<mat-paginator
+				[pageSizeOptions]="[14, 20, 50]"
+				showFirstLastButtons
+				aria-label="paginator"
+				class="table-data"></mat-paginator>
+		</div>
+	</div>
+</div>

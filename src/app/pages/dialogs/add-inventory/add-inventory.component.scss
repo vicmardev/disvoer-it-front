@@ -1,0 +1,81 @@
+.title{
+  text-align: center;
+  color:#0996c4;
+  font-weight: 500;
+}
+
+.subtitle{
+  text-align: center;
+  color:#0996c4;
+}
+
+input{
+  color:#325f96;
+  font-size: 13px;
+  padding-top: 8px;
+}
+textarea{
+  color:#325f96;
+  font-size: 15px;
+  padding-top: 25px;
+}
+mat-label{
+  font-size: 15px;
+  color:#0c86e6 !important;
+}
+.field{
+  font-size: 13px;
+  width: 23%;
+}
+
+.field2{
+  font-size: 13px;
+  width: 47%;
+}
+
+.field3{
+  font-size: 13px;
+  width: 31%;
+}
+
+
+.paterntest{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form1{
+  display: flex;
+  justify-content: space-between;
+}
+
+.form2{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.form3{
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+}
+
+.form{
+  width: 98%;
+  display: flex;
+  justify-content: center;
+}
+
+.container{
+  width: 95%;
+}
+mat-card{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.error-field{
+  color: #E96882;
+}

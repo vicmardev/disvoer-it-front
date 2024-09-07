@@ -1,0 +1,263 @@
+<div class="container">
+	<div class="containerform-1">
+		<div class="redisigned-1">
+			<a href="../assets/docs/Plantilla_contratos.xlsx" download>
+				<button class="actionButton" mat-fab color="success" matTooltip="Plantilla excel">
+					<i class="fas fa-file-download icons action-icon"></i>
+				</button>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="containerform">
+		<br />
+		<div class="header">
+			<h2 class="instructions">
+				Llenar todos los campos solicitados, para crear un nuevo contrato.
+			</h2>
+		</div>
+		<form
+			class="new-peson-form"
+			[formGroup]="generateform"
+			(ngSubmit)="generateContractZip()"
+			(keydown.enter)="$event.preventDefault()">
+			<div class="redisigned">
+				<h4 class="subtitle">Datos generales del contrato</h4>
+				<div class="firstpart">
+					<div class="generalone">
+						<mat-form-field class="field-4">
+							<mat-label>Numero de orden</mat-label>
+							<input
+								formControlName="NumOrder"
+								matInput
+								type="number"
+								(change)="validateOrder()" />
+							<mat-error class="error-field">
+								Campo obligatorio, favor de llenarlo
+							</mat-error>
+						</mat-form-field>
+						<mat-form-field class="field-4">
+							<mat-label>Fecha del contrato</mat-label>
+							<input
+								matInput
+								[matDatepicker]="createdAt"
+								formControlName="createdAt"
+								/>
+								<mat-datepicker-toggle
+								matSuffix
+								[for]="createdAt"></mat-datepicker-toggle>
+							<mat-datepicker #createdAt ></mat-datepicker>
+							<mat-error class="error-field">
+								Campo obligatorio, favor de llenarlo
+							</mat-error>
+						</mat-form-field>
+						<mat-form-field class="field-4">
+							<mat-select
+								class="selected"
+								placeholder="Cliente"
+								matInput
+								formControlName="IdClient"
+								required>
+								<mat-option *ngFor="let client of clientsList" [value]="client.IdClient">
+									{{ client.Name }}
+								</mat-option>
+							</mat-select>
+							<mat-error class="error-field">
+								Campo obligatorio, favor de llenarlo
+							</mat-error>
+						</mat-form-field>
+					</div>
+					<div class="generalone">
+						<mat-form-field class="field-4">
+							<mat-label>Inicio del contrato</mat-label>
+							<input
+								matInput
+								[matDatepicker]="StartContract"
+								formControlName="StartContract" />
+							<mat-datepicker-toggle
+								matSuffix
+								[for]="StartContract"></mat-datepicker-toggle>
+							<mat-datepicker #StartContract></mat-datepicker>
+							<mat-error class="error-field">
+								Campo obligatorio, favor de llenarlo
+							</mat-error>
+						</mat-form-field>
+						<mat-form-field class="field-4">
+							<mat-label>Fin del contrato</mat-label>
+							<input
+								matInput
+								[matDatepicker]="EndContract"
+								formControlName="EndContract"
+								[min]="todayDate" />
+							<mat-datepicker-toggle
+								matSuffix
+								[for]="EndContract"></mat-datepicker-toggle>
+							<mat-datepicker #EndContract></mat-datepicker>
+							<mat-error class="error-field">
+								Campo obligatorio, favor de llenarlo
+							</mat-error>
+						</mat-form-field>
+						<div class="field-4"></div>
+					</div>
+					<br />
+					<div class="generalone">
+						<mat-radio-group
+							aria-label="Selecciona una opcion "
+							formControlName="layout"
+							class="field-4">
+							<mat-radio-button [value]="1">Alpha Networks</mat-radio-button>
+							<br />
+							<br />
+							<mat-radio-button [value]="2">Virwo</mat-radio-button>
+						</mat-radio-group>
+					</div>
+				</div>
+				<br />
+				<!--File Upload-->
+				<div class="thirdpart">
+					<div class="data-file">
+						<div class="child" appDnd (fileDropped)="onFileDropped($event)">
+							<input
+								type="file"
+								#file
+								id="file"
+								(change)="fileUpload($event)"
+								accept=".xlsx"
+								formControlName="file" />
+							<h3 class="legend">Arrastra y suelta el archivo aqui o busca el archivo</h3>
+							<img
+								src="https://cdn0.iconfinder.com/data/icons/common-file-extensions-audio-documents/24/ext_xlsx-64.png"
+								alt="" />
+						</div>
+						<br />
+						<div class="info" *ngIf="flag">
+							<h3 class="nameFile">
+								{{ fileName }}
+							</h3>
+						</div>
+					</div>
+					<div class="files-list">
+						<div class="single-file" *ngFor="let file of files; let i = index">
+							<div class="file-icon" style="width: 50px">
+								<svg
+									version="1.1"
+									id="Capa_1"
+									xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink"
+									x="0px"
+									y="0px"
+									viewBox="0 0 58 58"
+									style="enable-background: new 0 0 58 58"
+									xml:space="preserve">
+									<polygon
+										style="fill: #edeada"
+										points="51.5,14 37.5,0 6.5,0 6.5,58 51.5,58 " />
+									<g>
+										<path
+											style="fill: #cec9ae"
+											d="M16.5,23h25c0.552,0,1-0.447,1-1s-0.448-1-1-1h-25c-0.552,0-1,0.447-1,1S15.948,23,16.5,23z" />
+										<path
+											style="fill: #cec9ae"
+											d="M16.5,15h10c0.552,0,1-0.447,1-1s-0.448-1-1-1h-10c-0.552,0-1,0.447-1,1S15.948,15,16.5,15z" />
+										<path
+											style="fill: #cec9ae"
+											d="M41.5,29h-25c-0.552,0-1,0.447-1,1s0.448,1,1,1h25c0.552,0,1-0.447,1-1S42.052,29,41.5,29z" />
+										<path
+											style="fill: #cec9ae"
+											d="M41.5,37h-25c-0.552,0-1,0.447-1,1s0.448,1,1,1h25c0.552,0,1-0.447,1-1S42.052,37,41.5,37z" />
+										<path
+											style="fill: #cec9ae"
+											d="M41.5,45h-25c-0.552,0-1,0.447-1,1s0.448,1,1,1h25c0.552,0,1-0.447,1-1S42.052,45,41.5,45z" />
+									</g>
+									<polygon style="fill: #cec9ae" points="37.5,0 37.5,14 51.5,14 " />
+								</svg>
+							</div>
+							<div class="info">
+								<h4 class="name">
+									{{ file?.name }}
+								</h4>
+								<p class="size">
+									{{ formatBytes(file?.size) }}
+								</p>
+								<app-progress [progress]="file?.progress"></app-progress>
+							</div>
+							<div class="delete" (click)="deleteFile(i)">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="14"
+									height="18"
+									viewBox="0 0 14 18">
+									<path
+										fill="#B1B1B1"
+										fill-rule="nonzero"
+										d="M1 16c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v10zm3.17-7.83a.996.996 0 0 1 1.41 0L7 9.59l1.42-1.42a.996.996 0 1 1 1.41 1.41L8.41 11l1.42 1.42a.996.996 0 1 1-1.41 1.41L7 12.41l-1.42 1.42a.996.996 0 1 1-1.41-1.41L5.59 11 4.17 9.58a.996.996 0 0 1 0-1.41zM10.5 1L9.79.29C9.61.11 9.35 0 9.09 0H4.91c-.26 0-.52.11-.7.29L3.5 1H1c-.55 0-1 .45-1 1s.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1h-2.5z" />
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Table and save-->
+			<div class="fourthpart">
+				<div class="table" *ngIf="isShow">
+					<table mat-table [dataSource]="dataTable" class="mat-elevation-z8">
+						<ng-container matColumnDef="Serial">
+							<th mat-header-cell *matHeaderCellDef class="header-table">Serial</th>
+							<td mat-cell *matCellDef="let element" class="content-table">
+								{{ element.Serial }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="SerialProvider">
+							<th mat-header-cell *matHeaderCellDef class="header-table">Serial Pro.</th>
+							<td mat-cell *matCellDef="let element" class="content-table">
+								{{ element.SerialProvider }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="Brand">
+							<th mat-header-cell *matHeaderCellDef class="header-table">Marca</th>
+							<td mat-cell *matCellDef="let element" class="content-table">
+								{{ element.Brand }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="Equipment">
+							<th mat-header-cell *matHeaderCellDef class="header-table">Equipo</th>
+							<td mat-cell *matCellDef="let element" class="content-table">
+								{{ element.Equipment }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="Model">
+							<th mat-header-cell *matHeaderCellDef class="header-table">Modelo</th>
+							<td mat-cell *matCellDef="let element" class="content-table">
+								{{ element.Model }}
+							</td>
+						</ng-container>
+						<ng-container matColumnDef="Sla">
+							<th mat-header-cell *matHeaderCellDef class="header-table">SLA</th>
+							<td mat-cell *matCellDef="let element" class="content-table">
+								{{ element.Sla }}
+							</td>
+						</ng-container>
+
+						<tr mat-header-row *matHeaderRowDef="displayeColumns"></tr>
+						<tr mat-row *matRowDef="let row; columns: displayeColumns"></tr>
+					</table>
+				</div>
+				<br />
+				<div>
+					<button
+						type="submit"
+						id="buttonProfile"
+						mat-raised-button
+						class="btn-block"
+						[disabled]="generateform.invalid">
+						Generar contrato
+					</button>
+				</div>
+			</div>
+		</form>
+		<br />
+		<br />
+		<br />
+	</div>
+</div>

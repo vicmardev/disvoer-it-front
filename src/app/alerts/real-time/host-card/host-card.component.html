@@ -1,0 +1,189 @@
+<!-- <mat-card class="card">
+	<mat-card-header>
+		<div mat-card-avatar class="img" *ngIf="showHostImage(); else noImage">
+			<img class="img" src="{{ hostImage }}" />
+			<img
+				class="img"
+				src="https://www.televes.com/media/catalog/product/cache/image/1000x1240/e9c3970ab036de70892d86c6d221abfe/i/p/ipr01210022_2_78364.png"
+				alt="imagen del equipo {{ host.Hostname }}" />
+		</div>
+
+		<ng-template #noImage>
+			<div mat-card-avatar class="badge">
+				<i class="{{ testIcon }} {{ host.statusCode }}"></i>
+			</div>
+		</ng-template>
+
+		<mat-card-title class="container">
+			<i
+				class="fas fa-circle {{ host.statusCode }} right-padding"
+				*ngIf="showHostImage()"></i>
+			{{ host.Hostname }}
+		</mat-card-title>
+
+		<mat-card-subtitle>{{ host.SerialNumber }}</mat-card-subtitle>
+		<div>
+			<div class="title-container" *ngIf="services">
+				<div>{{ services.length }} Servicios</div>
+			</div>
+		</div>
+	</mat-card-header>
+	<div class="container">
+		<button mat-button class="ok badge" (click)="filter('ok')">
+			OK: {{ alarmCount.ok }}
+		</button>
+		<button mat-button class="warning badge" (click)="filter('warning')">
+			WARNING: {{ alarmCount.warning }}
+		</button>
+		<button mat-button class="critical badge" (click)="filter('critical')">
+			CRITICAL: {{ alarmCount.critical + alarmCount.unknown }}
+		</button>
+		<button mat-button class="badge" (click)="filter('total')">
+			TOTAL: {{ services ? services.length : 0 }}
+		</button>
+
+		<button
+			mat-icon-button
+			[matMenuTriggerFor]="menu"
+			aria-label="Example icon-button with a menu">
+			<mat-icon>more_vert</mat-icon>
+		</button>
+		<mat-menu #menu="matMenu">
+			<button mat-menu-item (click)="openDialog()">
+				<mat-icon>photo</mat-icon>
+				<span>Editar Imagen</span>
+			</button>
+		</mat-menu>
+	</div>
+	<mat-card-content class="container-table">
+		<div *ngIf="filteredServices" else loadingData>
+			<service-table
+				[services]="filteredServices"
+				(changeOKCountEvent)="clearAlarm($event)"></service-table>
+		</div>
+		<ng-template #loadingData>
+			<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+		</ng-template>
+	</mat-card-content>
+</mat-card> -->
+
+<mat-card class="container">
+	<mat-card-header>
+		<div mat-card-avatar class="img" *ngIf="showHostImage(); else noImage">
+			<img class="img" src="{{ hostImage }}" />
+			<!-- <img
+				class="img"
+				src="../../../../assets/img/ipr01210022_2_78364 (1).png"
+				alt="imagen del equipo {{ host.Hostname }}" /> -->
+		</div>
+
+		<ng-template #noImage>
+			<div mat-card-avatar class="img">
+				<!-- <i class="{{ testIcon }} {{ host.statusCode }}"></i> -->
+				<img
+					class="img outline"
+					src="../../../../assets/img/out.png"
+					alt="equipo fuera de linea" />
+			</div>
+			<mat-card-subtitle>
+				<i class="fas fa-times"></i>
+				Equipo fuera de línea
+			</mat-card-subtitle>
+		</ng-template>
+
+		<mat-card-title>
+			<!-- <i
+				class="fas fa-circle {{ host.statusCode }} right-padding"
+				*ngIf="showHostImage()"></i>
+			{{ host.Hostname }}
+			<button
+				mat-icon-button
+				[matMenuTriggerFor]="menu"
+				aria-label="Example icon-button with a menu">
+				<mat-icon>more_vert</mat-icon>
+			</button>
+			<mat-menu #menu="matMenu">
+				<button mat-menu-item (click)="openDialog()">
+					<mat-icon>photo</mat-icon>
+					<span>Editar Imagen</span>
+				</button>
+			</mat-menu> -->
+
+			<table>
+				<tr>
+					<td>
+						<i
+							class="fas fa-circle {{ host.statusCode }} right-padding"
+							*ngIf="showHostImage()"
+							matTooltip="En línea"></i>
+					</td>
+					<td>
+						{{ host.Hostname }}
+					</td>
+					<td>
+						<button
+							mat-icon-button
+							[matMenuTriggerFor]="menu"
+							aria-label="Example icon-button with a menu">
+							<mat-icon>more_vert</mat-icon>
+						</button>
+						<mat-menu #menu="matMenu">
+							<button mat-menu-item (click)="openDialog()">
+								<mat-icon>photo</mat-icon>
+								<span>Editar Imagen</span>
+							</button>
+						</mat-menu>
+					</td>
+				</tr>
+			</table>
+		</mat-card-title>
+
+		<mat-card-subtitle>Número serial: {{ host.SerialNumber }}</mat-card-subtitle>
+		<!-- <div>
+			<div class="title-container" *ngIf="services">
+				<div>{{ services.length }} Servicios</div>
+			</div>
+		</div> -->
+	</mat-card-header>
+	<div class="container-filters">
+		<button mat-button class="ok badge" (click)="filter('ok')">
+			<i class="fas fa-check-circle"></i>
+			Ok: {{ alarmCount.ok }}
+		</button>
+		<button mat-button class="warning badge" (click)="filter('warning')">
+			<i class="fas fa-exclamation-triangle"></i>
+			Warning: {{ alarmCount.warning }}
+		</button>
+		<button mat-button class="critical badge" (click)="filter('critical')">
+			<i class="fas fa-times-circle"></i>
+			Critical: {{ alarmCount.critical + alarmCount.unknown }}
+		</button>
+		<button mat-button class="badge" (click)="filter('total')">
+			<i class="fas fa-server"></i>
+			Total: {{ services ? services.length : 0 }}
+		</button>
+
+		<!-- <button
+			mat-icon-button
+			[matMenuTriggerFor]="menu"
+			aria-label="Example icon-button with a menu">
+			<mat-icon>more_vert</mat-icon>
+		</button>
+		<mat-menu #menu="matMenu">
+			<button mat-menu-item (click)="openDialog()">
+				<mat-icon>photo</mat-icon>
+				<span>Editar Imagen</span>
+			</button>
+		</mat-menu> -->
+	</div>
+	<mat-card-content class="container-table">
+		<div *ngIf="filteredServices" else loadingData>
+			<service-table
+				[services]="filteredServices"
+				(changeOKCountEvent)="clearAlarm($event)"></service-table>
+		</div>
+		<ng-template #loadingData>
+			<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+		</ng-template>
+	</mat-card-content>
+</mat-card>

@@ -1,0 +1,164 @@
+.title {
+    text-align: center;
+    color: #0f4282;
+    font-size: 32px;
+  }
+  /* estilos  de  arbol */
+  .example-tree-invisible {
+    display: none;
+  }
+  
+  .example-tree ul,
+  .example-tree li {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+  }
+  .example-tree-node {
+    display: block;
+  }
+  
+  .example-tree-node .example-tree-node {
+    padding-left: 40px;
+  }
+  .childList {
+    /* color: #fb3006; */
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .folder {
+    /* color: #dede3e; */
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .spanName {
+    margin-left: 6px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .spanPdf {
+    /* color: #d51818f7; */
+    margin-left: 6px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  /* progres  bar  */
+  ::ng-deep .mat-progress-bar-fill::after {
+    background-color: #0c4464 !important;
+  }
+  
+  ::ng-deep .mat-progress-bar-buffer {
+    /* background: #E4E8EB !important; */
+  
+   /*  background: rgb(194,0,0);
+    background: linear-gradient(90deg, 
+    rgba(194,0,0,1) 0%, 
+    rgba(255,255,255,1) 50%, 
+    rgba(0,153,204,1) 100%); */
+  
+    background: rgb(191,0,0);
+    background: linear-gradient(90deg, rgba(191,0,0,1) 0%, rgba(180,180,180,1) 50%, rgba(0,153,204,1) 100%);
+   
+  }
+  
+  ::ng-deep .mat-progress-bar {
+    border-radius: 5px !important;
+  }
+  .audio-progress-bar {
+    height: 8px;
+  }
+  .btnEdit {
+    margin: 7px;
+    background-color: #ff8a65;
+  }
+  .btnDelete {
+    margin: 7px;
+    background-color: #f0466b;
+  }
+  
+  .button-add {
+    margin: 7px;
+  }
+  
+  .percentage {
+    width: 4em;
+    margin-left: 10px;
+  }
+  
+  .progress-bar-text {
+    position: absolute;
+    /* color: #0833a2; */
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    font-size: 30px;
+    z-index: 10;
+   /*  text-shadow: 1px 0 0 rgba(0, 0, 0, 0.24), 0 -1px 0 rgba(0, 0, 0, 0.24),
+      0 1px 0 rgba(0, 0, 0, 0.192), -1px 0 0 rgba(0, 0, 0, 0.24); */
+  }
+  
+  .progress .mat-progress-bar-fill::after {
+    background-color:  #0833A2 !important;
+  }
+  
+  .gloss{
+    width: 79%;
+    height: 30px;
+   /*  background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0.7511379551820728) 24%, rgba(255,255,255,0.25253851540616246) 56%, rgba(255,255,255,0) 85%); */
+  
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0.5914740896358543) 0%, rgba(255,255,255,0.4990371148459384) 37%, rgba(255,255,255,0) 86%);
+  position: absolute;
+    border-radius: 5px;
+  }
+  @media (max-width: 768px) {
+    .pdf{
+      width: 700px;
+      height: 700px;
+    }
+  }
+  
+  @media (max-width: 959px) and (min-width: 769px) {
+    .pdf{
+      width: 800px;
+      height: 800px;
+    }
+  }
+  
+  @media (max-width: 992px) and (min-width: 960px) {
+    .pdf{
+      width: 900px;
+      height: 900px;
+    }
+  }
+  
+  @media (max-width: 1280px) and (min-width: 993px){
+    .pdf{
+      width: 900px;
+      height: 900px;
+    }
+  }
+  @media (max-width: 1920px) and (min-width: 1281px){
+    .pdf{
+      width: 900px;
+      height: 900px;
+    }
+  }
+  
+  @media (max-width: 2560px) and (min-width: 1921px){
+    .pdf{
+      width: 1200px;
+      height: 1200px;
+    }
+  }
+  
+  @media (max-width: 3840px) and (min-width: 2561px){
+    .pdf{
+      width: 1900px;
+      height: 1900px;
+    }
+  }
+    /*background-color: #0833a2 !important;
+  }
+  */
+  

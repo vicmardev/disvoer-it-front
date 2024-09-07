@@ -1,0 +1,175 @@
+<h2 class="barTitle">
+	<span *ngIf="data.ticket.issueType == 'Hardware'; else Software">Reemplazar parte</span>
+</h2>
+<ng-template #Software>Responder Ticket</ng-template>
+
+<div *ngIf="data.ticket.issueType == 'Hardware'">
+	<div fxLayout="row">
+		<div fxLayout="column" style="width: 50%">
+			<h3>
+				<span class="info">Marca:</span>
+				<b>{{ data.ticket.brand }}</b>
+			</h3>
+			<h3>
+				<span class="info">Modelo:</span>
+				<b>{{ data.ticket.model }}</b>
+			</h3>
+		</div>
+		<div fxLayout="column">
+			<h3>
+				<span class="info">Parte afectada:</span>
+				<b>{{ data.ticket.equipment }}</b>
+			</h3>
+			<h3>
+				<span class="info">No. de parte:</span>
+				<b>{{ data.ticket.affectationPart }}</b>
+			</h3>
+		</div>
+	</div>
+	<table
+		*ngIf="dataSource.data.length"
+		mat-table
+		[dataSource]="dataSource"
+		class="mat-elevation-z8"
+		multiTemplateDataRows>
+		<ng-container matColumnDef="select">
+			<mat-header-cell *matHeaderCellDef class="header-table">
+				Seleccionar
+			</mat-header-cell>
+			<mat-cell *matCellDef="let row">
+				<mat-checkbox
+					(click)="$event.stopPropagation()"
+					(change)="$event ? selection.toggle(row) : null"
+					[checked]="selection.isSelected(row)"></mat-checkbox>
+			</mat-cell>
+		</ng-container>
+		<ng-container matColumnDef="serialNumber">
+			<mat-header-cell *matHeaderCellDef class="header-table">S/N</mat-header-cell>
+			<mat-cell *matCellDef="let availablePart">
+				{{ availablePart.serialNumber }}
+			</mat-cell>
+		</ng-container>
+		<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+		<mat-row
+			*matRowDef="let row; columns: displayedColumns"
+			class="example-element-row"></mat-row>
+	</table>
+	<mat-paginator
+		*ngIf="dataSource.data.length; else noPartsMessage"
+		[pageSizeOptions]="[5, 10, 20]"
+		showFirstLastButtons
+		aria-label="paginator"></mat-paginator>
+	<ng-template #noPartsMessage>
+		<h4 class="no-parts">No hay partes disponibles.</h4>
+		<button
+			(click)="notifyNoAvailableParts()"
+			mat-flat-button
+			class="btn-accept notify"
+			mat-button>
+			Notificar al administrador
+			<mat-icon mat-list-icon matSuffix>mail_outline</mat-icon>
+		</button>
+	</ng-template>
+
+	<div fxLayout="row" fxLayoutAlign="center">
+		<div
+			fxLayout="column"
+			style="width: 50%"
+			[formGroup]="response"
+			*ngIf="selection.selected.length">
+			<mat-form-field appearance="legacy">
+				<mat-label>Status</mat-label>
+				<br />
+				<mat-select formControlName="status">
+					<mat-option *ngFor="let sev of statusResponse" [value]="sev.value">
+						{{ sev.name }}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<mat-form-field appearance="legacy">
+				<mat-label>Descripcion de la solución</mat-label>
+				<br />
+				<textarea
+					matInput
+					placeholder="Descripción"
+					cdkAutosizeMinRows="10"
+					cdkAutosizeMaxRows="10"
+					cols="10"
+					rows="1"
+					formControlName="solution"></textarea>
+			</mat-form-field>
+		</div>
+	</div>
+	<div fxLayout="row" fxLayoutAlign="center">
+		<button
+			mat-raised-button
+			class="btn-color"
+			style="background-color: #0099cc"
+			(click)="closeDialog()"
+			mat-button>
+			Atrás
+		</button>
+		<button
+			(click)="sendResponse()"
+			mat-flat-button
+			class="btn-accept"
+			mat-button
+			[disabled]="
+				data.ticket.stepTicket >= 4 ||
+				selection.selected.length < 1 ||
+				responseSupport.get('solution')?.value === '' ||
+				responseSupport.get('status')?.value === ''
+			">
+			Responder
+		</button>
+	</div>
+</div>
+
+<!-- Software problem -->
+<div *ngIf="data.ticket.issueType === 'Software'" fxLayout="row" fxLayoutAlign="center">
+	<div fxLayout="column" style="width: 50%" [formGroup]="response">
+		<mat-form-field appearance="legacy">
+			<mat-label>Status</mat-label>
+			<br />
+			<mat-select formControlName="status">
+				<mat-option *ngFor="let sev of statusResponse" [value]="sev.value">
+					{{ sev.name }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<mat-form-field appearance="legacy">
+			<mat-label>Descripcion de la solución</mat-label>
+			<br />
+			<textarea
+				matInput
+				placeholder="Descripción"
+				cdkAutosizeMinRows="10"
+				cdkAutosizeMaxRows="10"
+				cols="10"
+				rows="1"
+				formControlName="solution"></textarea>
+		</mat-form-field>
+		<div fxLayout="row" fxLayoutAlign="center">
+			<button
+				mat-raised-button
+				class="btn-color"
+				style="background-color: #0099cc"
+				(click)="closeDialog()"
+				mat-button>
+				Atrás
+			</button>
+			<button
+				(click)="sendResponse()"
+				mat-flat-button
+				class="btn-accept"
+				mat-button
+				[disabled]="
+					data.ticket.stepTicket >= 4 ||
+					responseSupport.get('solution')?.value === '' ||
+					responseSupport.get('status')?.value === ''
+				">
+				Responder
+			</button>
+		</div>
+	</div>
+</div>

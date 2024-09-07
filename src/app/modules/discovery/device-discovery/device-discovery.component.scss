@@ -1,0 +1,194 @@
+
+.form-container{
+  display: flex;
+  direction: row;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+
+form{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  //background-color: red;
+}
+
+mat-icon{
+display: inline-block;
+width: 30px;
+background-color: #1A4E86;
+padding: 10px 16px 16px 15px;
+-webkit-border-radius: 4px 0px 0px 4px;
+-moz-border-radius: 4px 0px 0px 4px;
+border-radius: 6px 0px 0px 6px;
+color: white;
+-webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+-moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+border: solid 0px #cbc9c9;
+}
+
+mat-form-field {
+  width: 75%;
+  word-wrap: break-word;
+}
+
+.selector{
+  width: 30%;
+  margin-left: -8%;
+}
+
+.selector-top{
+  height: 30px;
+  width: 80.5%;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #1A4E86;
+  color: white;
+}
+
+.selector-bottom{
+  height: 80%;
+  width: 80%;
+  border-radius: 0px 0px 10px 10px;
+  border: 1px solid #1A4E86;
+}
+
+.radio{
+  margin-left: 15%;
+  margin-top: 5%;
+  width: 70%;
+}
+
+#info{
+  margin-top: 100px;
+  font-family: "Arial Black", sans-serif;
+  font-size: 1.5em;
+  margin-left: 5%;
+  color: white;
+}
+
+.swal-height {
+  height: 80vh;
+}
+
+button{
+  color: white;
+  background-color: #1A4E86;
+}
+
+.container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  //background-color: red;
+}
+
+
+
+
+//NEW DESIGN
+
+.page{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.top2{
+  width: 100%;
+  display: flex;
+  direction: row;
+  justify-content: space-evenly;
+}
+
+.top{
+  margin-top: 10%;
+  width: 100%;
+  display: flex;
+  direction: row;
+  justify-content: space-evenly;
+}
+
+.form-containers{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.format{
+  width: 50%;
+}
+
+.selector{
+  width: 50%;
+}
+
+mat-card-content{
+  display: flex;
+  direction: column;
+  justify-content: flex-start;
+  width: 80%;
+}
+
+.btns{
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 10%;
+}
+
+.btnCenter{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.selectorbtn{
+  width: 10%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.example-chip{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  order: 5;
+  flex-shrink: 1;
+
+}
+
+.rowImg{
+  display: flex;
+  flex-direction: row;
+}
+
+.text{
+  margin-top: 5%;
+  margin-left: 2%;
+}
+
+mat-chip:hover{
+  background: white;
+  background: linear-gradient(180deg, #ffffff 30%, #009cd6) !important;
+}
+
+mat-chip{
+  background: white !important;
+  background-color: white !important;
+}
+
+
+.image{
+  margin-right: 2%;
+}

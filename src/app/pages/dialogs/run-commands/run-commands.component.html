@@ -1,0 +1,71 @@
+<div>
+  <h1 class="title">
+      <strong>
+          <i class="fas fa-ticket-alt ticket"></i> Ejecutar comandos en: <strong class="black">{{data.serial}}</strong>
+      </strong>
+  </h1>
+  <h4>
+      <strong class="title">*Instrucciones ejecutar comandos en dispositivo:</strong>
+      <p> 1.- Registra los  campos correspondientes.</p>
+      <p> 2.- Listar los comandos, separados por una linea nueva.</p>
+      <p> 3.- Ejecuta los comandos.</p>
+      <p> 4.- Descarga el archivo JSON.</p>
+  </h4>
+  <br>
+</div>
+<form class="new-person-form" [formGroup]="commandData" *ngIf="!download && !loading">
+  
+  <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+      <mat-form-field fxFlex="40">
+          <mat-label>Serial:</mat-label>
+          <input matInput placeholder="Serial" formControlName="serial">
+      </mat-form-field>
+      <mat-form-field fxFlex="30">
+        <mat-label>Hostname (IP):</mat-label>
+        <input matInput placeholder="Hostname" formControlName="hostname">
+    </mat-form-field>
+      <mat-form-field appearance="legacy" fxFlex="30">
+        <mat-label>Driver </mat-label>
+        <br>
+        <mat-select formControlName="driverType"  >
+            <mat-option *ngFor="let driver of driverList" [value]="driver.value">
+                {{driver.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+  </mat-card>
+
+  <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+    <mat-form-field fxFlex="30">
+        <mat-label>Usuario:</mat-label>
+        <input matInput placeholder="username" formControlName="username">
+    </mat-form-field>
+    <mat-form-field fxFlex="30">
+        <mat-label>Contraseña:</mat-label>
+        <input matInput placeholder="password" formControlName="password">
+    </mat-form-field>
+    <mat-form-field fxFlex="40">
+      <mat-label>Contraseña Admin:</mat-label>
+      <input matInput placeholder="admin password" formControlName="enableSecret">
+  </mat-form-field>
+</mat-card>
+
+  <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+      <mat-form-field fxFlexFill appearance="legacy">
+          <mat-label>Comandos:</mat-label>
+          <textarea matInput placeholder="show version" cdkAutosizeMinRows="15" formControlName="commandString" cdkAutosizeMaxRows="15" cols="10" rows="15"></textarea>
+      </mat-form-field>
+  </mat-card>
+
+</form>
+
+<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+  <button mat-flat-button class="btn-accept" (click)="sendCommands()" *ngIf="!download && !loading">Ejecutar Comandos</button>
+  <button mat-flat-button class="btn-cancel" (click)="closeDialog()" *ngIf="!download && !loading">Cancelar</button>
+  <a mat-flat-button class="btn btn-back" title="Download JSON" [href]="fileRef" [download]="serial+'.json'" *ngIf="download && !loading" (click)="closeDialog()">Descargar Archivo</a>
+  <div *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </div>
+
+
+</mat-card> 

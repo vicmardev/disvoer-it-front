@@ -1,0 +1,31 @@
+<div class="title-bar">
+	<span>Agregar Marca</span>
+</div>
+<br />
+<form class="addBrand" [formGroup]="formAddBrand">
+	<p>
+		<mat-form-field appearance="legacy">
+			<mat-label>Nombre</mat-label>
+			<br />
+			<input placeholder="Nombre" formControlName="namebrand" matInput />
+		</mat-form-field>
+	</p>
+
+	<p>
+		<mat-form-field appearance="legacy">
+			<mat-label>Domicilio Fiscal</mat-label>
+			<br />
+			<textarea
+				placeholder="Domicilio Fiscal"
+				formControlName="description"
+				matInput></textarea>
+		</mat-form-field>
+	</p>
+</form>
+
+<button mat-flat-button class="btn-accept save-button" (click)="addBrand()">
+	Guardar
+</button>
+<button mat-flat-button class="btn-cancel cancel-button" (click)="closeDialog()">
+	Cancelar
+</button>

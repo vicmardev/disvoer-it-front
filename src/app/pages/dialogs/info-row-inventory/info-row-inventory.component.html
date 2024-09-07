@@ -1,0 +1,93 @@
+<form class="new-person-form" [formGroup]="formEditRow">
+    <div>
+        <h1 class="title">
+            <strong>
+                <mat-icon>info</mat-icon> Información del equipo: <strong class="black"> {{data.info.Serial}}</strong>
+            </strong>
+        </h1>
+        <br>
+    </div>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field>
+            <mat-label>Contrato:</mat-label>
+            <input matInput placeholder="Equipo" formControlName="Contrato" class="disabled" readonly>
+        </mat-form-field>
+    </mat-card>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlex="100">
+            <mat-label># Serial:</mat-label>
+            <input matInput placeholder="No Contrato" formControlName="Serial">
+        </mat-form-field>
+        <mat-form-field fxFlex="50" *ngIf="user.role == 'Admin'">
+            <mat-label> # Serial proveedor:</mat-label>
+            <input matInput placeholder="Serial " formControlName="SerialOctopian">
+        </mat-form-field>
+    </mat-card>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlex="50">
+            <mat-label>Modelo:</mat-label>
+            <input matInput placeholder="Modelo" formControlName="Model">
+        </mat-form-field>
+        <mat-form-field fxFlex="50">
+            <mat-label>Estatus:</mat-label>
+            <input matInput placeholder="Status" formControlName="Status" class="disabled" readonly>
+        </mat-form-field>
+    </mat-card>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlex="50">
+            <mat-label>Marca:</mat-label>
+            <input matInput placeholder="Marca" formControlName="Brand">
+        </mat-form-field>
+        <mat-form-field fxFlex="50">
+            <mat-label>Equipo:</mat-label>
+            <input matInput placeholder="Equipo" formControlName="Equipment" class="disabled" readonly>
+        </mat-form-field>
+    </mat-card>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlex="50" class="field"  *ngIf="user.role == 'Admin'">
+            <mat-label>Proveedor:</mat-label>
+            <input matInput placeholder="Proveedor" formControlName="HardwareProvider">
+        </mat-form-field>
+        <mat-form-field fxFlex="50" class="field">
+            <mat-label>SLA</mat-label>
+            <input matInput placeholder="SLA" formControlName="SLA" class="disabled" readonly>
+        </mat-form-field>
+    </mat-card>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlex="50" class="field">
+            <mat-label>Tag:</mat-label>
+            <input matInput placeholder="No Contrato" formControlName="ServiceTag">
+        </mat-form-field>
+        <mat-form-field fxFlex="50" class="field">
+            <mat-label>Ciudad</mat-label>
+            <input matInput placeholder="Tag" formControlName="City" class="disabled" readonly>
+        </mat-form-field>
+    </mat-card>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlexFill appearance="fill">
+            <mat-label>Dirección</mat-label>
+            <textarea matInput placeholder="Dirección" cdkAutosizeMinRows="10" formControlName="Address"
+                cdkAutosizeMaxRows="10" cols="10" rows="1"></textarea>
+        </mat-form-field>
+    </mat-card>
+    <mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <mat-form-field fxFlex="50" class="field">
+            <mat-label>Fecha inicial</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="Start">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field fxFlex="50" class="field">
+            <mat-label>Fecha final</mat-label>
+            <input matInput [matDatepicker]="pickerFinal" formControlName="End">
+            <mat-datepicker-toggle matSuffix [for]="pickerFinal"></mat-datepicker-toggle>
+            <mat-datepicker #pickerFinal></mat-datepicker>
+        </mat-form-field>
+    </mat-card>
+</form>
+
+<!-- <mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+    <button mat-flat-button class="btn-accept" (click)="updateRow()">Guardar</button>
+
+    <button mat-flat-button class="btn-cancel" (click)="closeDialog()">Cancelar</button>
+</mat-card> -->

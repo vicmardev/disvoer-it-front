@@ -1,0 +1,8 @@
+<h1 mat-dialog-title><i class="fas fa-exclamation-triangle"></i> ¿Seguro que deseas eliminar a este usuario?</h1>
+<div fxLayoutAlign="center center" mat-dialog-content><h3>Esta acción es permanente y no puede deshacerse.</h3></div>
+<div fxLayoutAlign="center center" mat-dialog-actions>
+
+    <button (click)="deleteUser()" class="botonEliminar" mat-raised-button>Eliminar</button>
+
+    <button class="botonCancelar" mat-raised-button mat-dialog-close>Cancelar</button>
+</div>

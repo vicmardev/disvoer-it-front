@@ -1,0 +1,90 @@
+table.mat-table {
+	width: 100%;
+	word-wrap: break-word;
+
+	th {
+		background-color: $tbl-header-bg;
+		text-align: center;
+		color: $tbl-header-text-color;
+		font-size: $font-size;
+		padding-left: $tbl-padding;
+		padding-right: $tbl-padding;
+		&.header-innerTable {
+			background-color: #999;
+			color: #000;
+		}
+	}
+
+	td {
+		text-align: center;
+		font-size: $font-size;
+		padding-left: $tbl-padding;
+		padding-right: $tbl-padding;
+		vertical-align: middle;
+	}
+
+	.highlight {
+		background-color: #0099cc3b;
+		color: #fdfcfb !important;
+		cursor: pointer;
+	}
+
+	td.alias-cell {
+		.alias-btn {
+			width: 26px;
+		}
+	}
+
+	span.alias-text {
+		display: inline-block;
+		width: 80%;
+		text-align: center;
+	}
+
+	td.nested-row {
+		padding: 0 !important;
+	}
+
+	tr.example-detail-row {
+		height: 0;
+	}
+
+	div.expanded-row {
+		overflow: hidden;
+		display: flex;
+		background-color: white;
+	}
+
+	img.pdfDownload {
+		vertical-align: middle;
+		height: $icons-size;
+		margin-left: 10px;
+		cursor: grab;
+	}
+}
+
+.table-footer {
+	height: 15px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url('../../../../../assets/icons/table_footer.svg');
+}
+
+.table-footer-inner {
+	margin: 20px 0;
+	background-size: 98%;
+}
+
+:host ::ng-deep .mat-select-placeholder {
+	color: white;
+}
+
+:host ::ng-deep .mat-select-arrow {
+	color: white;
+}
+
+:host ::ng-deep .mat-select-value {
+	font-size: 14px;
+	color: white !important;
+}

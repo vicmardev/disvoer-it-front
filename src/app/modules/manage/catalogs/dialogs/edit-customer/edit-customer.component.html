@@ -1,0 +1,68 @@
+<div class="title-bar">
+	<span>Editar Cliente</span>
+</div>
+<br />
+<form class="addCustomer" [formGroup]="formEditClient">
+	<div class="group1">
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>Nombre</mat-label>
+				<br />
+				<input placeholder="Nombre" formControlName="name" matInput />
+			</mat-form-field>
+		</p>
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>Familia</mat-label>
+				<br />
+				<input placeholder="Familia" formControlName="family" matInput />
+			</mat-form-field>
+		</p>
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>Razón Social</mat-label>
+				<br />
+				<input placeholder="Razón Social" formControlName="razonsocial" matInput />
+			</mat-form-field>
+		</p>
+	</div>
+
+	<div class="group2">
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>RFC</mat-label>
+				<br />
+				<input placeholder="RFC" formControlName="rfc" min="0" max="13" matInput />
+			</mat-form-field>
+		</p>
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>Orden de Compra</mat-label>
+				<br />
+				<input placeholder="Orden de Compra" formControlName="ordencompra" matInput />
+			</mat-form-field>
+		</p>
+	</div>
+
+	<div class="group3">
+		<p>
+			<mat-form-field appearance="legacy">
+				<mat-label>Domicilio Fiscal</mat-label>
+				<br />
+				<textarea
+					placeholder="Domicilio Fiscal"
+					formControlName="adressfiscal"
+					matInput></textarea>
+			</mat-form-field>
+		</p>
+	</div>
+</form>
+
+<div class="group4">
+	<button mat-flat-button class="btn-accept save-button" (click)="editClient()">
+		Guardar
+	</button>
+	<button mat-flat-button class="btn-cancel cancel-button" (click)="closeDialog()">
+		Cancelar
+	</button>
+</div>

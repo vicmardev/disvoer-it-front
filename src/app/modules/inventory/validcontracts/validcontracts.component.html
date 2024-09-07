@@ -1,0 +1,436 @@
+<div
+	fxFlex="100"
+	fxLayout="column"
+	fxLayoutAlign="center space-between"
+	fxLayoutGap="20px"
+	fxFill>
+	<br />
+	<!-- Outer most div -->
+	<div
+		fxLayout="row wrap"
+		fxFlex="100"
+		fxLayoutAlign="space-between start"
+		fxLayoutGap="20px"
+		fxFill>
+		<!-- show both halves in a row -->
+		<div fxLayout="row wrap-reverse" fxFlex="100" fxLayoutAlign="space-between center">
+			<!-- half with table data -->
+			<div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="center space-between">
+				<div
+					fxLayout="row wrap"
+					fxLayoutAlign="space-between start"
+					fxFlex="100"
+					fxLayoutGap="20px">
+					<!-- buttons of left side -->
+					<div fxLayout="row wrap">
+						<button
+							class="actionButton action-button excel-upload-button"
+							mat-fab
+							color="success"
+							matTooltip="Importar archivo (xlsx)"
+							(click)="importExcel()"
+							*ngIf="user.role != 'User'"></button>
+						<a
+							href="../assets/docs/Plantilla_Contratos.xlsx"
+							download
+							*ngIf="user.role != 'User'">
+							<button
+								class="actionButton action-button excel-download-button"
+								mat-fab
+								color="success"
+								matTooltip="Plantilla excel"></button>
+						</a>
+					</div>
+					<!-- search bars on rights side -->
+					<div fxLayout="row wrap" fxLayoutGap="20px">
+						<p>
+							<mat-form-field appearance="outline" matTooltip="Filtrar por  campos">
+								<mat-label>Filtrar tabla</mat-label>
+								<input
+									matInput
+									placeholder="Buscar por ..."
+									(keyup)="filterTable($event)"
+									[(ngModel)]="textFilterTable" />
+								<mat-icon matSuffix>search</mat-icon>
+							</mat-form-field>
+						</p>
+						<p>
+							<mat-form-field appearance="outline" color="warn">
+								<mat-label>Rango de fechas</mat-label>
+								<mat-date-range-input [rangePicker]="picker">
+									<input
+										matStartDate
+										placeHolder="Start date"
+										(dateChange)="filterDateStart($event)"
+										[(ngModel)]="dateRangeFilterStart" />
+									<input
+										matEndDate
+										placeholder="End date"
+										(dateChange)="filterDateEnd($event)"
+										[(ngModel)]="dateRangeFilterEnd" />
+								</mat-date-range-input>
+								<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+								<mat-date-range-picker #picker></mat-date-range-picker>
+							</mat-form-field>
+						</p>
+						<p>
+							<mat-form-field appearance="outline">
+								<mat-label>Estatus contrato</mat-label>
+								<mat-select
+									(selectionChange)="filterStatus($event)"
+									[(ngModel)]="statusFilter">
+									<mat-option *ngFor="let status of allStatus" [value]="status.value">
+										{{ status.name }}
+									</mat-option>
+								</mat-select>
+							</mat-form-field>
+						</p>
+					</div>
+				</div>
+				<div fxFill>
+					<mat-progress-bar
+						class="audio-progress-bar"
+						mode="indeterminate"
+						*ngIf="!loadedTableData"></mat-progress-bar>
+					<table
+						mat-table
+						[dataSource]="dataSource"
+						class="mat-elevation-z8"
+						matTableExporter
+						multiTemplateDataRows
+						#exporter="matTableExporter">
+						<!-- Contract-->
+						<ng-container matColumnDef="Contract">
+							<th mat-header-cell *matHeaderCellDef>Contrato</th>
+							<td mat-cell *matCellDef="let row">
+								{{ row.Contract.Contract }}
+								<img
+									src="../assets/icons/pdf.png"
+									class="pdfDownload"
+									(click)="dowloadPDf(row)" />
+							</td>
+						</ng-container>
+						<!-- Contract-->
+
+						<!-- Alias -->
+						<ng-container matColumnDef="Alias">
+							<th mat-header-cell *matHeaderCellDef class="alias-header">Alias</th>
+							<td mat-cell class="alias-cell" class="alias-cell" *matCellDef="let row">
+								<div fxLayout="row">
+									<mat-icon
+										class="alias-btn"
+										(click)="editAlias(row.Contract); $event.stopPropagation()"
+										matTooltip="Agregar Alias"
+										fxflex="20">
+										arrow_drop_down_circle
+									</mat-icon>
+									<span class="alias-text" fxflex="80">{{ row.Contract.Alias }}</span>
+								</div>
+							</td>
+						</ng-container>
+						<!-- Alias -->
+
+						<!-- Client -->
+						<ng-container matColumnDef="Client">
+							<th mat-header-cell *matHeaderCellDef class="alias-header">Cliente</th>
+							<td mat-cell *matCellDef="let row">
+								{{ row.Contract.ClientName }}
+							</td>
+						</ng-container>
+						<!-- Client -->
+
+						<!-- DataCenters  -->
+						<ng-container matColumnDef="DataCenters">
+							<th mat-header-cell *matHeaderCellDef class="dataCenters-header">
+								DataCenters
+							</th>
+							<td mat-cell *matCellDef="let row">
+								{{ row.Contract.DataCentersCount }}
+							</td>
+						</ng-container>
+						<!-- DataCenters  -->
+
+						<!-- EquipmentsCount  -->
+						<ng-container matColumnDef="EquipmentsTotal">
+							<th mat-header-cell *matHeaderCellDef class="equipos-contratos-header">
+								Total de equipos
+							</th>
+							<td mat-cell class="equipos-cell" *matCellDef="let row">
+								{{ row.Contract.EquipmentsTotal }}
+							</td>
+						</ng-container>
+						<!-- EquipmentsCount -->
+
+						<!-- StartContract  -->
+						<ng-container matColumnDef="StartContract">
+							<th mat-header-cell *matHeaderCellDef style="min-width: 50px !important">
+								Inicio
+							</th>
+							<td mat-cell style="min-width: 50px !important" *matCellDef="let element">
+								{{ element.Contract.StartContract | date: 'shortDate' }}
+							</td>
+						</ng-container>
+
+						<!-- EndContract  -->
+						<ng-container matColumnDef="EndContract">
+							<th mat-header-cell *matHeaderCellDef style="min-width: 50px !important">
+								Fin
+							</th>
+							<td mat-cell style="min-width: 50px !important" *matCellDef="let element">
+								{{ element.Contract.EndContract | date: 'shortDate' }}
+							</td>
+						</ng-container>
+						<!-- EndContract  -->
+
+						<!-- Status  -->
+						<ng-container matColumnDef="Status">
+							<th mat-header-cell *matHeaderCellDef style="min-width: 50px !important">
+								Estatus
+							</th>
+							<td mat-cell style="min-width: 50px !important" *matCellDef="let element">
+								{{ element.Contract.Status | inventoryStatus }}
+							</td>
+						</ng-container>
+						<!-- Status  -->
+
+						<!-- Days  -->
+						<ng-container matColumnDef="Days">
+							<th mat-header-cell *matHeaderCellDef style="min-width: 50px !important">
+								Días restantes
+							</th>
+							<td mat-cell style="min-width: 50px !important" *matCellDef="let element">
+								{{ element.Contract.DaysRemaining }}
+							</td>
+						</ng-container>
+						<!-- Days  -->
+
+						<!-- DaysRemaining  -->
+						<ng-container matColumnDef="DaysRemaining">
+							<th mat-header-cell *matHeaderCellDef>Porcentaje Restante</th>
+							<td mat-cell *matCellDef="let element; let i = index">
+								<div class="percentage-container">
+									<mat-progress-bar
+										class="{{ getProgressClass(element.Contract.DaysRemaining) }}"
+										[ngStyle]="{
+											height: '20px'
+										}"
+										matSuffix="matSuffix"
+										[matTooltip]="
+											progressBarToolTipText(
+												element.Contract.DaysRemaining,
+												element.Contract.ContractLength
+											)
+										"
+										[value]="
+											(1 - element.Contract.SpentDays / element.Contract.ContractLength) *
+											100
+										"
+										[bufferValue]="100"></mat-progress-bar>
+									<div
+										class="progress-bar-text"
+										*ngIf="
+											(element.Contract.SpentDays / element.Contract.ContractLength) *
+												100 <
+											100
+										">
+										{{
+											(1 - element.Contract.SpentDays / element.Contract.ContractLength) *
+												100 | number: '1.0-0'
+										}}%
+									</div>
+									<div
+										class="progress-bar-text"
+										*ngIf="
+											(element.Contract.SpentDays / element.Contract.ContractLength) *
+												100 >
+											100
+										">
+										{{ 0 }}%
+									</div>
+								</div>
+							</td>
+						</ng-container>
+						<!-- DaysRemaining  -->
+
+						<!-- Services-->
+						<ng-container matColumnDef="Actions">
+							<th mat-header-cell *matHeaderCellDef class="acciones-header">Acciones</th>
+							<td mat-cell class="acciones-cell" *matCellDef="let element; let i = index">
+								<div class="div-acciones">
+									<button
+										mat-icon-button
+										[matMenuTriggerFor]="menu"
+										aria-label="Example icon-button with a menu"
+										(menuOpened)="contractMenuOpened(element)"
+										(menuClosed)="contractMenuClosed()"
+										(click)="$event.stopPropagation()">
+										<mat-icon>more_vert</mat-icon>
+									</button>
+								</div>
+
+								<mat-menu #menu="matMenu">
+									<button
+										mat-menu-item
+										(click)="openDialogAddBudget(element.Contract, i)">
+										<mat-icon>add</mat-icon>
+										<span>Agregar Presupuesto</span>
+									</button>
+									<button mat-menu-item (click)="generateZip(element)">
+										<mat-icon>cloud_download</mat-icon>
+										<span>Descargar Zip</span>
+									</button>
+								</mat-menu>
+							</td>
+						</ng-container>
+						<!-- Services-->
+
+						<!-- Expanded Content -->
+						<ng-container matColumnDef="expandedDetail">
+							<td
+								mat-cell
+								*matCellDef="let element"
+								[attr.colspan]="displayedColumns.length"
+								class="nested-row">
+								<div
+									class="expanded-row"
+									*ngIf="element.Contract.DataCenters.length"
+									[@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+									<div fxFlex="100" fxLayout="column" fxFill>
+										<table
+											#innerTables
+											mat-table
+											#innerSort="matSort"
+											[dataSource]="element.DataCenterTableModel"
+											class="nested-table"
+											matSort>
+											<!-- DataCenter  -->
+											<ng-container matColumnDef="DataCenter">
+												<th mat-header-cell *matHeaderCellDef class="header-innerTable">
+													DataCenter
+												</th>
+												<td mat-cell *matCellDef="let element">
+													{{ element.DataCenter }}
+												</td>
+											</ng-container>
+											<!-- DataCenter  -->
+
+											<!-- Equipos  -->
+											<ng-container matColumnDef="Equipment">
+												<th mat-header-cell *matHeaderCellDef class="header-innerTable">
+													Equipos
+												</th>
+												<td mat-cell *matCellDef="let element">
+													{{ element.EquipmentsCount }}
+												</td>
+											</ng-container>
+											<!-- Equipos  -->
+
+											<!-- País  -->
+											<ng-container matColumnDef="Country">
+												<th mat-header-cell *matHeaderCellDef class="header-innerTable">
+													País
+												</th>
+												<td mat-cell *matCellDef="let element">
+													{{ element.CountryName }}
+												</td>
+											</ng-container>
+											<!-- País  -->
+
+											<!-- City  -->
+											<ng-container matColumnDef="City">
+												<th mat-header-cell *matHeaderCellDef class="header-innerTable">
+													Ciudad
+												</th>
+												<td mat-cell *matCellDef="let element">
+													{{ element.CityName }}
+												</td>
+											</ng-container>
+											<!-- city  -->
+
+											<!-- Dirección  -->
+											<ng-container matColumnDef="Address">
+												<th mat-header-cell *matHeaderCellDef class="header-innerTable">
+													Dirección
+												</th>
+												<td mat-cell *matCellDef="let element">
+													{{ element.Address }}
+												</td>
+											</ng-container>
+											<!-- País  -->
+
+											<!-- Actions -->
+											<ng-container matColumnDef="Actions">
+												<th mat-header-cell *matHeaderCellDef class="header-innerTable">
+													Acciones
+												</th>
+												<td mat-cell *matCellDef="let element; let i = index">
+													<div
+														class="div-acciones"
+														(click)="selectDataCenter(element); $event.stopPropagation()">
+														<button
+															mat-icon-button
+															[matMenuTriggerFor]="menu"
+															(menuClosed)="deselectDataCenter()"
+															aria-label="Example icon-button with a menu">
+															<mat-icon>more_vert</mat-icon>
+														</button>
+													</div>
+													<mat-menu #menu="matMenu">
+														<button mat-menu-item (click)="dialogEditDataCenter(element)">
+															<mat-icon>edit</mat-icon>
+															<span>Editar</span>
+														</button>
+													</mat-menu>
+												</td>
+											</ng-container>
+											<!-- Actions -->
+
+											<tr
+												mat-header-row
+												*matHeaderRowDef="innerDisplayedColumns"
+												(mouseover)="highLightOn = false"></tr>
+											<tr
+												mat-row
+												*matRowDef="let row; columns: innerDisplayedColumns"
+												[ngClass]="{
+													highlight: row.IdDataCenter === selectedDataCenter?.IdDataCenter
+												}"
+												(click)="listEquipment(row)"></tr>
+										</table>
+										<div class="table-footer table-footer-inner"></div>
+									</div>
+								</div>
+							</td>
+						</ng-container>
+						<!-- Expanded Content -->
+
+						<tr
+							mat-header-row
+							*matHeaderRowDef="displayedColumns"
+							(mouseover)="highLightOn = false"></tr>
+						<tr
+							mat-row
+							*matRowDef="let row; columns: displayedColumns; let i = dataIndex"
+							[ngClass]="{
+								highlight: row.Contract.IdContract === selectedContract?.IdContract
+							}"
+							(click)="selectContract(row); $event.stopPropagation()"
+							(mouseover)="highLightOn = false"></tr>
+
+						<tr
+							mat-row
+							*matRowDef="let row; columns: ['expandedDetail']"
+							class="example-detail-row"></tr>
+					</table>
+
+					<mat-paginator
+						class="mat-paginator"
+						[pageSizeOptions]="[12, 24, 36]"
+						showFirstLastButtons
+						aria-label="Select page of periodic elements"></mat-paginator>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="table-footer"></div>
+</div>

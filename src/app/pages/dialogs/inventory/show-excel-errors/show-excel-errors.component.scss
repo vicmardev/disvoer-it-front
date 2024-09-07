@@ -1,0 +1,141 @@
+$background-color: #0099cc;
+$text-color: #fdfcfb;
+
+h2 {
+	color: #ff000099;
+}
+
+table {
+	width: 100%;
+	display: table;
+	min-height: 100%;
+}
+
+th {
+	text-align: center;
+	background-color: $background-color;
+	color: $text-color;
+	font-size: 18px;
+	flex: 1;
+	border-bottom-width: 0px !important;
+	border-bottom-style: none !important;
+
+	.mat-header-cell {
+		justify-content: center;
+		color: #fdfcfb !important;
+		background-color: $text-color;
+		font-size: 18px;
+	}
+}
+
+.mat-table__wrapper .mat-table {
+	min-width: auto !important;
+	width: 100% !important;
+}
+
+.mat-header-row {
+	min-width: auto !important;
+
+	text-align: center !important;
+	color: #fdfcfb !important;
+	background-color: #0099cc;
+	text-align: center !important;
+	font-size: 18px;
+	width: 100%;
+}
+
+.mat-row {
+	min-width: auto !important;
+	font-size: 18px;
+	text-align: center !important;
+	width: 100%;
+}
+
+td {
+	text-align: center !important;
+	font-size: 18px;
+}
+
+.example-element-row .mat-cell {
+	justify-content: center;
+	text-align: center !important;
+	border-bottom-width: 0;
+	font-size: 18px;
+	width: 100%;
+}
+
+.mat-row.example-detail-row {
+	min-height: 0;
+}
+
+.mat-row.example-element-row:not(.example-expanded-row):active {
+	background: #efefef;
+}
+
+.example-element-detail {
+	overflow: hidden;
+	display: flex;
+}
+
+.mat-row.example-detail-row {
+	min-height: 0;
+}
+
+.progress-bar-text {
+	position: absolute;
+	padding-right: -4px;
+	color: white;
+	text-shadow: 1px 0 0 rgba(0, 0, 0, 0.253), 0 -1px 0 rgba(0, 0, 0, 0.253), 0 1px 0 #000,
+		-1px 0 0 rgba(0, 0, 0, 0.253);
+}
+
+.alias-header {
+	min-width: 150px !important;
+}
+
+.alias-cell {
+	min-width: 150px !important;
+}
+
+.equipos-contratos-header {
+	min-width: 50px !important;
+}
+
+.equipos-cell {
+	min-width: 50px !important;
+}
+
+.acciones-header {
+	max-width: 80px !important;
+}
+
+.acciones-cell {
+	max-width: 80px !important;
+}
+
+.div-acciones {
+	width: 5em;
+}
+
+.header-contrato {
+	min-width: 150px !important;
+}
+
+.cell-contrato {
+	min-width: 150px !important;
+}
+
+.mat-paginator {
+	width: 100%;
+}
+
+.dwlPdf {
+	width: 26px;
+	margin-left: 20px;
+	cursor: grab;
+}
+
+.arrowDown {
+	font-size: 22px;
+	margin-left: 5px;
+}

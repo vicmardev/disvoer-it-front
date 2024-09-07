@@ -1,0 +1,19 @@
+<h1 class="blue">En caso de requerir un  campo o  informacion  adicional,
+   <br> agrega las observaciones necesarias para que el usuario, 
+   <br> pueda agregarlo.
+</h1>
+<br>
+<div>
+    <form action="" [formGroup]="formObservations">
+        <br>
+        <textarea matInput placeholder="Ingresa  los  datos  requeridos" cdkAutosizeMinRows="10" cdkAutosizeMaxRows="10"
+            cols="10" rows="5" formControlName="ObservationSupport">
+        </textarea>
+        <br>
+    </form>
+    <div fxLayoutAlign="center">
+        <button mat-button class="btn-danger" (click)="closeDialog()" >Cancelar</button>
+        <button  class="mgLef"(click)="saveObs()" mat-stroked-button color="accent"
+         [disabled]="formObservations.invalid">Enviar</button>
+    </div>
+</div>

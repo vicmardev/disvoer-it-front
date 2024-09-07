@@ -1,0 +1,38 @@
+.title{
+    text-align: center;
+    color: #19a0cc;
+}
+.btn-cancel{
+    background:red;
+    color: white;
+}
+.btn-accept{
+    background:#00c22a;
+    color: white;
+}
+.ml{
+    margin-left: 18px;
+}
+.center{
+    text-align: center;
+}
+.background-red{
+    background-color: rgb(153, 50, 50);
+  }
+  
+  ::ng-deep .warning{
+    background: 'yellow';
+ }
+ /* .mat-simple-snackbar{
+    font-size: 31px !important;
+ }
+ .background-snack{
+  font-size: 28px !important;
+  font-style: italic !important;
+} */
+.black{
+    color: #00000082;;
+  }
+  textarea{
+    margin-top: 20px;
+  }

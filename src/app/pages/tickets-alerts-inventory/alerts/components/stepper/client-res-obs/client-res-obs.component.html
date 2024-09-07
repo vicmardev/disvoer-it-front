@@ -1,0 +1,24 @@
+<h1 >Responder las observaciones solicitadas por el
+    <br> equipo de soporte, para poder continuar con el flujo
+    <br> del ticket.
+</h1>
+<br>
+<div>
+    <h1 ><span class="blue"> Observaciones de soporte</span>  </h1>  
+    <span>{{data.info.ObservationSupport}}</span>
+</div>
+<div>
+    <form  [formGroup]="formResponse">
+        <br>
+        <h1 ><span class="blue">Responder observaciones</span></h1>
+        <textarea matInput placeholder="Ingresa los  detalles de las  observacion" cdkAutosizeMinRows="10" cdkAutosizeMaxRows="10"
+            cols="10" rows="5" formControlName="ObservationResponseUser">
+        </textarea>
+        <br>
+    </form>
+     <div fxLayoutAlign="center">
+        <button mat-button class="btn-danger" (click)="closeDialog()" >Cancelar</button>
+        <button  class="mgLef" mat-stroked-button color="accent" (click)="saveResponse()"
+         [disabled]="formResponse.invalid">Enviar</button>
+    </div> 
+</div>

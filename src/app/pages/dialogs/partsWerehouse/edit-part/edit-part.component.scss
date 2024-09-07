@@ -1,0 +1,35 @@
+.field{
+    font-size: 17px;
+}
+
+.title{
+    text-align: center;
+    color: #0999CD;
+}
+
+.mat-card{
+    width: 100%;
+}
+
+.cardpatern{
+    width: 100%;
+}
+
+.card{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.field{
+    width: 45%;
+}
+
+.field-pieza{
+    width: 30%;
+}
+
+.disabled{
+    color: #8b8a8a8f !important;
+}

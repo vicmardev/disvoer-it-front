@@ -1,0 +1,124 @@
+<!-- <div id="dox" fxLayout="row" fxLayoutAlign="space-between center">
+	<h3>
+		<br />
+		<div class="timer">
+			<i
+				matTooltip="Actualizar"
+				class="fas fa-sync cursor"
+				(click)="getAllAlarms(); getHosts()"></i>
+			Última Actualización: {{ lastUpdate }}
+			<br />
+			<i class="fas fa-clock"></i>
+			Próxima Actualización:
+			<span>{{ seconds }}</span>
+			seg.
+		</div>
+		<br />
+	</h3>
+
+	<div class="blue-color">
+		<div>
+			<br />
+			<div *ngIf="!dataReady">
+				<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+			</div>
+			<div class="column left" *ngIf="dataReady">
+				<h3 class="titleTables">
+					<i class="fas fa-server"></i>
+					Hosts Disponibles:
+					{{ filteredHostList.length }}
+				</h3>
+			</div>
+		</div>
+
+		<div class=" ">
+			<mat-form-field style="width: 100%">
+				<mat-select
+					[(ngModel)]="selectedHostList"
+					(ngModelChange)="filter($event)"
+					placeholder="Filtrar por Host"
+					multiple>
+					<mat-option *ngFor="let host of hostList" [value]="host.Hostname">
+						{{ host.Hostname }}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</div>
+	</div>
+</div> -->
+
+<div class="dox">
+	<div class="last">
+		<i
+			matTooltip="Actualizar"
+			class="fas fa-sync cursor"
+			(click)="getAllAlarms(); getHosts()"></i>
+		Última Actualización: {{ lastUpdate }}
+	</div>
+	<div class="next">
+		<i class="fas fa-clock"></i>
+		Próxima Actualización:
+		<span>{{ seconds }}</span>
+		seg.
+	</div>
+	<div class="filter">
+		<div>
+			<div *ngIf="!dataReady">
+				<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+			</div>
+			<div class="column left" *ngIf="dataReady">
+				<h3 class="titleTables">
+					<i class="fas fa-server"></i>
+					Hosts Disponibles:
+					{{ filteredHostList.length }}
+				</h3>
+			</div>
+		</div>
+
+		<div class=" ">
+			<mat-form-field style="width: 100%">
+				<mat-select
+					[(ngModel)]="selectedHostList"
+					(ngModelChange)="filter($event)"
+					placeholder="Filtrar por Host"
+					multiple>
+					<mat-option *ngFor="let host of hostList" [value]="host.Hostname">
+						{{ host.Hostname }}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</div>
+	</div>
+</div>
+
+<div *ngIf="dataReady; else loadingData">
+	<div class="host-grid">
+		<div
+			class="host-container"
+			*ngFor="
+				let host of paginatorConfig.$values
+					| async
+					| slice
+						: paginator.pageIndex * paginator.pageSize
+						: (paginator.pageIndex + 1) * paginator.pageSize
+			">
+			<host-card [host]="host"></host-card>
+		</div>
+	</div>
+
+	<div class="paginContainer">
+		<mat-paginator
+			id="paginator"
+			#paginator
+			[length]="paginatorConfig.length"
+			[pageSize]="paginatorConfig.pageSize"
+			[pageSizeOptions]="[2, 6, 10, 20]"
+			(page)="pageEventHandler($event)"></mat-paginator>
+	</div>
+</div>
+
+<ng-template #loadingData>
+	<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-template>
+
+<!-- <div class="footBarraTab"></div> -->

@@ -1,0 +1,189 @@
+<button id="add-provider" mat-fab matTooltip="Agregar Proveedor" (click)="openDialog()">
+	<mat-icon>add</mat-icon>
+</button>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" multiTemplateDataRows>
+	<!-- Nombre -->
+	<ng-container matColumnDef="Name">
+		<mat-header-cell *matHeaderCellDef class="header-table-1">Nombre</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.Name }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Nombre de Contacto -->
+	<ng-container matColumnDef="NameContact">
+		<mat-header-cell *matHeaderCellDef class="header-table-2">
+			Nombre de Contacto
+		</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.NameContact }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Teléfono de Contacto -->
+	<ng-container matColumnDef="PhoneContact">
+		<mat-header-cell *matHeaderCellDef class="header-table-3">
+			Teléfono de Contacto
+		</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.PhoneContact }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Correo de Contacto -->
+	<ng-container matColumnDef="EmailContact">
+		<mat-header-cell *matHeaderCellDef class="header-table-4">
+			Correo de Contacto
+		</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.EmailContact }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Ciudad -->
+	<ng-container matColumnDef="City">
+		<mat-header-cell *matHeaderCellDef class="header-table-5">Ciudad</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.City }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Pais -->
+	<ng-container matColumnDef="Country">
+		<mat-header-cell *matHeaderCellDef class="header-table-6">País</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.Country }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Delegacion -->
+	<ng-container matColumnDef="Delegation">
+		<mat-header-cell *matHeaderCellDef class="header-table-7">Delegación</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.Delegation }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Codigo postal -->
+	<ng-container matColumnDef="PostalCode">
+		<mat-header-cell *matHeaderCellDef class="header-table-8">
+			Código Postal
+		</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.PostalCode }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- No. Interior -->
+	<ng-container matColumnDef="InternalNumber">
+		<mat-header-cell *matHeaderCellDef class="header-table-9">
+			No. Interior
+		</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.InternalNumber }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- No. Exterior -->
+	<ng-container matColumnDef="ExternalNumber">
+		<mat-header-cell *matHeaderCellDef class="header-table-10">
+			No. Exterior
+		</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.ExternalNumber }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Comentarios -->
+	<ng-container matColumnDef="Comments">
+		<mat-header-cell *matHeaderCellDef class="header-table-11">
+			Comentarios
+		</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.Comments }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Fecha de Registro -->
+	<ng-container matColumnDef="createdAt">
+		<mat-header-cell *matHeaderCellDef class="header-table-12">
+			Fecha de Registro
+		</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.createdAt | date: 'shortDate' }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Acciones -->
+	<ng-container matColumnDef="Accions">
+		<mat-header-cell *matHeaderCellDef class="header-table-13"></mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			<div class="acciones">
+				<button
+					mat-icon-button
+					[matMenuTriggerFor]="menu"
+					aria-label="Example icon-button with a menu">
+					<mat-icon>more_vert</mat-icon>
+				</button>
+			</div>
+			<mat-menu #menu="matMenu">
+				<button id="button-accions-edit" (click)="editProvider(element)">
+					<span class="text">Editar</span>
+				</button>
+				<button id="button-accions-delete" (click)="deleteProvider(element)">
+					<span class="text">Eliminar</span>
+				</button>
+			</mat-menu>
+		</mat-cell>
+	</ng-container>
+
+	<!-- ------ -->
+	<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+	<mat-row
+		*matRowDef="let row; columns: displayedColumns"
+		class="example-element-row"></mat-row>
+</table>
+<mat-paginator
+	[pageSizeOptions]="[10, 15, 30]"
+	showFirstLastButtons
+	aria-label="paginator"></mat-paginator>

@@ -1,0 +1,54 @@
+<h1 class="title">
+	Selecciona el archivo:
+	<i class="fas fa-file-excel icons"></i>
+</h1>
+<div *ngIf="!flagSpiner">
+	<input (change)="onFileChange($event)" #fileInput type="file" *ngIf="!fileToUpload" />
+	<mat-card fxLayout="row wrap">
+		<mat-form-field class="example-full-width">
+			<input
+				matInput
+				placeholder="Token de autorización"
+				[type]="hideToken ? 'password' : 'text'"
+				[(ngModel)]="token"
+				required />
+			<mat-icon matSuffix (click)="hideToken = !hideToken">
+				{{ hideToken ? 'visibility_off' : 'visibility' }}
+			</mat-icon>
+		</mat-form-field>
+	</mat-card>
+	<mat-card fxLayout="row wrap">
+		<div fxLayout="column">
+			<mat-card-content *ngIf="fileVerified">
+				Elementos nuevos: {{ newItems }}
+			</mat-card-content>
+			<mat-card-content *ngIf="fileVerified">
+				Elementos modificados: {{ itemsChanged }}
+			</mat-card-content>
+		</div>
+		<div fxLayout="row" fxLayoutAlign="center center">
+			<button
+				mat-flat-button
+				class="btn-accept ml"
+				(click)="checkParts()"
+				*ngIf="fileToUpload && !fileVerified">
+				Subir Archivo
+			</button>
+			<button
+				mat-flat-button
+				class="btn-accept ml"
+				(click)="addParts()"
+				*ngIf="fileVerified">
+				Aceptar Cambios
+			</button>
+			<button mat-flat-button class="btn-cancel ml" (click)="closeDialog()">
+				Cancelar
+			</button>
+		</div>
+	</mat-card>
+</div>
+<div *ngIf="flagSpiner">
+	<mat-spinner class="spinerLoad"></mat-spinner>
+	<br />
+	<p class="titleLoad">Cargando ...</p>
+</div>

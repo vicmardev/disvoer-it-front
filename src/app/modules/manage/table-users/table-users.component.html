@@ -1,0 +1,203 @@
+<!-- #docregion align-start -->
+<mat-tab-group mat-align-tabs="center">
+	<!-- LIST -->
+	<mat-tab label="Lista">
+		<div fxLayout="row" fxLayoutAlign="center center">
+			<br />
+			<br />
+			<div class="button-container">
+				<button
+					routerLink="/dash/manage/add"
+					mat-fab
+					color="primary"
+					aria-label="Example icon button with a delete icon"
+					matTooltip="Agregar Usuario">
+					<mat-icon>person_add</mat-icon>
+				</button>
+			</div>
+			<div fxLayout="row" fxLayoutAlign="end" fx LayoutGap="30px">
+				<div fxLayoutGap="200px">
+					<p>
+						<mat-form-field
+							appearance="outline"
+							class="iptSearch"
+							matTooltip="Filtrar por usuarios">
+							<input
+								matInput
+								placeholder="Buscar usuarios..."
+								(keyup)="filtrar($event)" />
+							<mat-icon matSuffix>search</mat-icon>
+						</mat-form-field>
+					</p>
+				</div>
+			</div>
+			<div fxflex="100">
+				<table mat-table [dataSource]="userList" class="mat-elevation-z8">
+					<ng-container matColumnDef="avatar">
+						<th mat-header-cell *matHeaderCellDef>Usuario</th>
+						<td mat-cell *matCellDef="let user">
+							<img
+								(click)="dialogShowProfilePic(user)"
+								src="https://www.shareicon.net/data/512x512/2016/08/05/806962_user_512x512.png"
+								class="avatar-table circleImg"
+								*ngIf="!user.avatarImagePath" />
+							<img
+								(click)="dialogShowProfilePic(user)"
+								src="{{ avatarUrl + user.avatarImagePath }}"
+								class="avatar-table circleImg"
+								*ngIf="user.avatarImagePath" />
+						</td>
+					</ng-container>
+					<ng-container matColumnDef="firstName">
+						<th mat-header-cell *matHeaderCellDef>Nombre</th>
+						<td mat-cell *matCellDef="let user">
+							{{ user.firstName }} {{ user.lastName }}
+						</td>
+					</ng-container>
+					<ng-container matColumnDef="statusLogin">
+						<th mat-header-cell *matHeaderCellDef>Estatus</th>
+						<td mat-cell *matCellDef="let user">
+							<span class="chipActive" *ngIf="user.statusLogin === true">
+								<i class="fas fa-circle"></i>
+								En línea
+							</span>
+							<span class="chipDanger" *ngIf="user.statusLogin === false">
+								<i class="fas fa-circle-notch"></i>
+								Fuera de línea
+							</span>
+						</td>
+					</ng-container>
+					<ng-container matColumnDef="contrato">
+						<th mat-header-cell *matHeaderCellDef># Contratos</th>
+						<td mat-cell *matCellDef="let user">
+							<b class="blueColor">{{ user.contrato.length }}</b>
+						</td>
+					</ng-container>
+					<ng-container matColumnDef="email">
+						<th mat-header-cell *matHeaderCellDef>Correo</th>
+						<td mat-cell *matCellDef="let user">{{ user.email }}</td>
+					</ng-container>
+					<ng-container matColumnDef="role">
+						<th mat-header-cell *matHeaderCellDef>Role</th>
+						<td mat-cell *matCellDef="let user">{{ user.role }}</td>
+					</ng-container>
+					<ng-container matColumnDef="id">
+						<th mat-header-cell *matHeaderCellDef>Acciones</th>
+						<td mat-cell *matCellDef="let user">
+							<button
+								mat-icon-button
+								[matMenuTriggerFor]="menu"
+								aria-label="Menu  actions">
+								<mat-icon>more_vert</mat-icon>
+							</button>
+							<mat-menu #menu="matMenu">
+								<button mat-menu-item routerLink="/dash/manage/edit/{{ user.id }}">
+									<mat-icon>edit</mat-icon>
+									<span>Editar</span>
+								</button>
+								<button
+									mat-menu-item
+									(click)="openDialog(user.id)"
+									[disabled]="user.isDeleting">
+									<mat-icon>delete</mat-icon>
+									<span>Eliminar</span>
+								</button>
+								<button mat-menu-item (click)="openContracts(user)">
+									<mat-icon>assignment</mat-icon>
+									<span>Contratos</span>
+								</button>
+							</mat-menu>
+						</td>
+					</ng-container>
+					<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+					<tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+				</table>
+				<mat-paginator
+					[pageSizeOptions]="[8, 10, 30]"
+					showFirstLastButtons
+					aria-label="Select page of periodic elements"></mat-paginator>
+				<div class="footBarraTab"></div>
+			</div>
+		</div>
+	</mat-tab>
+	<!-- CARDS -->
+	<mat-tab label="Tarjetas">
+		<div class="page-container">
+			<mat-card class="animate__animated animate__fadeInLeft" id="add-user">
+				<mat-card-content style="margin-top: 80px">
+					<div class="border">
+						<i id="icon" class="fas fa-user-plus" routerLink="add"></i>
+					</div>
+				</mat-card-content>
+				<mat-card-footer>
+					<span class="add-user-text">Agregar Usuario</span>
+				</mat-card-footer>
+			</mat-card>
+		</div>
+		<div id="filterCards" class="animate__animated animate__fadeInLeft">
+			<mat-form-field appearance="outline" class="iptSearch" matTooltip="Buscar Usuarios">
+				<input matInput placeholder="Buscar Usuarios" (keyup)="filtrarTarjetas($event)" />
+				<mat-icon matSuffix>search</mat-icon>
+			</mat-form-field>
+		</div>
+		<div class="slides">
+			<div *ngFor="let user of filteredUsers" class="dox">
+				<mat-card class="animate__animated animate__fadeInLeft" id="card-user">
+					<div class="options">
+						<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu  actions">
+							<mat-icon>more_vert</mat-icon>
+						</button>
+						<mat-menu #menu="matMenu">
+							<button mat-menu-item routerLink="/dash/manage/edit/{{ user.id }}">
+								<mat-icon>edit</mat-icon>
+								<span>Editar</span>
+							</button>
+							<button
+								mat-menu-item
+								(click)="openDialog(user.id)"
+								[disabled]="user.isDeleting">
+								<mat-icon>delete</mat-icon>
+								<span>Eliminar</span>
+							</button>
+							<button mat-menu-item (click)="openContracts(user)">
+								<mat-icon>assignment</mat-icon>
+								<span>Contratos</span>
+							</button>
+						</mat-menu>
+					</div>
+					<mat-card-title>
+						<img
+							(click)="dialogShowProfilePic(user)"
+							src="https://www.shareicon.net/data/512x512/2016/08/05/806962_user_512x512.png"
+							class="avatar-table circleImgCards"
+							*ngIf="!user.avatarImagePath" />
+
+						<img
+							(click)="dialogShowProfilePic(user)"
+							src="{{ avatarUrl + user.avatarImagePath }}"
+							class="avatar-table circleImgCards"
+							*ngIf="user.avatarImagePath" />
+					</mat-card-title>
+					<mat-card-content>
+						<p>
+							<span class="name-user">{{ user.firstName }} {{ user.lastName }}</span>
+							<br />
+							<span class="rol-user">{{ user.role }}</span>
+						</p>
+						<p>
+							<span class="email-user">{{ user.email }}</span>
+						</p>
+						<p>
+							<span class="user-contract">Contratos:</span>
+							<br />
+							<span class="user-contract" *ngFor="let contrato of user.contrato">
+								{{ contrato }}
+								<br />
+							</span>
+						</p>
+					</mat-card-content>
+				</mat-card>
+			</div>
+		</div>
+	</mat-tab>
+</mat-tab-group>

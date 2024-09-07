@@ -1,0 +1,117 @@
+<div class="container">
+	<div class="containerform">
+		<br />
+		<div class="header">
+			<h2 class="instructions">Editar Orden</h2>
+		</div>
+		<form [formGroup]="updatewForm" (ngSubmit)="updateOrder()" class="form">
+			<div class="child1">
+				<mat-form-field class="field disabled">
+					<mat-label>Numero de orden</mat-label>
+					<input
+						formControlName="NumOrden"
+						matInput
+						type="number"
+						(keypress)="numericOnly($event)"
+						[readonly]="true" />
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field disabled">
+					<mat-label>Cliente</mat-label>
+					<input
+						formControlName="NoProvider"
+						matInput
+						[readonly]="true" />
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field">
+					<mat-label>Fecha de recepcion</mat-label>
+					<input
+						formControlName="DateReceptionEmail"
+						matInput
+						[matDatepicker]="DateReceptionEmail" />
+					<mat-datepicker-toggle
+						matSuffix
+						[for]="DateReceptionEmail"></mat-datepicker-toggle>
+					<mat-datepicker #DateReceptionEmail></mat-datepicker>
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field">
+					<mat-select
+						placeholder="Tipo de equipo"
+						matInput
+						formControlName="IdTypeEquipments"
+						required>
+						<mat-option *ngFor="let type of typePartsList" [value]="type.IdTypePart">
+							{{ type.Name }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+			<br />
+			<div class="child2">
+				<mat-form-field class="field">
+					<mat-select placeholder="Marca" matInput formControlName="IdBrand" required>
+						<mat-option *ngFor="let brand of brandsList" [value]="brand.IdBrand">
+							{{ brand.NameBrand }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+				<mat-form-field class="field">
+					<mat-label>Servicio</mat-label>
+					<mat-select placeholder="Marca" matInput formControlName="Services" required>
+						<mat-option *ngFor="let service of services" [value]="service.value">
+							{{ service.viewValue }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+				<mat-form-field class="field">
+					<mat-label>Total de equipos</mat-label>
+					<input
+						type="number"
+						(keypress)="numericOnly($event)"
+						formControlName="TotalEquipments"
+						matInput />
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field">
+					<mat-label>Empresa dueña</mat-label>
+					<mat-select
+						placeholder="Empresa"
+						matInput
+						formControlName="OwnCompany"
+						required>
+						<mat-option *ngFor="let company of companies" [value]="company.value">
+							{{ company.viewValue }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+			<br />
+			<div class="child3">
+				<mat-form-field class="field">
+					<mat-label>Usuario final</mat-label>
+					<input formControlName="UserClient" matInput />
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field">
+					<mat-label>Correo usuario final</mat-label>
+					<input formControlName="EmailUserFinal" matInput />
+					<mat-error class="error-field">Campo obligatio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<mat-form-field class="field">
+					<mat-label>SubTotal</mat-label>
+					<input type="number" formControlName="Subtotal" matInput />
+					<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+				</mat-form-field>
+				<div class="field"></div>
+			</div>
+			<br />
+			<div class="button">
+				<button type="submit" id="buttonProfile" mat-raised-button class="btn-block">
+					Guardar orden
+				</button>
+			</div>
+		</form>
+	</div>
+</div>

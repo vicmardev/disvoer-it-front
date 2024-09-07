@@ -1,0 +1,55 @@
+.title{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 15px;
+    color: white;
+}
+
+.btn-cancel{
+    background:red;
+    color: white;
+}
+
+.btn-accept{
+    background:#00c22a;
+    color: white;
+}
+
+input{
+    color:#325f96;
+   
+    margin-top: 10px !important;
+}
+
+
+textarea{
+    margin-top: 10px !important;
+}
+
+mat-label{
+    font-size: 21px;
+    color:#0c86e6 !important;
+    margin-bottom: 10px;
+}
+
+.black{
+    color: #00000082;;
+  }
+  
+.disabled{
+    color: #8b8a8a8f !important;
+}
+
+mat-select{
+    /* margin-top: 13px !important; */
+    color:#0c86e6 !important;
+    
+}
+
+.title-bar{
+    height: 40px;
+    background-color: #0b95c2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

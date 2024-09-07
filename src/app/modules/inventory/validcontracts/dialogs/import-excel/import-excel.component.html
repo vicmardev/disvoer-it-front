@@ -1,0 +1,72 @@
+<div *ngIf="!loading && !fileUploaded">
+	<h2 class="title">
+		Selecciona el archivo:
+		<i class="fas fa-file icons"></i>
+	</h2>
+	<input
+		class="file-select"
+		(change)="onFileChange($event)"
+		#fileInput
+		accept=".xlsx"
+		type="file" />
+	<mat-card fxLayout="row wrap">
+		<mat-form-field>
+			<input
+				matInput
+				placeholder="Token de autorización"
+				[type]="hideToken ? 'password' : 'text'"
+				[(ngModel)]="token"
+				required />
+			<mat-icon matSuffix (click)="hideToken = !hideToken">
+				{{ hideToken ? 'visibility_off' : 'visibility' }}
+			</mat-icon>
+		</mat-form-field>
+	</mat-card>
+	<mat-card>
+		<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+			<button mat-flat-button class="btn-cancel" (click)="cancel()">Cancelar</button>
+			<button mat-flat-button class="btn-accept" (click)="uploadFile()" *ngIf="file">
+				Subir Archivo
+			</button>
+		</div>
+	</mat-card>
+</div>
+<div *ngIf="loading" fxLayout="column" fxLayoutAlign="center center" class="spinner">
+	<img src="assets/gifs/Antena-1-unscreen.gif" alt="Cargando" />
+</div>
+<div *ngIf="!loading && fileUploaded">
+	<h2 class="title">Resultados de la importación</h2>
+	<table class="mat-table mat-elevation-z8">
+		<thead>
+			<tr class="mat-row">
+				<th class="mat-header-cell"></th>
+				<th class="mat-header-cell">Nuevo</th>
+				<th class="mat-header-cell">Actualizado</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="mat-row">
+				<td class="mat-cell details">Contratos</td>
+				<td class="mat-cell">{{ totalResults?.contracts?.new }}</td>
+				<td class="mat-cell">{{ totalResults?.contracts?.updated }}</td>
+			</tr>
+			<tr class="mat-row">
+				<td class="mat-cell details">DataCenters</td>
+				<td class="mat-cell">{{ totalResults?.dataCenters?.new }}</td>
+				<td class="mat-cell">{{ totalResults?.dataCenters?.updated }}</td>
+			</tr>
+			<tr class="mat-row">
+				<td class="mat-cell details">Equipos</td>
+				<td class="mat-cell">{{ totalResults?.equipments?.new }}</td>
+				<td class="mat-cell">{{ totalResults?.equipments?.updated }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<div
+		fxLayout="row"
+		fxLayoutAlign="center center"
+		fxLayoutGap="20px"
+		style="margin-top: 20px">
+		<button mat-flat-button class="btn-cancel" (click)="close()">Cerrar</button>
+	</div>
+</div>

@@ -1,0 +1,20 @@
+<strong>
+    <h1 class="title"> ¿Esta seguro  que  deseas eliminar el contrato <strong>{{idContrato}}</strong> ?</h1>
+</strong>
+<h2 class="center">No serial: <strong class="black">{{data.info.Serial}}</strong></h2>
+<!-- <h2 class="center">IP: <strong class="black">{{data.info.IP}}</strong></h2> -->
+<h2 class="center">Marca: <strong class="black">{{data.info.Brand}}</strong></h2>
+<form class="new-person-form" [formGroup]="deleteRow">
+<mat-form-field fxFlexFill appearance="fill">
+    <mat-label>Describe por  que se desaea eliminar registro:</mat-label>
+    <textarea matInput placeholder="Ejemplo: La información esta mal" 
+    cdkAutosizeMinRows="10" 
+    formControlName="commentsDelete"
+    cdkAutosizeMaxRows="10"
+    cols="10" rows="3" ></textarea>
+  </mat-form-field>
+</form>
+<div fxLayout="row" fxLayoutAlign="center center">
+    <button mat-flat-button class="btn-accept ml" (click)="aceptDeleteDialog(data.info)">Aceptar</button>
+    <button mat-flat-button class="btn-cancel ml" (click)="closeDialog()">Cancelar</button>
+</div>

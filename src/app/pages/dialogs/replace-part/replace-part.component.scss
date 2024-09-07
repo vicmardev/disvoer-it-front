@@ -1,0 +1,199 @@
+.barTitle {
+	background: #001e28b3;
+	color: white;
+	top: 8px;
+	text-align: center;
+}
+
+$background-color: #0099cc;
+$text-color: #fdfcfb;
+$text-size: 16px;
+
+table {
+	width: 100%;
+}
+
+mat-card-header {
+	justify-content: center;
+	background-color: #001e28b3;
+	color: #fff;
+}
+
+mat-card-title {
+	margin-top: 10px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 16px;
+	left: 0;
+	right: 0;
+	font-size: 14px;
+	text-align: center;
+}
+
+#chart {
+	width: 33% !important;
+}
+
+.graphics {
+	display: flex;
+}
+
+table {
+	width: 100%;
+}
+
+.title-card {
+	text-align: center !important;
+}
+
+.headerGray {
+	background-color: #4b6168ab;
+	color: #fff;
+	font-size: 17px;
+	font-weight: 500;
+}
+
+.mat-card-header-text {
+	margin-top: 10px;
+}
+
+.headerStatus {
+	margin-bottom: 10px;
+}
+
+.headerAlerts {
+	margin-bottom: 10px;
+}
+mat-table {
+	width: 100% !important;
+}
+mat-header-cell {
+	text-align: center !important;
+	color: #fdfcfb !important;
+	background-color: #4b6168ab !important;
+	font-size: 18px !important;
+}
+th {
+	text-align: center !important;
+	background-color: #4b6168ab;
+	color: #fdfcfb;
+	font-size: 18px;
+}
+mat-paginator {
+	width: 100% !important;
+}
+.mat-row:hover {
+	background-color: #abd0f06e;
+	cursor: pointer;
+	color: white !important;
+}
+.center {
+	text-align: center !important;
+}
+.barTitle {
+	background: #001e28b3;
+	color: white;
+	top: 8px;
+	text-align: center;
+}
+.cursor {
+	cursor: pointer;
+}
+.gray {
+	background: #646460;
+	color: white;
+	margin-left: 14px;
+	cursor: pointer;
+}
+.pendig {
+	background: #efcc00;
+	color: white;
+	margin-left: 14px;
+	cursor: pointer;
+}
+.complete {
+	background: #2db674;
+	color: white;
+	margin-left: 14px;
+	cursor: pointer;
+}
+.canceled {
+	background: #cc4c32;
+	color: white;
+	margin-left: 14px;
+	cursor: pointer;
+}
+.reasign {
+	background: #646460;
+	color: white;
+	margin-left: 14px;
+	cursor: pointer;
+}
+
+.center {
+	text-align: center;
+}
+.info {
+	color: #0099cc;
+	font-size: 19px;
+}
+.steperIcon {
+	margin-left: 48%;
+	width: 54px;
+}
+.center {
+	text-align: center;
+}
+
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit {
+	background-color: green !important;
+	color: white;
+}
+
+.mat-step-header .mat-step-icon-selected {
+	background-color: #0099cc !important;
+	color: white;
+}
+
+.mat-step-header .mat-step-icon {
+	color: white;
+	background-color: gray;
+}
+
+.highlight {
+	background-color: #4560682b;
+	cursor: pointer;
+}
+
+.filterDates {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 10px;
+}
+
+.alias {
+	width: 100%;
+	display: inline-block;
+}
+
+.arrowDown {
+	width: 100%;
+	display: inline-block;
+}
+
+.no-parts {
+	text-align: center;
+	color: #cc4c32;
+	margin-top: 10px;
+	font-size: 21px;
+	font-weight: bold;
+}
+
+.notify {
+	display: block;
+	text-align: center;
+	margin: 30px auto;
+}

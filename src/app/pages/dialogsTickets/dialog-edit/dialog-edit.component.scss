@@ -1,0 +1,59 @@
+.title{
+  text-align: center;
+  color:#fe6853;
+}
+
+input{
+  color:#325f96;
+  font-size: 17px;
+  margin-top: 10px !important;
+}
+textarea{
+  color:#325f96;
+  font-size: 17px;
+  margin-top: 10px !important;
+
+}
+
+
+ ::ng-deep .mat-form-field .mat-form-field-label {
+  color:#0c86e6 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color:#0c86e6 !important;
+  margin-bottom: 23px !important;
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  font-size: 24px;
+  color:#0c86e6 !important;
+}
+::ng-deep .mat-card-content{
+
+  margin-bottom: 23px !important;
+}
+mat-form-field{
+  font-size: 19px !important;
+}
+
+
+.black{
+  color: #00000082;;
+}
+.disabled{
+
+  color: #8b8a8a8f !important;
+}
+.mat-select{
+  margin-top: 5px !important;
+}
+.imagenRespuesta{
+  margin-top: 1.9%;
+}
+.cRed{
+  color: red;
+}
+.mTop{
+  margin-top: 17px !important;
+}

@@ -1,0 +1,97 @@
+<h2 class="sub-title">Comunícate con nuestro equipo</h2>
+<div class="box">
+	<mat-card class="box1">
+		<mat-card-title class="title">
+			<span class="sub-title">Contactanos</span>
+		</mat-card-title>
+		<br />
+		<mat-card-content>
+			<form [formGroup]="contactForm">
+				<mat-form-field appearance="outline" class="example-full-width">
+					<mat-icon mat-list-icon matSuffix>person</mat-icon>
+					<input
+						[readonly]="true"
+						id="firstName"
+						type="text"
+						matInput
+						placeholder="Nombre(s)"
+						formControlName="firstName" />
+				</mat-form-field>
+
+				<mat-form-field appearance="outline" class="example-full-width">
+					<mat-icon mat-list-icon matSuffix>people</mat-icon>
+					<input
+						id="company"
+						type="text"
+						matInput
+						placeholder="Compañia"
+						formControlName="company"
+						required />
+					<mat-error>Por favor, ingresa tu comañia</mat-error>
+				</mat-form-field>
+
+				<mat-form-field appearance="outline" class="example-full-width">
+					<mat-icon mat-list-icon matSuffix>mail_outline</mat-icon>
+					<input
+						[readonly]="true"
+						id="email"
+						type="email"
+						matInput
+						placeholder="E-mail"
+						formControlName="email"
+						required />
+				</mat-form-field>
+				<mat-form-field appearance="outline" class="example-full-width">
+					<mat-icon mat-list-icon matSuffix>phone</mat-icon>
+					<input
+						id="phone"
+						type="phone"
+						matInput
+						placeholder="Teléfono"
+						formControlName="phone"
+						required />
+					<mat-error>Por favor, esrcibe un número valido</mat-error>
+				</mat-form-field>
+
+				<mat-form-field appearance="outline" class="example-full-width">
+					<mat-icon mat-list-icon matSuffix>message</mat-icon>
+					<input
+						id="message"
+						type="message"
+						matInput
+						placeholder="Mensaje"
+						formControlName="message"
+						required />
+					<mat-error>Por favor, escribe tu mensaje</mat-error>
+				</mat-form-field>
+			</form>
+		</mat-card-content>
+		<button
+			id="boton"
+			type="submit"
+			mat-raised-button
+			color="primary"
+			(click)="onSubmit()"
+			class="btn-md">
+			Enviar
+		</button>
+	</mat-card>
+
+	<mat-card class="map">
+		<mat-card-content>
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.959529844799!2d-99.26801688472634!3d19.370904947669285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2017e8246e929%3A0x92aa5ebe825038dc!2sVIRWO!5e0!3m2!1ses-419!2smx!4v1645433366273!5m2!1ses-419!2smx"
+				width="600"
+				height="400"
+				style="border: 0"></iframe>
+		</mat-card-content>
+		<!-- <br><br><br> -->
+		<mat-card-footer class="foot">
+			<span class="title" style="font-size: 20px">
+				<i class="fas fa-map-marker-alt"></i>
+				Prol. P.º de la Reforma 51, Santa Fe, Paseo de las Lomas, Cuajimalpa de Morelos,
+				01330 Ciudad de México, CDMX
+			</span>
+		</mat-card-footer>
+	</mat-card>
+</div>

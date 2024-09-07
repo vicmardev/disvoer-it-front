@@ -1,0 +1,133 @@
+
+<form
+	action=""
+	[formGroup]="formCreateEquip"
+	class="form"
+	id="formEquipment"
+	(keydown.enter)="$event.preventDefault()">
+	<div class="container">
+		<h1 class="title">Agregar equipo</h1>
+		<div class="form1">
+			<mat-form-field class="field">
+				<mat-label>Contrato</mat-label>
+				<input matInput type="text" formControlName="Contrato" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+			<mat-form-field class="field">
+				<mat-label>Serial</mat-label>
+				<input matInput type="text" formControlName="Serial" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+			<mat-form-field class="field">
+				<mat-label>Serial Cliente</mat-label>
+				<input matInput type="text" formControlName="SerialProvider" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+			<mat-form-field class="field">
+				<mat-label>Marca</mat-label>
+				<input matInput type="text" formControlName="Brand" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+		</div>
+		<div class="form1">
+			<mat-form-field class="field">
+				<mat-label>Equipo</mat-label>
+				<input matInput type="text" formControlName="Equipment" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+			<mat-form-field class="field">
+				<mat-label>Modelo</mat-label>
+				<input matInput type="text" formControlName="Model" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+			<mat-form-field class="field">
+				<mat-label>SLA</mat-label>
+				<input matInput type="text" formControlName="SLA" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+			<mat-form-field class="field">
+				<mat-label>Etiqueta de servicio</mat-label>
+				<input matInput type="text" formControlName="ServiceTag" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+		</div>
+		<div class="form3">
+			<mat-form-field class="field3">
+				<mat-label>IP</mat-label>
+				<input matInput type="text" formControlName="IP" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+			<mat-form-field class="field3">
+				<mat-label>Fecha de inicio</mat-label>
+				<input matInput [matDatepicker]="picker" formControlName="Start" />
+				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+				<mat-datepicker #picker></mat-datepicker>
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+			<mat-form-field class="field3">
+				<mat-label>Fecha fin</mat-label>
+				<input matInput [matDatepicker]="pickerFinal" formControlName="End" />
+				<mat-datepicker-toggle matSuffix [for]="pickerFinal"></mat-datepicker-toggle>
+				<mat-datepicker #pickerFinal></mat-datepicker>
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+		</div>
+		<h2 class="subtitle">Direccion</h2>
+		<div class="form1">
+			<mat-form-field class="field">
+				<mat-label>Codigo Postal</mat-label>
+				<input
+					matInput
+					type="text"
+					formControlName="PostalCode"
+					(change)="getAddressByPC()" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+			<mat-form-field class="field">
+				<mat-label>Delegacion o Municipio</mat-label>
+				<input matInput type="text" formControlName="Delegation" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+			<mat-form-field class="field">
+				<mat-label>Ciudad</mat-label>
+				<input matInput type="text" formControlName="City" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+			<mat-form-field class="field">
+				<mat-label>Pais</mat-label>
+				<input matInput type="text" formControlName="Country" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+		</div>
+		<div class="form1">
+			<!---Neighborhood-->
+			<mat-form-field class="field">
+				<mat-label>Vecindario</mat-label>
+				<input matInput type="text" formControlName="Neighborhood" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+			<mat-form-field class="field">
+				<mat-label>Calle</mat-label>
+				<input matInput type="text" formControlName="Street" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+			<mat-form-field class="field">
+				<mat-label>Numero exterior</mat-label>
+				<input matInput type="text" formControlName="ExternalNumber" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+			<mat-form-field class="field">
+				<mat-label>Numero interior</mat-label>
+				<input matInput type="text" formControlName="InternalNumber" />
+				<mat-error class="error-field">Campo obligatorio, favor de llenarlo</mat-error>
+			</mat-form-field>
+		</div>
+		<br />
+		<mat-card>
+			<button mat-flat-button class="btn-accept" (click)="createNewEquipt()">
+				Guardar
+			</button>
+			<button mat-flat-button class="btn-cancel" (click)="closeDialog()">Cancelar</button>
+		</mat-card>
+	</div>
+</form>

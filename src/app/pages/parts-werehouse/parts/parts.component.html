@@ -1,0 +1,146 @@
+<mat-tab-group mat-align-tabs="center">
+	<mat-tab>
+		<ng-template mat-tab-label>
+			<div
+				class="secondTab"
+				[ngClass]="{tabSelected: equipment, tabNotSelected: !equipment}"
+				(click)="tabChange(1)">
+				<img
+					class="ico-mat-label"
+					src="../../../../assets/img/equiposBlanco.png"
+					alt="" />
+				<span class="title-mat-label">Equipos</span>
+			</div>
+		</ng-template>
+		<div id="container">
+			<button
+				[ngClass]="{buttonEntryClick: flag, buttonEntry: !flag}"
+				(click)="cambioColor()"
+				id="space-btw"
+				class="buttonEntry"
+				matTooltip="Registrar entrada de equipo"
+				(click)="openRegisterIncomingPart()">
+				<img class="ico-entrada" src="../../../../assets/img/entradaBlanco.png" alt="" />
+				<br />
+				<span class="text-button">Entrada de Equipo</span>
+			</button>
+
+			<button
+				[ngClass]="{buttonExitClick: flag2, buttonExit: !flag2}"
+				(click)="cambioColorRojo()"
+				id="space-btw"
+				class="buttonExit"
+				matTooltip="Registrar salida de equipo"
+				(click)="openRegisterOutgoingPart()">
+				<img class="ico-entrada" src="../../../../assets/img/salidaBlanco.png" alt="" />
+				<br />
+				<span class="text-button">Salida de Equipo</span>
+			</button>
+		</div>
+		<br />
+		<div id="container-2">
+			<mat-progress-bar
+				class="audio-progress-bar"
+				mode="indeterminate"
+				*ngIf="!tableInfo"></mat-progress-bar>
+			<table
+				mat-table
+				[dataSource]="dataSource"
+				class="mat-elevation-z8"
+				multiTemplateDataRows>
+				<ng-container matColumnDef="brand">
+					<mat-header-cell *matHeaderCellDef class="header-table">MARCA</mat-header-cell>
+					<mat-cell *matCellDef="let element" (click)="singleClick(element)">
+						{{ element.Brand }}
+					</mat-cell>
+				</ng-container>
+				<ng-container matColumnDef="part">
+					<mat-header-cell *matHeaderCellDef class="header-table">PART</mat-header-cell>
+					<mat-cell *matCellDef="let element" (click)="singleClick(element)">
+						{{ element.TypePart }}
+					</mat-cell>
+				</ng-container>
+				<ng-container matColumnDef="model">
+					<mat-header-cell *matHeaderCellDef class="header-table">MODELO</mat-header-cell>
+					<mat-cell *matCellDef="let element" (click)="singleClick(element)">
+						{{ element.Model }}
+					</mat-cell>
+				</ng-container>
+				<ng-container matColumnDef="partNumber">
+					<mat-header-cell *matHeaderCellDef class="header-table">P/N</mat-header-cell>
+					<mat-cell *matCellDef="let element" (click)="singleClick(element)">
+						{{ element.PartNumber }}
+					</mat-cell>
+				</ng-container>
+				<ng-container matColumnDef="quantity">
+					<mat-header-cell *matHeaderCellDef class="header-table">
+						Cantidad
+					</mat-header-cell>
+					<mat-cell *matCellDef="let element" (click)="singleClick(element)">
+						{{ element.Count }}
+					</mat-cell>
+				</ng-container>
+
+				<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+				<mat-row
+					*matRowDef="let row; columns: displayedColumns"
+					(click)="tableSelectedRow(row)"
+					[ngClass]="{highligth: selectedRow == row.IdPart}"
+					class="example-element-row"></mat-row>
+			</table>
+			<mat-paginator
+				[pageSizeOptions]="[10, 20, 50]"
+				showFirstLastButtons
+				aria-label="paginator"></mat-paginator>
+
+			<ng-template [ngIf]="selectedPart">
+				<app-parts-details [part]="selectedPart"></app-parts-details>
+			</ng-template>
+		</div>
+	</mat-tab>
+
+	<mat-tab>
+		<ng-template mat-tab-label>
+			<div
+				class="secondTab"
+				[ngClass]="{tabSelected: equipmentTypes, tabNotSelected: !equipmentTypes}"
+				(click)="tabChange(2)">
+				<img
+					class="ico-mat-label"
+					src="../../../../assets/img/tiposEquipoBlanco.png"
+					alt="" />
+				<span class="title-mat-label">Tipos de Equipos</span>
+			</div>
+		</ng-template>
+		Content 2
+	</mat-tab>
+
+	<mat-tab>
+		<ng-template mat-tab-label>
+			<div
+				class="secondTab"
+				[ngClass]="{tabSelected: racks, tabNotSelected: !racks}"
+				(click)="tabChange(3)">
+				<img class="ico-mat-label" src="../../../../assets/img/racksBlanco.png" alt="" />
+				<span class="title-mat-label">Racks</span>
+			</div>
+		</ng-template>
+		Content 3
+	</mat-tab>
+
+	<mat-tab>
+		<ng-template mat-tab-label>
+			<div
+				class="secondTab"
+				[ngClass]="{tabSelected: stores, tabNotSelected: !stores}"
+				(click)="tabChange(4)">
+				<img
+					class="ico-mat-label"
+					src="../../../../assets/img/bodegasBlanco.png"
+					alt="" />
+				<span class="title-mat-label">Bodegas</span>
+			</div>
+		</ng-template>
+		Content 4
+	</mat-tab>
+</mat-tab-group>

@@ -1,0 +1,106 @@
+<div class="row">
+	<!-- LEFT COMPONENT <- ALERTS BY HOST -->
+	<div class="column left">
+		<!-- Title bar -->
+		<h3 class="titleTables">
+			<!-- <i class="fas fa-bell"></i> -->
+			Servicios de {{ host }}
+		</h3>
+		<!-- TABLE <- ALERTS BY HOST -->
+		<table
+			id="tableAlarm"
+			mat-table
+			[dataSource]="dataSourceAlarms"
+			class="mat-elevation-z8">
+			<ng-container matColumnDef="Attemps">
+				<th class="headerAlarms" mat-header-cell *matHeaderCellDef>Intentos</th>
+				<td
+					mat-cell
+					*matCellDef="let element; let row"
+					[ngClass]="{highlight: row === selectedRowIndexAlarms}"
+					(click)="
+						getTablebitacora(element.Name, element.idService); highlightAlarms(row)
+					">
+					{{ element.Attemps }}
+				</td>
+			</ng-container>
+			<ng-container matColumnDef="Duration">
+				<th class="headerAlarms" mat-header-cell *matHeaderCellDef>Duración</th>
+				<td
+					mat-cell
+					*matCellDef="let element; let row"
+					[ngClass]="{highlight: row === selectedRowIndexAlarms}"
+					(click)="
+						getTablebitacora(element.Name, element.idService); highlightAlarms(row)
+					">
+					{{ element.Duration }}
+				</td>
+			</ng-container>
+			<ng-container matColumnDef="Hostname">
+				<th class="headerAlarms" mat-header-cell *matHeaderCellDef>Hostname</th>
+				<td
+					mat-cell
+					*matCellDef="let element; let row"
+					[ngClass]="{highlight: row === selectedRowIndexAlarms}"
+					(click)="
+						getTablebitacora(element.Name, element.idService); highlightAlarms(row)
+					">
+					<b>{{ host }}</b>
+				</td>
+			</ng-container>
+
+			<ng-container matColumnDef="ServiceName">
+				<th class="headerAlarms" mat-header-cell *matHeaderCellDef>Componente</th>
+				<td
+					mat-cell
+					*matCellDef="let element; let row"
+					[ngClass]="{highlight: row === selectedRowIndexAlarms}"
+					(click)="
+						getTablebitacora(element.Name, element.idService); highlightAlarms(row)
+					">
+					{{ element.Name }}
+				</td>
+			</ng-container>
+			<ng-container matColumnDef="Status">
+				<th class="headerAlarms" mat-header-cell *matHeaderCellDef>Estado</th>
+				<td
+					mat-cell
+					*matCellDef="let element; let row"
+					[ngClass]="{highlight: row === selectedRowIndexAlarms}"
+					(click)="(element.Hostname); highlight(row)">
+					<i class="fas fa-check-circle green" *ngIf="element.Status === 'ok'"></i>
+					<i
+						class="fas fa-exclamation-circle orange"
+						*ngIf="element.Status === 'warning'"></i>
+					<i
+						class="fas fa-exclamation-triangle red"
+						*ngIf="element.Status === 'critical'"></i>
+					<i
+						class="fas fa-exclamation-triangle red"
+						*ngIf="element.Status === 'unknown'"></i>
+				</td>
+			</ng-container>
+			<tr mat-header-row *matHeaderRowDef="displayColumAlarmHost"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayColumAlarmHost"></tr>
+		</table>
+		<mat-paginator
+			#paginator
+			[pageSize]=""
+			showFirstLastButtons
+			aria-label="paginator"
+			[pageSizeOptions]="[10, 20, 50]"></mat-paginator>
+	</div>
+	<!-- Histórico de alertas -->
+	<div class="column right">
+		<div *ngIf="flagSpinner && !tableReady">
+			<mat-spinner class="spinner"></mat-spinner>
+		</div>
+		<div *ngIf="tableReady">
+			<!-- <app-historic-alerts></app-historic-alerts> -->
+			<app-historic-alerts
+				[dataSource]="bitacoraFilter"
+				[host]="host"
+				[currentServiceName]="serviceName"></app-historic-alerts>
+		</div>
+	</div>
+</div>

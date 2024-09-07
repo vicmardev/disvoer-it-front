@@ -1,0 +1,167 @@
+<!-- Filter by Date / Month -->
+<div class="flex-item ">
+     <div class="filterDates"><div class="filterDates">
+        <mat-form-field appearance="outline" color="warn">
+        <mat-label> Filtrar por Fecha </mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeHolder="Start date" (dateChange)="startChange($event)" />
+        <input matEndDate placeholder="End date" (dateChange)="endChange($event)" />
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+    </div>
+</div>
+
+<!-- graficas alarmas-->
+<div class="patern1">
+    <div id="listBadge" fxLayout="row" fxLayoutGap="" fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="colum" fxLayoutAlign="center" class="cursor">
+        <div class="title-grap">
+            <h1 class="title-test">
+                Estatus de los tickets
+            </h1>
+        </div>
+        <div class="graficas">
+
+        </div>
+        <script type="text/javascript" src="dist/jszip-utils.js"></script>
+        
+        <div class="graph1">
+            <apx-chart
+                class="chart"
+                [series]="chartOptionsPending.series" 
+                [chart]="chartOptionsPending.chart"
+                [title]="chartOptionsPending.title" 
+                [colors]="chartOptionsPending.colors" 
+                [labels]="chartOptionsPending.labels"
+                [responsive]="chartOptionsPending.responsive" 
+                (click)="filterStatus('Pending')"
+                *ngIf="chartOptionsPending">
+            </apx-chart>
+    
+            <apx-chart
+                class="chart" 
+                [series]="chartOptionsReassigned.series" 
+                [chart]="chartOptionsReassigned.chart"
+                [title]="chartOptionsReassigned.title" 
+                [colors]="chartOptionsReassigned.colors"
+                [labels]="chartOptionsReassigned.labels"
+                [responsive]="chartOptionsReassigned.responsive"   
+                (click)="filterStatus('Reassigned')"
+                *ngIf="chartOptionsReassigned">
+            </apx-chart>
+
+            <apx-chart
+                class="chart" 
+                [series]="chartOptionsComplete.series" 
+                [chart]="chartOptionsComplete.chart"
+                [title]="chartOptionsComplete.title" 
+                [colors]="chartOptionsComplete.colors"
+                [labels]="chartOptionsComplete.labels"
+                [responsive]="chartOptionsComplete.responsive"  
+                (click)="filterStatus('Complete')"
+                *ngIf="chartOptionsComplete">
+            </apx-chart>
+    
+            <apx-chart
+                class="chart"
+                [series]="chartOptionsTotal.series" 
+                [chart]="chartOptionsTotal.chart"
+                [legend]="chartOptionsTotal.legend"
+                [title]="chartOptionsTotal.title"
+                [colors]="chartOptionsTotal.colors" 
+                [labels]="chartOptionsTotal.labels" 
+                [plotOptions]="chartOptionsTotal.plotOptions"
+                [responsive]="chartOptionsTotal.responsive" 
+                (click)="filterStatus('Total')"
+                *ngIf="chartOptionsTotal">
+            </apx-chart>
+
+        </div>
+        <div class="child-1">
+            <h1 class="barTitle">
+                Lista de tickets
+            </h1>
+            <div class="example-header" style="text-align: center;">
+                <mat-form-field style="width: 100%;">
+                    <input matInput placeholder="Filtrar Tabla" (keyup)="applyFilter($event)">
+                </mat-form-field>
+            </div>
+            <div class="example-container mat-elevation-z8">
+                <mat-table [dataSource]="dataSource" matSort>
+                    <ng-container matColumnDef="select">
+                        <mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox   matTooltip="Seleccionar todos"
+                                            (change)="$event ? masterToggle() : null"
+                                            [checked]="selection.hasValue() && isAllSelected()"
+                                            [indeterminate]="selection.hasValue() && !isAllSelected()">
+                            </mat-checkbox>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let row" > 
+                            <div *ngIf="row.stepTicket == 6">
+                                <mat-checkbox   class="example-margin"
+                                                (click)="$event.stopPropagation()"
+                                                (change)="$event ? selection.toggle(row) : null"
+                                                [checked]="selection.isSelected(row)"
+                                                [ngClass]="{'highlight':  row === selectedRowIndex}">
+                                </mat-checkbox>
+                            </div>
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="ticketID">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> ID Ticket </mat-header-cell>
+                        <mat-cell *matCellDef="let row" [ngClass]="{'highlight':  row === selectedRowIndex}"
+                            (click)="getUniqueId(row);highlight(row);"> {{row.ticketID}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="host">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Host </mat-header-cell>
+                        <mat-cell *matCellDef="let row" [ngClass]="{'highlight':  row === selectedRowIndex}"
+                            (click)="getUniqueId(row);highlight(row)"> {{row.host}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="statusTicket">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Estatus </mat-header-cell>
+                        <mat-cell *matCellDef="let row" [ngClass]="{'highlight':  row === selectedRowIndex}"
+                            (click)="getUniqueId(row);highlight(row)"> {{row.statusTicket}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="stepTicket">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Etapa </mat-header-cell>
+                        <mat-cell *matCellDef="let row" [ngClass]="{'highlight':  row === selectedRowIndex}"
+                            (click)="getUniqueId(row);highlight(row)">
+                            <mat-chip [ngClass]="{'pendig': row.statusTicket === 'Pending','complete': row.statusTicket === 'Complete',
+                                'canceled': row.statusTicket === 'Canceled','reasign': row.statusTicket === 'Reassigned'}">
+                                {{row.stepTicket}}</mat-chip>
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="ticketRegistrationDate">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Creacion </mat-header-cell>
+                        <mat-cell *matCellDef="let row" [ngClass]="{'highlight':  row === selectedRowIndex}"
+                            (click)="getUniqueId(row);highlight(row)"> {{row.ticketRegistrationDate | date:'shortDate'}}
+                        </mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;">
+                    </mat-row>
+                </mat-table>
+                <div class="footer-table">
+                    <button  mat-button class="btn-back" (click)="selectPdFDownload()" matTooltip="Exportar tickets">Descargar  <mat-icon>cloud_download</mat-icon> </button>
+                    <mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div fxLayout="row" fxLayoutGap="90px" fxLayout.xs="column" fxLayout.sm="column" class="patern12">
+        <div class="child-2" class="divChild">
+            <h1 class="barTitle">
+                Fase del ticket:
+                <span class="idTicket">{{idTicketSelect}}</span>
+            </h1>
+            <div *ngIf="flagDivComponet">
+                <app-stepper [selectTicket]="rowSelect"></app-stepper>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+

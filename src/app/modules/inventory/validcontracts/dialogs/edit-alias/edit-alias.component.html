@@ -1,0 +1,27 @@
+<form class="new-person-form" [formGroup]="formEditAlias">
+	<div>
+		<h1 class="title">
+			<strong>
+				<mat-icon>edit</mat-icon>
+				Editar Contrato:
+				<strong class="black">{{ contract.Contract }}</strong>
+			</strong>
+		</h1>
+		<br />
+	</div>
+	<mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+		<mat-form-field fxFlex="100" class="field">
+			<mat-label>Alias</mat-label>
+			<input
+				matInput
+				placeholder="Alias Contrato"
+				formControlName="Alias"
+				maxlength="50" />
+		</mat-form-field>
+	</mat-card>
+</form>
+
+<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+	<button mat-flat-button class="btn-cancel" (click)="cancel()">Cancelar</button>
+	<button mat-flat-button class="btn-accept" (click)="update()">Guardar</button>
+</mat-card>

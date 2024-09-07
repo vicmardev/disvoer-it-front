@@ -1,0 +1,44 @@
+<form class="new-person-form" [formGroup]="formTakePart">
+    <div>
+        <h1 class="title">
+            <strong>
+                <mat-icon>settings_input_hdmi</mat-icon>
+                Tomar piezas
+            </strong>
+        </h1>
+    </div>
+    <mat-card fxLayout="row" fxLayoutAlign="center center" class="mat-card" fxLayoutGap="15px">
+        <div class="cardpatern">
+            <div class="card">
+                <mat-form-field  class="field">
+                    <mat-label>Modelo</mat-label>
+                    <input matInput placeholder="Modelo" formControlName="model" class="disabled" readonly>
+                </mat-form-field>
+                <mat-form-field  class="field">
+                    <mat-label>Cantidad disponible</mat-label>
+                    <input matInput placeholder="1" formControlName="quantity" class="disabled" readonly>
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-card>
+    <br>
+    <mat-card fxLayout="row" fxLayoutAlign="center center" class="mat-card" fxLayoutGap="15px">
+        <div class="cardpatern">
+           
+            <div class="card" *ngFor="let serial of listPartsSerial">
+               
+                <div class="card">
+                    <p>Serial: {{serial}}</p>
+                    <button mat-flat-button class="btn-accept" (click)="takePart(serial)">Checkout</button>
+                </div>
+                
+            </div>
+        </div>
+    </mat-card>
+    <br>
+</form>
+<br>
+<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+    <button *ngIf="isShow" mat-flat-button class="btn-accept" (click)="validateAvailableParts()">Solicitar piezas</button>
+    <button mat-flat-button class="btn-cancel" (click)="closeDialog()">Cancelar</button>
+</mat-card>

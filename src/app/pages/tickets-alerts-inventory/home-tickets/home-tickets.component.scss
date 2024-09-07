@@ -1,0 +1,36 @@
+.mat-tab-group {
+    margin-bottom: 48px;
+  }
+  .alarmas, .inventario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .alarmas {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .inventario {
+    height: 300px;
+    width: 300px;
+  }
+  .title{
+    text-align: center !important;
+    color:#0f4282 !important;
+    font-size: 32px;
+}
+.spanTitle{
+  font-size: 20px;
+    color: #0099CC;
+}
+.ml{
+  margin-left: 4px;
+}
+.sizeIcon{
+  width:32px;
+}

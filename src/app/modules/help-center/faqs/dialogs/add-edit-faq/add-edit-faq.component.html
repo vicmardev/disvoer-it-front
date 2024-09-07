@@ -1,0 +1,36 @@
+<form class="new-person-form" [formGroup]="faqResponse">
+	<div>
+		<div class="title-bar">
+			<h1 class="title">Editar Pregunta</h1>
+		</div>
+		<br />
+		<mat-card fxLayout="row">
+			<mat-form-field fxFlex="100">
+				<mat-label>Pregunta</mat-label>
+				<textarea formControlName="question" matInput></textarea>
+			</mat-form-field>
+		</mat-card>
+		<mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+			<mat-form-field fxFlex="100">
+				<mat-label>Respuesta</mat-label>
+				<textarea formControlName="response" matInput></textarea>
+			</mat-form-field>
+		</mat-card>
+		<!--</mat-card>-->
+		<mat-card fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+			<mat-form-field fxFlex="100">
+				<mat-label>Tipo de pregunta</mat-label>
+				<!-- <input matInput placeholder="Pregunta" formControlName="questiontype" /> -->
+				<mat-select formControlName="questiontype">
+					<mat-option value="General">General</mat-option>
+					<mat-option value="Específico">Específico</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</mat-card>
+	</div>
+</form>
+
+<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+	<button mat-flat-button class="btn-accept" (click)="updateFaq()">Actualizar</button>
+	<button mat-flat-button class="btn-cancel" (click)="closeDialog()">Cancelar</button>
+</mat-card>

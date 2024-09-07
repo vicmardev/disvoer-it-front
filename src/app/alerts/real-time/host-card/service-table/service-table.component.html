@@ -1,0 +1,114 @@
+<ng-template #loadingData>
+	<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-template>
+
+
+  <table mat-table [dataSource]="data" class="mat-elevation-z8">
+    <ng-container matColumnDef="Acknowledged">
+      <th class="cell-size" mat-header-cell *matHeaderCellDef>No.</th>
+      <td class="cell-size" mat-cell *matCellDef="let element">
+      {{ element.CurrentAlarm.ack }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="Serial">
+    <th class="cell-size" mat-header-cell *matHeaderCellDef>Serial</th>
+    <td class="cell-size" mat-cell *matCellDef="let element">
+      {{ element.Serial }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="Attemps">
+    <th class="cell-size-small" mat-header-cell *matHeaderCellDef>Clear alert</th>
+    <td class="cell-size-small" mat-cell *matCellDef="let element" (click)="clearAlarm(element)">
+      <i class="fas fa-exchange-alt btnClear"></i>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="Duration">
+    <th class="cell-size" mat-header-cell *matHeaderCellDef>
+      Duracion de alarma
+    </th>
+    <td class="cell-size" mat-cell *matCellDef="let element">
+      {{ element.CurrentAlarm.Duration }}
+    </td>
+  </ng-container>
+  
+  <ng-container matColumnDef="Created">
+    <th class="cell-size" mat-header-cell *matHeaderCellDef>
+      Ultima Alerta
+    </th>
+    <td class="cell-size" mat-cell *matCellDef="let element">
+      {{ getDateFromTimestamp(element.CurrentAlarm.CreatedAt )| date:'shortDate' }}
+    </td>
+  </ng-container>
+  
+  <ng-container matColumnDef="Hostname">
+    <th class="cell-size" mat-header-cell *matHeaderCellDef>Host</th>
+    <td class="cell-size" mat-cell *matCellDef="let element">
+      {{ element.Hostname }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="Notification">
+    <th class="cell-size" mat-header-cell *matHeaderCellDef>Notificación</th>
+    <td class="cell-size" mat-cell *matCellDef="let element">
+      {{ element.CurrentAlarm.Notification }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="PluginOutput">
+    <th class="cell-size" mat-header-cell *matHeaderCellDef>
+      Respuesta NAGIOS
+    </th>
+    <td class="cell-size" mat-cell *matCellDef="let element">
+      {{ element.CurrentAlarm.PluginOutput }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="ServiceName">
+    <th class="cell-size" mat-header-cell *matHeaderCellDef>Componente</th>
+    <td class="cell-size" mat-cell *matCellDef="let element">
+      {{ element.Name }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="Status">
+    <th class="cell-size-small" mat-header-cell *matHeaderCellDef>Estatus</th>
+    <td class="cell-size-small" mat-cell *matCellDef="let element" [ngClass]="{
+      green: element.CurrentAlarm.Status === 'ok',
+      orange: element.CurrentAlarm.Status === 'warning',
+        red: element.CurrentAlarm.Status === 'critical',
+        gray: element.CurrentAlarm.Status === 'unknown'
+      }">
+      {{ element.CurrentAlarm.Status }}
+    </td>
+  </ng-container>
+  
+  <ng-container matColumnDef="Service">
+    <th class="cell-size-small" mat-header-cell *matHeaderCellDef>Acciones</th>
+    <td class="cell-size-small" mat-cell *matCellDef="let element">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"
+      (click)="highLightOn = true; selectedRow = element._id">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="openDialogTicket(element)">
+        <mat-icon>remove_red_eye</mat-icon>
+        <span>Crear Ticket</span>
+      </button>
+      <button mat-menu-item>
+        <a href="http://discoverit.virwo.com/dash/know" target="_blank" class="link">
+          <mat-icon>library_books</mat-icon>
+          <span>Documentacion</span>
+        </a>
+      </button>
+        <button mat-menu-item (click)="goTickets()">
+          <mat-icon>remove_red_eye</mat-icon>
+          <span>Ver Tickets</span>
+        </button>
+      </mat-menu>
+    </td>
+  </ng-container>
+  
+  <div *ngIf="services else loadingData">
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </div>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of services">
+</mat-paginator>
+<br>

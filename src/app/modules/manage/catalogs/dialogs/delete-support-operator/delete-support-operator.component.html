@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>
+	<i class="fas fa-exclamation-triangle"></i>
+	¿Seguro que deseas eliminar este operador?
+</h1>
+<div class="sub-title" fxLayoutAlign="center center" mat-dialog-content>
+	<h3>Esta acción es permanente y no puede deshacerse.</h3>
+</div>
+<div class="accions" fxLayoutAlign="center center" mat-dialog-actions>
+	<button (click)="deleteSupportOperator()" class="botonEliminar" mat-raised-button>
+		Eliminar
+	</button>
+
+	<button (click)="closeDialog()" class="botonCancelar" mat-raised-button>
+		Cancelar
+	</button>
+</div>

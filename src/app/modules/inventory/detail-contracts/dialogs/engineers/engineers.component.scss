@@ -1,0 +1,29 @@
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+mat-chip{
+    display: flex;
+    justify-content: space-between;   
+}
+
+.btn-add {
+	background: #0996c4;
+	color: white;
+}
+
+mat-form-field{
+    margin-top: 10%;
+}
+
+mat-chip-list{
+    width: 100%;
+}
+
+// .btn-accept{
+//     display: flex;
+//     justify-content: center;
+//     margin-top: 5%;
+//     margin-left: 40%;
+// }

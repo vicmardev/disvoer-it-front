@@ -1,0 +1,115 @@
+<mat-tab-group
+	#tabGroup
+	(selectedTabChange)="tabChanged($event)"
+	dynamicHeight
+	headerPosition="below">
+	<mat-tab label="Short tab">
+		<ng-template mat-tab-label>
+			<mat-icon mat-list-icon svgIcon="arrow_left"></mat-icon>
+		</ng-template>
+		<!-- <div class="example-large-box mat-elevation-z4">Left content</div> -->
+		<div class="page">
+			<div class="item_1">
+				<div class="graphic_1">
+					<div class="header">
+						<span class="formatHeader">GRÁFICOS DE CONTRATOS</span>
+					</div>
+					<div id="barras" class="chart child-1"></div>
+				</div>
+				<div class="graphic_2">
+					<div id="pieStatusContract" style="height: 350px" class="chart child-2"></div>
+				</div>
+			</div>
+			<div class="item_group">
+				<!-- Bar chart by inventory type -->
+				<div class="card backgroundStyle">
+					<div class="header">
+						<span class="marginHeader">GRAFICOS DE EQUIPOS</span>
+					</div>
+					<div class="item_2">
+						<div class="graphic_3">
+							<div id="brandGraphic" style="height: 350px" class="chart child-2"></div>
+						</div>
+						<div class="graphic_4">
+							<div id="chartArea" style="height: 360px" class="chart child-1"></div>
+						</div>
+						<div class="graphic_5">
+							<div
+								id="equipmentByInventoryBar"
+								style="height: 360px"
+								class="chart child-1"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card backgroundStyle">
+					<div class="header">
+						<span class="marginHeader">GRÁFICOS DE USUARIOS</span>
+					</div>
+					<div class="item_2">
+						<div class="graphic_6">
+							<div id="chartPie" style="height: 360px" class="chart child-1"></div>
+						</div>
+						<div class="graphic_7">
+							<div id="divUserGraphic" style="height: 360px" class="chart child-2"></div>
+						</div>
+						<div class="graphic_8">
+							<apx-chart
+								*ngIf="ticketHeatMapOptions"
+								[series]="ticketHeatMapOptions.series"
+								[chart]="ticketHeatMapOptions.chart"
+								[dataLabels]="ticketHeatMapOptions.dataLabels"
+								[plotOptions]="ticketHeatMapOptions.plotOptions"
+								[title]="ticketHeatMapOptions.title"></apx-chart>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</mat-tab>
+	<mat-tab label="Long tab">
+		<ng-template mat-tab-label>
+			<mat-icon mat-list-icon svgIcon="arrow_right"></mat-icon>
+		</ng-template>
+		<div class="page">
+			<div class="item_group_right">
+				<div class="card_2 backgroundStyle">
+					<div class="header">
+						<span class="marginHeader">GRAFICOS DE DIFERENTES EQUIPOS POR MARCAS</span>
+					</div>
+					<div class="item_3">
+						<div class="graphic_9">
+							<apx-chart
+								*ngIf="chartOptions"
+								[series]="chartOptions.series"
+								[chart]="chartOptions.chart"
+								[dataLabels]="chartOptions.dataLabels"
+								[plotOptions]="chartOptions.plotOptions"
+								[responsive]="chartOptions.responsive"
+								[xaxis]="chartOptions.xaxis"
+								[legend]="chartOptions.legend"
+								[fill]="chartOptions.fill"></apx-chart>
+						</div>
+					</div>
+				</div>
+				<div class="card_2 backgroundStyle">
+					<div class="header">
+						<span class="marginHeader">GRAFICOS DE DIFERENTES EQUIPOS POR MARCAS</span>
+					</div>
+
+					<div class="item_4">
+						<div class="graphic_10">
+							<div id="divUser" style="height: 350px" class="chart child-1"></div>
+						</div>
+						<div class="graphic_11">
+							<div
+								id="usersPerContract"
+								style="height: 350px"
+								class="chart child-2"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</mat-tab>
+</mat-tab-group>

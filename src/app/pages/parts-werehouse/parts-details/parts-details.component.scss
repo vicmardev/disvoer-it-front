@@ -1,0 +1,143 @@
+$background-color: #0099cc;
+$text-color: #fdfcfb;
+$text-size: 16px;
+
+table {
+    width: 100%;
+}
+
+th {
+    text-align: center !important;
+    background-color: $background-color;
+    color: $text-color;
+    font-size: $text-size;
+}
+
+.mat-header-cell {
+    justify-content: center;
+    color: $text-color !important;
+    background-color: $background-color;
+    font-size: $text-size;
+}
+
+.header {
+    text-align: center !important;
+    color: $text-color !important;
+    background-color: $background-color;
+}
+
+.mat-table__wrapper .mat-table {
+    min-width: auto !important;
+    width: 100% !important;
+}
+
+.mat-header-row {
+    min-width: auto !important;
+    text-align: center !important;
+    color: $text-color !important;
+    background-color: $background-color;
+    text-align: center !important;
+    font-size: $text-size;
+    width: 100%;
+}
+
+.mat-row {
+  min-width: auto !important;
+  font-size: $text-size;
+  text-align: center !important;
+  width: 100%;
+}
+
+
+td {
+  text-align: center !important;
+  font-size: $text-size;
+  padding: 0.75rem !important;
+}
+
+.title {
+  text-align: center;
+  color: #0f4282;
+  font-size: 32px;
+}
+
+.footBarraTab {
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  background-color: #0c4464;
+}
+
+.foot {
+  margin-top: 3px;
+}
+
+.cursor {
+  cursor: pointer;
+  color: #c4b5c0;
+  font-size: 34px;
+}
+
+.mat-tooltip {
+  font-size: 18px;
+}
+
+
+.mat-row:hover {
+  background-color: #abd0f06e;
+  cursor: pointer;
+}
+
+.highlight {
+  background-color: #0099cc;
+  color: #fdfcfb !important;
+  cursor: pointer;
+}
+
+
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #0c86e6 !important;
+  margin-top: 1px !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-select {
+  color: #0c86e6 !important;
+  margin-top: 1px !important;
+}
+
+
+.mgLeft {
+  margin-left: 3px;
+}
+
+
+
+.example-element-row .mat-cell {
+    justify-content: center;
+    text-align: center !important;
+    border-bottom-width: 0;
+    font-size: $text-size;
+    width: 100%;
+}
+
+.mat-row.example-detail-row {
+  min-height: 0;
+}
+
+.mat-row.example-element-row:not(.example-expanded-row):active {
+    background: $background-color;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.mat-row.example-detail-row {
+  min-height: 0;
+}
+
+.info{
+  font-size: 14px;
+}

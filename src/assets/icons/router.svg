@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 657 657">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Capa_1-2" data-name="Capa 1">
+    <g>
+      <rect x="70.5" y="291.46" width="516" height="109.15" rx="17.02" ry="17.02"/>
+      <rect x="104.61" y="378.9" width="34.73" height="53.34" transform="translate(-283.59 527.55) rotate(-90)"/>
+      <rect x="515.18" y="378.9" width="34.73" height="53.34" transform="translate(126.97 938.11) rotate(-90)"/>
+      <ellipse class="cls-2" cx="136.64" cy="344.05" rx="28.02" ry="13.27"/>
+      <ellipse class="cls-2" cx="231.01" cy="344.05" rx="28.02" ry="13.27"/>
+      <rect class="cls-2" x="482.06" y="330.4" width="71.69" height="26.55"/>
+      <rect x="95.28" y="234.06" width="26.55" height="67.13" rx="9.94" ry="9.94"/>
+      <rect x="535.17" y="234.06" width="26.55" height="67.13" rx="9.79" ry="9.79"/>
+    </g>
+    <rect class="cls-1" width="657" height="657"/>
+  </g>
+</svg>

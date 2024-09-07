@@ -1,0 +1,96 @@
+<div>
+	<h3 class="titleTables">
+		<!-- <i class="fab fa-readme"></i> -->
+		Histórico de {{ currentServiceName }}
+	</h3>
+
+	<table
+		id="tableBitacora"
+		mat-table
+		[dataSource]="dataSourceBitacora"
+		class="mat-elevation-z8">
+		<ng-container matColumnDef="Hostname">
+			<th class="headerBitacora" mat-header-cell *matHeaderCellDef>Hostname</th>
+			<td
+				mat-cell
+				*matCellDef="let element; let row"
+				[ngClass]="{highlight: row === selectedRowIndex}"
+				(click)="highlight(row)">
+				<b>{{ host }}</b>
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="Time">
+			<th class="headerBitacora" mat-header-cell *matHeaderCellDef>Fecha</th>
+			<td
+				mat-cell
+				*matCellDef="let element; let row"
+				[ngClass]="{highlight: row === selectedRowIndex}"
+				(click)="highlight(row)">
+				{{ element.CreatedAt * 1000 | date }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="AlarmType">
+			<th class="headerBitacora" mat-header-cell *matHeaderCellDef>Tipo de alarma</th>
+			<td
+				mat-cell
+				*matCellDef="let element; let row"
+				[ngClass]="{highlight: row === selectedRowIndex}">
+				{{ element.AlarmType }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="Duration">
+			<th class="headerBitacora" mat-header-cell *matHeaderCellDef>Duración</th>
+			<td
+				mat-cell
+				*matCellDef="let element; let row"
+				[ngClass]="{highlight: row === selectedRowIndex}">
+				{{ element.Duration }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="ServiceName">
+			<th class="headerBitacora" mat-header-cell *matHeaderCellDef>Servicio</th>
+			<td
+				mat-cell
+				*matCellDef="let element; let row"
+				[ngClass]="{highlight: row === selectedRowIndex}">
+				<b>{{ currentServiceName }}</b>
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="Status">
+			<th class="headerBitacora" mat-header-cell *matHeaderCellDef>Estatus</th>
+			<td
+				mat-cell
+				*matCellDef="let element; let row"
+				[ngClass]="{highlight: row === selectedRowIndex}">
+				<i class="fas fa-check-circle green" *ngIf="element.Status === 'ok'"></i>
+				<i
+					class="fas fa-exclamation-circle orange"
+					*ngIf="element.Status === 'warning'"></i>
+				<i
+					class="fas fa-exclamation-triangle red"
+					*ngIf="element.Status === 'critical'"></i>
+				<i
+					class="fas fa-exclamation-triangle red"
+					*ngIf="element.Status === 'unknown'"></i>
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="PluginOutput">
+			<th class="headerBlue" mat-header-cell *matHeaderCellDef>PluginOutput</th>
+			<td
+				mat-cell
+				*matCellDef="let element; let row"
+				[ngClass]="{highlight: row === selectedRowIndex}">
+				{{ element.PluginOutput }}
+			</td>
+		</ng-container>
+
+		<tr mat-header-row *matHeaderRowDef="displayedColumnsBitacora"></tr>
+		<tr mat-row *matRowDef="let row; columns: displayedColumnsBitacora"></tr>
+	</table>
+	<mat-paginator
+		#paginator
+		[pageSize]=""
+		showFirstLastButtons
+		aria-label="paginator"
+		[pageSizeOptions]="[10, 20, 50]"></mat-paginator>
+</div>

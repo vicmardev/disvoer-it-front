@@ -1,0 +1,32 @@
+.title{
+  text-align: center;
+  color:#0996c4;
+}
+
+input{
+  color:#325f96;
+  font-size: 17px;
+  padding-top: 15px;
+}
+textarea{
+  color:#325f96;
+  font-size: 17px;
+  padding-top: 25px;
+}
+mat-label{
+  font-size: 24px;
+  color:#0c86e6 !important;
+}
+.black{
+  color: #00000082;;
+}
+.disabled{
+  color: #8b8a8a8f !important;
+}
+.mat-input-element:disabled, .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after {
+  color: rgba(0, 0, 0, 0.38);
+  margin-top: 10px !important;
+}
+.cRed{
+  color: #ee3b3ba3  !important;
+}

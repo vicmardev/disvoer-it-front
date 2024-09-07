@@ -1,0 +1,20 @@
+#user-img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.dox {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.fa-times{
+    font-size: 170%;
+    cursor: pointer;
+}
+
+.fa-times:hover {
+	color: red;
+}

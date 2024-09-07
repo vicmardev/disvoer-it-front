@@ -1,0 +1,62 @@
+@import '/src/app/modules/inventory/validcontracts/styles/vars.scss';
+@import '/src/app/modules/inventory/validcontracts/styles/tables.scss';
+//@import '../../styles/tables';
+
+$fontSize: 14px;
+.table-div{
+    width: 99%;
+}
+table{
+    width: 100%;
+}
+
+.buttons-add{
+    display: flex;
+    flex-direction: row;
+    width: 33%;
+}
+
+.options-filters{
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+}
+.buttons-headers{
+    width: 40%;
+}
+
+.buttons-add-filter{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    align-items: flex-end;
+    justify-content: center;
+}
+.add-filter{
+    display: flex;
+    justify-content: space-between;
+    width: 99%;
+}
+
+
+  .add-button{
+    background-color: #203B79;
+  }
+ 
+
+	.filter-button {
+		background-repeat: no-repeat;
+		background-size: 24px 24px;
+		background-position: center;
+
+		&.filter-disabled {
+			background-image: url('/assets/icons/Filtro.svg');
+			background-color: #808080;
+		}
+
+		&.filter-enabled {
+			background-image: url('/assets/icons/FiltroQ.svg');
+			background-color: #203b79;
+		}
+	}
+

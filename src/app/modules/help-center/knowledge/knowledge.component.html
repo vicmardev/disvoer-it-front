@@ -1,0 +1,114 @@
+<div
+	id="gloss"
+	fxLayout="row"
+	fxLayoutAlign="space-evenly center"
+	style="padding-bottom: '30px'; margin-top: 51px">
+	<mat-progress-bar
+		class="complete-progress"
+		[ngStyle]="{
+			height: '30px',
+			width: '80%'
+		}"
+		matSuffix="matSuffix"
+		[value]="100 - treeSize"
+		dir="rtl"
+		[bufferValue]="100"></mat-progress-bar>
+
+	<div class="progress-bar-text">{{ treeSize | number: '1.0-1' }} MB / 50 MB</div>
+	<div class="gloss"></div>
+</div>
+
+<mat-progress-bar
+	class="audio-progress-bar"
+	mode="indeterminate"
+	*ngIf="!data"></mat-progress-bar>
+<div
+	fxLayout="row"
+	fxLayoutAlign="start start"
+	fxLayoutGap="20px"
+	fxLayout.xs="column"
+	fxLayout.sm="column"
+	fxLayout.md="column">
+	<div fxFlex="40">
+		<h2 class="title">Lista de servicios:</h2>
+		<!-- tree -->
+		<cdk-tree [dataSource]="dataSource" [treeControl]="treeControl">
+			<!-- This is the tree node template for leaf nodes -->
+			<cdk-nested-tree-node *cdkTreeNodeDef="let node" class="example-tree-node">
+				<!-- use a disabled button to provide padding for tree leaf -->
+				<button mat-icon-button disabled></button>
+				<span class="spanPdf" (click)="loadPdf(node)">
+					<span class="childList">
+						<i class="fas fa-file-pdf"></i>
+					</span>
+					{{ node.name }}
+				</span>
+			</cdk-nested-tree-node>
+			<!-- This is the tree node template for expandable nodes -->
+			<cdk-nested-tree-node
+				*cdkTreeNodeDef="let node; when: hasChild"
+				class="example-tree-node">
+				<button
+					mat-icon-button
+					[attr.aria-label]="'Toggle ' + node.name"
+					cdkTreeNodeToggle>
+					<mat-icon class="mat-icon-rtl-mirror">
+						{{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+					</mat-icon>
+					<span class="folder">
+						<i class="fas fa-folder"></i>
+					</span>
+					<span class="spanName">{{ node.name }}</span>
+				</button>
+				<div [class.example-tree-invisible]="!treeControl.isExpanded(node)">
+					<ng-container cdkTreeNodeOutlet></ng-container>
+				</div>
+			</cdk-nested-tree-node>
+		</cdk-tree>
+	</div>
+	<div fxFlex="50">
+		<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="40px">
+			<object [data]="pdfSrc | safe" type="application/pdf" class="pdf">
+				<embed src="pdfSrc | safe" type="application/pdf" class="pdf" />
+			</object>
+		</div>
+	</div>
+	<div
+		fxFlex="10"
+		fxLayout="column"
+		fxLayout.xs="row"
+		fxLayout.sm="row"
+		fxLayout.md="row"
+		fxLayoutAlign="end start"
+		LayoutGap="20px">
+		<div class="example-button-container">
+			<button
+				mat-fab
+				color="warn"
+				class="button-add"
+				matTooltip="Agregar registro"
+				(click)="openDialog('add')"
+				*ngIf="user.role != 'User'">
+				<mat-icon>add</mat-icon>
+			</button>
+		</div>
+		<button
+			mat-fab
+			color="warn"
+			class="btnEdit"
+			matTooltip="Editar regsitro"
+			(click)="openDialog('edit')"
+			*ngIf="user.role != 'User' && pdfAvailable">
+			<mat-icon>edit</mat-icon>
+		</button>
+		<button
+			mat-fab
+			color="warn"
+			class="btnDelete"
+			matTooltip="Eliminar registro"
+			(click)="openDialog('delete')"
+			*ngIf="user.role != 'User' && pdfAvailable">
+			<mat-icon>delete</mat-icon>
+		</button>
+	</div>
+</div>

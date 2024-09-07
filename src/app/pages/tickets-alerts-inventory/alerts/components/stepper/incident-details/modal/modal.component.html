@@ -1,0 +1,29 @@
+<mat-card class="box">
+    <mat-card-title fxLayoutAlign="center center">
+        <p><span class="title">Editar Información del Ticket <i class="fa fa-ticket" aria-hidden="true"></i></span></p>
+    </mat-card-title>
+    <br>
+    <mat-card-content fxLayoutAlign="center center">
+        <form class="formulario" [formGroup]="formEdit">
+
+            <mat-form-field class="lol" appearance="legacy">
+                <input matInput placeholder="Tema de Alerta" formControlName="titleTicket">
+                <mat-icon matSuffix>warning</mat-icon>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="legacy">
+                <input matInput placeholder="Teléfono" formControlName="userPhone">
+                <mat-icon matSuffix> phone</mat-icon>
+            </mat-form-field>
+            <br>
+            <mat-form-field fxFlexFill appearance="legacy">
+                <textarea matInput placeholder="Dirección" cols="30" rows="1" formControlName="location"></textarea>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="center center">
+        <button id="saveB" type="submit" (click)="updateTicket()" mat-raised-button color="primary"
+            class="btn-md">Guardar</button>
+        <button id="notB" type="submit" mat-dialog-close mat-raised-button color="primary">Cancelar</button>
+    </mat-card-actions>
+</mat-card>

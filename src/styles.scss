@@ -1,0 +1,301 @@
+@import '~animate.css/animate.min';
+@import '~ngx-org-chart/_theming.scss';
+@import 'tippy.js/dist/tippy.css'; // used for tooltip styling
+
+$colorWithe: white;
+$imgBody: '../src/assets/img/Backgrounds/background-discover.png';
+$cursor: pointer;
+$blueVirwo: #0099cc;
+$width100: 100%;
+$okColor: #2cba86;
+$warningColor: #ff8a65;
+$criticalColor: #f0466b;
+
+html,
+body {
+	height: $width100;
+	max-height: $width100;
+	margin: 0;
+	//background-image: url('../src/assets/img/fondoDiscover.png');
+	background-image: url('../src/assets/img/Backgrounds/fondoDiscover11.png');
+	//background-image: url($imgBody);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.mat-snack-bar-container {
+	max-width: $width100 !important;
+}
+.background-snack {
+	background-color: #2196f3;
+	color: $colorWithe;
+}
+.background-snack-red {
+	background-color: #ff0000ad;
+	color: $colorWithe;
+}
+.background-snack-info {
+	background-color: $blueVirwo;
+	color: $colorWithe;
+}
+
+.mat-simple-snackbar {
+	font-size: 25px !important;
+	font-family: proxima-nova, sans-serif;
+}
+
+.mat-tooltip {
+	font-size: 20px !important;
+}
+
+.mat-focused .mat-form-field-label {
+	color: blue !important;
+	font-size: 18px;
+	margin-top: 10px !important;
+}
+.disabled[_ngcontent-dmp-c348] {
+	color: #8b8a8a8f !important;
+	margin-top: 10px !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+	font-size: 12px;
+	background: #fbfbfbc7;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+	background: #fbfbfbc7;
+}
+* {
+	scrollbar-width: thin;
+	scrollbar-color: blue orange;
+}
+*::-webkit-scrollbar {
+	width: 12px;
+}
+*::-webkit-scrollbar-track {
+	background: #cbcbcb;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #00688a78;
+	border-radius: 20px;
+	border: 3px solid #00688a78;
+}
+.mat-badge-content,
+.mat-badge-content2 {
+	color: $colorWithe !important;
+}
+
+.mat-progress-bar-background {
+	fill: none;
+}
+
+.green-progress .mat-progress-bar-fill::after {
+	background-color: #2cba86 !important;
+}
+
+.green-progress .mat-progress-bar-buffer {
+	background: #2cba8669 !important;
+}
+
+.danger-progress .mat-progress-bar-fill::after {
+	background-color: #f0466b !important;
+}
+
+.danger-progress .mat-progress-bar-buffer {
+	background: #f0466b !important;
+}
+
+.warn-progress .mat-progress-bar-fill::after {
+	background-color: #ff8a65 !important;
+}
+
+.warn-progress .mat-progress-bar-buffer {
+	background: #ff896569 !important;
+}
+
+.complete-progress .mat-progress-bar-fill::after {
+	background: #e4e8eb !important;
+}
+.unknown-progress .mat-progress-bar-fill::after {
+	background-color: #8b8b8bbd !important;
+}
+.avatar-table {
+	display: block;
+	margin: auto;
+	width: 50px;
+	cursor: $cursor;
+}
+.mat-toolbar.mat-primary {
+	background: $blueVirwo;
+	color: $colorWithe;
+}
+.mat-expansion-indicator::after {
+	border-width: 0 5px 4px 0 !important;
+	color: $colorWithe !important;
+}
+.full-container {
+	width: $width100;
+}
+
+.mat-expansion-panel {
+	width: $width100;
+}
+.mat-row:hover {
+	background-color: #abd0f06e !important;
+	cursor: $cursor;
+	color: $colorWithe !important;
+}
+
+.btn-cancel {
+	background: red;
+	color: $colorWithe;
+}
+
+.btn-accept {
+	background: #00c22a;
+	color: $colorWithe;
+}
+
+.btn-back {
+	background: $blueVirwo;
+	color: $colorWithe;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+	padding: 0.75em 0 !important;
+	font-size: 14px !important;
+}
+
+#map-container {
+	display: flex;
+}
+#inventory-map .info {
+	padding: 6px 8px;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: $colorWithe;
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+	width: 170px;
+	height: auto;
+	border-radius: 5px;
+}
+
+#states-map .info {
+	padding: 6px 8px;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: $colorWithe;
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+	width: 170px;
+	height: auto;
+	border-radius: 5px;
+}
+
+#inventory-map .info h4 {
+	margin: 0 0 5px;
+	color: #777;
+	font-weight: bold;
+}
+
+#inventory-map .info .contrato-details {
+	color: #0f4282;
+	font-weight: bold;
+}
+#mat-accordion
+	> .mat-accordion
+	.mat-expansion-panel
+	.mat-expansion-panel-header
+	.mat-expansion-indicator::after {
+	color: #0c4464 !important;
+}
+
+#states-map .info .contrato-details {
+	color: #0f4282;
+	font-weight: bold;
+}
+
+.map-overlay {
+	width: 50vw;
+	height: 76vh;
+	position: relative; /* Sit on top of the page content */
+	background-color: #0c4464cf; /* Black background with opacity */
+	z-index: auto; /* Specify a stack order in case you're using a different order for other elements */
+	cursor: $cursor; /* Add a $cursor on hover */
+}
+.ok-alarm .mat-progress-bar-fill::after {
+	background-color: #2cba86 !important;
+}
+
+.ok-alarm .mat-progress-bar-buffer {
+	background: #2cba8669 !important;
+}
+
+.critical-alarm .mat-progress-bar-fill::after {
+	background-color: #f0466b !important;
+}
+
+.critical-alarm .mat-progress-bar-buffer {
+	background: #d8c4c8 !important;
+}
+
+.warning-alarm .mat-progress-bar-fill::after {
+	background-color: #ff8a65 !important;
+}
+
+.warning-alarm .mat-progress-bar-buffer {
+	background: #ff896569 !important;
+}
+.mat-list-text {
+	margin-top: 10px !important;
+}
+
+.mat-tab-label {
+	background-color: rgb(170, 170, 170);
+	color: white;
+	border-width: 1px;
+	width: 200%;
+}
+
+.mat-tab-label-content{
+
+	margin-left: -24px;
+	margin-right: -24px;
+}
+
+.mat-tab-label:focus:not(.mat-tab-disabled) {
+	background-color: #07293c;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+	background-color: #07293c;
+	height: 100%;
+}
+
+.mat-ink-bar {
+
+	opacity: 0.01;
+	//opacity: 0.999;
+}
+
+#mat-tab-label-0-0,
+#mat-tab-label-0-1,
+#mat-tab-label-0-2,
+#mat-tab-label-0-3 {
+	background-color: rgba(135, 135, 135, 0);
+	margin-left: -24;
+	margin-right: -24;
+	width: 100%;
+	opacity: 0.999;
+}
+
+.mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent{
+	background-color: #203b79;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+///
+///

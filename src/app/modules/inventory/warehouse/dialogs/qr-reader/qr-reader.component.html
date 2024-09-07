@@ -1,0 +1,49 @@
+<div class="container" [hidden]="!hasDevices">
+	<div>
+		<mat-form-field appearance="fill" class="header">
+			<select matNativeControl matInput (change)="onDeviceSelectChange($event)">
+				<option value="" [selected]="!currentDevice">No Device Selected</option>
+				<option
+					*ngFor="let device of availableDevices"
+					[value]="device.deviceId"
+					[selected]="currentDevice && device.deviceId === currentDevice.deviceId">
+					{{ device.label }}
+				</option>
+			</select>
+		</mat-form-field>
+
+		<zxing-scanner
+			class="scanner"
+			[torch]="torchEnabled"
+			[(device)]="currentDevice"
+			(scanSuccess)="onCodeResult($event)"
+			(permissionResponse)="onHasPermission($event)"
+			(camerasFound)="onCamerasFound($event)"
+			(torchCompatible)="onTorchCompatible($event)"></zxing-scanner>
+	</div>
+	<br />
+</div>
+
+<div>
+	<ng-container *ngIf="hasPermission === undefined">
+		<h2>Esperando permisos.</h2>
+
+		<blockquote>
+			Si no dispositivo no cuenta con una cámara, no se pedira ningun permiso.
+		</blockquote>
+	</ng-container>
+
+	<ng-container *ngIf="hasPermission === false">
+		<h2>Por favor dar el permiso de cámara para escanear. 😪</h2>
+	</ng-container>
+
+	<ng-container *ngIf="hasDevices == null">
+		<h2>No fue posible encontrar un dispositivo.</h2>
+
+		<blockquote>Puede ser ocasionado por un error de seguridad.</blockquote>
+	</ng-container>
+
+	<ng-container *ngIf="hasDevices === false">
+		<h2>Ningun dispositivo encontrado</h2>
+	</ng-container>
+</div>

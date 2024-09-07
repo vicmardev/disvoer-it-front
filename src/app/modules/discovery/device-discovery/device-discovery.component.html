@@ -1,0 +1,87 @@
+<div class="page">
+	<div
+		[ngClass]="{
+			top: btn == false,
+			top2: btn == true
+		}">
+		<div class="form-containers">
+			<mat-card-content>
+				<form [formGroup]="discoveryForm">
+					<div class="format">
+						<div>
+							<mat-icon mat-list-icon matSuffix svgIcon="ip-icon" class="icon"></mat-icon>
+							<mat-form-field appearance="outline" class="example-full-width">
+								<input
+									id="ip"
+									type="text"
+									matInput
+									placeholder="IP: "
+									formControlName="ip" />
+							</mat-form-field>
+						</div>
+						<br />
+						<div>
+							<mat-icon mat-list-icon matSuffix svgIcon="user-icon"></mat-icon>
+							<mat-form-field appearance="outline" class="example-full-width">
+								<input
+									id="user"
+									type="text"
+									matInput
+									placeholder="User:"
+									formControlName="user" />
+							</mat-form-field>
+						</div>
+						<br />
+						<div>
+							<mat-icon mat-list-icon matSuffix svgIcon="password-icon"></mat-icon>
+							<mat-form-field appearance="outline" class="example-full-width">
+								<input
+									id="password"
+									type="password"
+									matInput
+									placeholder="Password:"
+									formControlName="password" />
+							</mat-form-field>
+						</div>
+					</div>
+					<div class="selector">
+						<div class="selector-top">
+							<span id="info">Tipo:</span>
+						</div>
+						<div class="selector-bottom">
+							<div class="radio">
+								<mat-chip-list
+									class="example-chip"
+									cdkDropList
+									cdkDropListOrientation="horizontal">
+									<mat-chip
+										class="example-box"
+										cdkDrag
+										*ngFor="let icon of icons"
+										(click)="selectChip(icon)">
+										<img matChipAvatar [src]="icon.icon" alt="img" />
+										{{ icon.name }}
+									</mat-chip>
+								</mat-chip-list>
+							</div>
+						</div>
+					</div>
+				</form>
+			</mat-card-content>
+		</div>
+		<div class="btns" (click)="getChasis()" *ngIf="btn">
+			<button type="submit" mat-raised-button [disabled]="!discoveryForm.valid">
+				Enviar
+			</button>
+		</div>
+	</div>
+	<div class="btnCenter" (click)="getChasis()" *ngIf="!btn">
+		<button type="submit" mat-raised-button [disabled]="!discoveryForm.valid">
+			Descubrir
+		</button>
+	</div>
+	<br />
+	<div *ngIf="showTable">
+		<device-table [tableData]="tableData"></device-table>
+	</div>
+</div>

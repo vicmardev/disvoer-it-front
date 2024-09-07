@@ -1,0 +1,31 @@
+<form class="new-person-form" [formGroup]="formEditEquipmentRow">
+	<div>
+		<h1 class="title">
+			<strong>
+				<mat-icon>edit</mat-icon>
+				Editar equipo:
+				<strong class="black">{{ data.equipment.Serial }}</strong>
+			</strong>
+		</h1>
+		<br />
+	</div>
+	<mat-card fxLayout="row wrap">
+		<mat-form-field fxFlexFill class="field">
+			<mat-label>Etiqueta de servicio</mat-label>
+			<input
+				matInput
+				placeholder="Etiqueta de servicio"
+				fxFlex="100"
+				formControlName="ServiceTag"
+				maxlength="50" />
+		</mat-form-field>
+		<mat-form-field fxFlexFill class="field">
+			<mat-label>IP</mat-label>
+			<input matInput placeholder="IP" fxFlex="100" formControlName="IP" maxlength="50" />
+		</mat-form-field>
+	</mat-card>
+</form>
+<mat-card fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="15px">
+	<button mat-flat-button class="btn-cancel" (click)="cancel()">Cancelar</button>
+	<button mat-flat-button class="btn-accept" (click)="update()">Guardar</button>
+</mat-card>

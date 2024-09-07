@@ -1,0 +1,92 @@
+<button
+	id="add-operator"
+	mat-fab
+	class="maLe"
+	matTooltip="Agregar Operador"
+	(click)="openDialog()">
+	<mat-icon>add</mat-icon>
+</button>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" multiTemplateDataRows>
+	<!-- Nombre -->
+	<ng-container matColumnDef="Nombre">
+		<mat-header-cell *matHeaderCellDef class="header-table">Nombre</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.Name }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- email -->
+	<ng-container matColumnDef="Correo">
+		<mat-header-cell *matHeaderCellDef class="header-table">Correo</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.Email }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Escalación -->
+	<ng-container matColumnDef="Escalación">
+		<mat-header-cell *matHeaderCellDef class="header-table">
+			Nivel de Escalación
+		</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.IdLevelScalation }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Teléfono -->
+	<ng-container matColumnDef="Teléfono">
+		<mat-header-cell *matHeaderCellDef class="header-table">Teléfono</mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			{{ element.Telephone }}
+		</mat-cell>
+	</ng-container>
+
+	<!-- Acciones -->
+	<ng-container matColumnDef="Acciones">
+		<mat-header-cell *matHeaderCellDef class="header-table"></mat-header-cell>
+		<mat-cell
+			*matCellDef="let element"
+			class="content-table"
+			[ngClass]="{highlight: element === selectedRowIndex}">
+			<div class="acciones">
+				<button
+					mat-icon-button
+					[matMenuTriggerFor]="menu"
+					aria-label="Example icon-button with a menu">
+					<mat-icon>more_vert</mat-icon>
+				</button>
+			</div>
+			<mat-menu #menu="matMenu">
+				<button id="button-accions-edit" (click)="editOperator(element)">
+					<span class="text">Editar</span>
+				</button>
+				<button id="button-accions-delete" (click)="deleteSupportOperator(element)">
+					<span class="text">Eliminar</span>
+				</button>
+			</mat-menu>
+		</mat-cell>
+	</ng-container>
+
+	<!-- ------ -->
+	<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+	<mat-row
+		*matRowDef="let row; columns: displayedColumns"
+		class="example-element-row"></mat-row>
+</table>
+<mat-paginator
+	[pageSizeOptions]="[10, 15, 30]"
+	showFirstLastButtons
+	aria-label="paginator"></mat-paginator>

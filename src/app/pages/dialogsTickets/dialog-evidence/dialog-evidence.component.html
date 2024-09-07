@@ -1,0 +1,8 @@
+<div>
+    <h1 class="title">Evidencia  Adjunta  por  Usuario</h1>
+    <img  width="700px" *ngIf="!data.info"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Blank-document-broken.svg/1024px-Blank-document-broken.svg.png" alt="">
+          
+    <img  width="700px" *ngIf="data.info"
+        src="{{ticketImgUrl+data.info}}" alt={{data.info}}>
+</div>

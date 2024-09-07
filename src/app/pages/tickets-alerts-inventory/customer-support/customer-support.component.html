@@ -1,0 +1,85 @@
+<mat-card class="box">
+    <mat-card-title class="title">
+        <span>Encuesta de Satisfacción <i class="fas fa-child"></i></span>
+    </mat-card-title>
+
+    <mat-card-subtitle id="center" class="sub-title">
+        <span>Nos interesa saber tu opinión, por favor responde esta encuesta</span>
+    </mat-card-subtitle>
+
+    <mat-card-content class="box-2">
+        <form [formGroup]="quizForm" (ngSubmit)="submit()" novalidate>
+
+            <div>
+                <span>¿Qué tan satisfecho te encuentras con la solución?</span>
+            </div>
+            <br>
+            <mat-radio-group formControlName="satisfaction">
+                <div class="dox" *ngFor="let cuestion of satisfactionValues; let i=index">
+                    <mat-radio-button [value]="cuestion.value">
+                        {{cuestion.name}}
+                    </mat-radio-button>
+                </div>
+            </mat-radio-group>
+
+
+            <div>
+                <span>¿El tiempo de respuesta fue el adecuado?</span>
+            </div>
+            <br>
+            <mat-radio-group formControlName="responseTimeSatisfaction">
+                <div class="dox" *ngFor="let cuestion of responseSatisfactionValues; let i=index">
+                    <mat-radio-button [value]="cuestion.value">
+                        {{cuestion.name}}
+                    </mat-radio-button>
+                </div>
+            </mat-radio-group>
+
+
+            <div>
+                <span>¿El trato por parte de los ingenieros fue adecuado?</span>
+            </div>
+            <br>
+            <mat-radio-group formControlName="treatmentSatisfaction">
+                <div class="dox" *ngFor="let cuestion of treatmentSatisfactionValues; let i=index">
+                    <mat-radio-button [value]="cuestion.value">
+                        {{cuestion.name}}
+                    </mat-radio-button>
+                </div>
+            </mat-radio-group>
+
+
+            <div class="dox">
+                <span>¿Cómo calificarías la atención brindada para resolver el ticket?</span>
+            </div>
+            <div style="text-align:center">
+                <star-rating
+                    class="dox" 
+                    [value]="0" 
+                    [totalstars]="5" 
+                    checkedcolor="orange" 
+                    uncheckedcolor="gray" 
+                    size="50px"
+                    [readonly]="false" 
+                    (rate)="onRate($event)" 
+                    formControlName="rating">
+                </star-rating>
+            </div>
+            <br>
+
+
+            <!-- Comentarios adicionales -->
+            <div>
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <textarea id="comments" type="text" matInput placeholder="Comentarios Adicionales..."
+                        formControlName="comments"></textarea>
+                </mat-form-field>
+            </div>
+
+
+            <div class="center">
+                <button mat-flat-button class="btn-accept ml">Aceptar</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

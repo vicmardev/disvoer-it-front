@@ -1,0 +1,8 @@
+<h1 mat-dialog-title><i class="fas fa-exclamation-triangle"></i> ¿Seguro que deseas aprobar la solución de este ticket? </h1>
+<div fxLayoutAlign="center center" mat-dialog-content><h3>Esta acción es permanente y no puede deshacerse.</h3></div>
+<div fxLayoutAlign="center center" mat-dialog-actions>
+
+    <button class="btn-accept" (click)="approveTicket()"  mat-raised-button>Aprobar</button>
+
+    <button class="btn-cancel" mat-raised-button mat-dialog-close>Cancelar</button>
+</div>

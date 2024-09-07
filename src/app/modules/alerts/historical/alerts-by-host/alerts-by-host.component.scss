@@ -1,0 +1,55 @@
+.green{
+    color: #2efb04;
+    font-size: 24px;
+}
+.red{
+    color: red;
+    font-size: 24px;
+}
+.orange{
+    color: #f3a708eb;
+    font-size: 24px;
+}
+
+#tableAlarm{
+    width: 100%;
+    //box-shadow: none;
+}
+
+.highlight {
+    background-color: #2196f338;
+    cursor: pointer;
+  }
+
+.titleTables{
+    text-align: center !important;
+    color: #07293c !important;
+    font-size: 24px;
+ } 
+
+.headerAlarms{
+    text-align: center !important;
+    background-color: #0099cc;
+    color: #fdfcfb !important;
+    font-size: 16px;
+    width: 500px;
+}
+
+.column {
+    float: left;
+}
+
+.right {
+    width: 49.5%;
+    margin-left: 0.5%;
+}
+
+.left {
+    width: 49.5%;
+    margin-right: 0.5%;
+}
+
+.spinner{
+    margin-top: 50%;
+    margin-left: 50%;
+  }

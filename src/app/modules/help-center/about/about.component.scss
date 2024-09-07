@@ -1,0 +1,130 @@
+/* Titulo de pagina */
+.title {
+    text-align: center;
+    color: #0f4282;
+    font-size: 31px;
+  }
+  
+  .class-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    width: 80%;
+  }
+  
+  .box-content {
+    /*  background-color: white; */
+    width: 45%;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-left: 17px solid #0099cc;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  mat-accordion {
+    background-color: red;
+  }
+  
+  hr {
+    border: 1px solid rgb(184, 184, 184);
+  }
+  
+  .text {
+    font-size: 20px !important;
+    color: #0099cc;
+  }
+  .text-foot {
+    font-size: 120%;
+  }
+  
+  a:link,
+  a:visited,
+  a:active {
+    text-decoration: none;
+    color: #0099cc;
+    cursor: pointer;
+  }
+  
+  .about-patern {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    align-items: flex-end;
+    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  
+  .logo {
+    width: 10%;
+    text-align: center;
+  }
+  
+  .title-app {
+    width: auto;
+    margin-left: 5%;
+  }
+  
+  .fa {
+    font-size: 25px;
+    color: #0f4282;
+    margin-right: 100%;
+    margin-bottom: 10%;
+  }
+  .about-patern-check {
+    word-wrap: break-word;
+    justify-content: flex-start;
+    flex-flow: wrap-reverse;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  .text-check {
+    font-size: 15px !important;
+    color: #828282;
+    word-wrap: break-word;
+    width: 106%;
+  }
+  .text-option {
+    font-size: 15px;
+    color: #000000;
+  }
+  
+  .title-about {
+    width: 85%;
+  }
+  .link {
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .icon-go {
+    width: 15%;
+    text-align: center;
+  }
+  .inform {
+    font-size: 22px !important;
+    color: #828282 !important;
+    cursor: pointer;
+  }
+  
+  .about-patern-go {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    
+  }
+  
+  .terms {
+    color: #0099cc;
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .about-patern,
+    .about-patern-check {
+      grid-template-columns: auto;
+    }
+  }
+  
